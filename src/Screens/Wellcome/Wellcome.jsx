@@ -5,10 +5,11 @@ import { styles } from './wellcome';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useFonts } from '@expo-google-fonts/montserrat/useFonts';
 import { Montserrat_400Regular } from '@expo-google-fonts/montserrat/400Regular';
-
+import { Montserrat_700Bold } from '@expo-google-fonts/montserrat/700Bold';
 export const Wellcome = () => {
     let [fontsLoaded] = useFonts({
         Montserrat_400Regular,
+        Montserrat_700Bold
     });
     if (!fontsLoaded) {
         return <Text>Carregando...</Text>;
@@ -32,7 +33,10 @@ export const Wellcome = () => {
 
                     {/* Parte do grafico */}
                     <View style={styles.containerGrafico}>
-                        <View></View>
+                        <View>
+                            <Text style={styles.textSaldo}>Seu saldo total</Text>
+                            <Text style={styles.valueSaldo}>R$: 1.000,00</Text>
+                        </View>
                         <View></View>
                     </View>
                 <StatusBar style="auto" />
