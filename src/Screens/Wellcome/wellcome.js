@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: '#f5f5f5',
 
     },
     headerGradient: {
@@ -28,6 +28,18 @@ export const styles = StyleSheet.create({
         marginTop: 5,
         fontFamily: 'Montserrat_400Regular',
         marginLeft: 20
+    },
+    containerGrafico: {
+        width: '80%',
+        height: 350,
+        backgroundColor: '#fff',
+        marginTop: -60,
+        borderRadius: 25,
+        shadowColor: "#000",
+        shadowOpacity: 0.25,
+        shadowRadius: 10,
+        elevation: 10,
+        padding: 20,
     }
 
 })

@@ -29,6 +29,12 @@ export const Wellcome = () => {
                         <Text style={styles.txtWellcome}>Bem vindo(a),</Text>
                         <Text style={styles.txtDescritionWellcome}>Gerencie suas finanças aqui!</Text>
                     </LinearGradient>
+
+                    {/* Parte do grafico */}
+                    <View style={styles.containerGrafico}>
+                        <View></View>
+                        <View></View>
+                    </View>
                 <StatusBar style="auto" />
             </View>
         );
