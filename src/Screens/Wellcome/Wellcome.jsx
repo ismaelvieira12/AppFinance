@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from './wellcome';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useFonts } from '@expo-google-fonts/montserrat/useFonts';
 import { Montserrat_400Regular } from '@expo-google-fonts/montserrat/400Regular';
 import { Montserrat_700Bold } from '@expo-google-fonts/montserrat/700Bold';
-import AntDesign from '@expo/vector-icons/AntDesign';
+
 export const Wellcome = () => {
     let [fontsLoaded] = useFonts({
         Montserrat_400Regular,
@@ -42,13 +42,19 @@ export const Wellcome = () => {
                     </View>
 
                     {/* Parte de ir para metas */}
-                    <LinearGradient
-                        colors={["#0056a7ff", "#0084ffff"]}
-                        style={styles.boxOraganization}
-                    >
-                        <Text style={styles.textOrganization}>Ir para metas</Text>
-                        <Text style={styles.textOrganization}>Organize suas finanças</Text>
-                    </LinearGradient>
+                    <TouchableOpacity style={styles.boxOraganization}>
+                        <LinearGradient
+                            colors={["#0056a7ff", "#0084ffff"]}
+                            style={styles.gradientOrganization}
+                        >
+                            <View>
+                                <Text style={styles.textOrganization}>Ir para metas</Text>
+                                <Text style={styles.textOrganization}>Organize suas finanças</Text>
+                            </View>
+                            <AntDesign name="arrow-right" size={24} color="white"/>
+                        </LinearGradient>
+                    </TouchableOpacity>
+                    
                 <StatusBar style="auto" />
             </View>
         );

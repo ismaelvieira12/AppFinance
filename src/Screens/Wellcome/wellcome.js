@@ -54,12 +54,23 @@ export const styles = StyleSheet.create({
         fontFamily: 'Montserrat_700Bold',
     },
     boxOraganization: {
+        width: '100%',
+        alignItems: 'center',
+    },
+    gradientOrganization: {
         width: '80%',
         height: 100,
         borderRadius: 20,
         marginTop: 20,
         padding: 20,
-        justifyContent: 'center',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+
+        shadowColor: "#000",
+        shadowOpacity: 0.6,
+        shadowRadius: 10,
+        elevation: 10,
     },
     textOrganization: {
         color: 'white',
