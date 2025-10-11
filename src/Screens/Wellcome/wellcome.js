@@ -9,6 +9,16 @@ export const styles = StyleSheet.create({
     },
     headerGradient: {
        width: '100%',
-       height: "30%",
+       height: "35%",
+       padding: 20,
+       borderBottomLeftRadius: 85,
+       borderBottomRightRadius: 85,
+    },
+    txtWellcome: {
+        color: 'white', 
+        fontSize: 30, 
+        fontWeight: 'bold', 
+        marginTop: 20
     }
+
 })
