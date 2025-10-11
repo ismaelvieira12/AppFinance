@@ -26,8 +26,8 @@ export const Wellcome = () => {
                                 source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt05by-WcwqQ5UHeK0eNhNYxGnrX2CJsHSOA&s'}}
                             />
                         </View>
-                        <Text style={styles.txtWellcome}>Bem vindo,</Text>
-                        <Text style={styles.txtDescritionWellcome}>Gerencie suas finanças de forma fácil</Text>
+                        <Text style={styles.txtWellcome}>Bem vindo(a),</Text>
+                        <Text style={styles.txtDescritionWellcome}>Gerencie suas finanças aqui!</Text>
                     </LinearGradient>
                 <StatusBar style="auto" />
             </View>

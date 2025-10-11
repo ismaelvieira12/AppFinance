@@ -18,12 +18,16 @@ export const styles = StyleSheet.create({
         color: 'white', 
         fontSize: 30, 
         fontWeight: 'bold', 
-        marginTop: 20
+        marginTop: 20,
+        fontFamily: 'Montserrat_400Regular',
+        marginLeft: 20
     },
     txtDescritionWellcome: {
         color: 'white', 
         fontSize: 18, 
-        marginTop: 5
+        marginTop: 5,
+        fontFamily: 'Montserrat_400Regular',
+        marginLeft: 20
     }
 
 })
