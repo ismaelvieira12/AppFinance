@@ -39,6 +39,15 @@ export const Wellcome = () => {
                         </View>
                         <View></View>
                     </View>
+
+                    {/* Parte de ir para metas */}
+                    <LinearGradient
+                        colors={["#0056a7ff", "#0084ffff"]}
+                        style={styles.boxOraganization}
+                    >
+                        <Text style={styles.textOrganization}>Ir para metas</Text>
+                        <Text style={styles.textOrganization}>Organize suas finanças</Text>
+                    </LinearGradient>
                 <StatusBar style="auto" />
             </View>
         );

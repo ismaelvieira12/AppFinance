@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     },
     textSaldo: {
         fontSize: 15,
-        color: '#a0a0a0',
+        color: '#5c5c5cff',
         fontFamily: 'Montserrat_400Regular',
     },
     valueSaldo: {
@@ -52,6 +52,20 @@ export const styles = StyleSheet.create({
         color: '#4fa4f5ff',
         marginTop: 5,
         fontFamily: 'Montserrat_700Bold',
+    },
+    boxOraganization: {
+        width: '80%',
+        height: 100,
+        borderRadius: 20,
+        marginTop: 20,
+        padding: 20,
+        justifyContent: 'center',
+    },
+    textOrganization: {
+        color: 'white',
+        fontSize: 18,
+        lineHeight: 30, 
+        fontFamily: 'Montserrat_400Regular',
     }
 
 })
