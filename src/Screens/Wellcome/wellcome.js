@@ -19,6 +19,11 @@ export const styles = StyleSheet.create({
         fontSize: 30, 
         fontWeight: 'bold', 
         marginTop: 20
+    },
+    txtDescritionWellcome: {
+        color: 'white', 
+        fontSize: 18, 
+        marginTop: 5
     }
 
 })
