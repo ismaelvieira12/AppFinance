@@ -1,12 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { Wellcome } from './src/Screens/Wellcome/Wellcome';
-
+import { Wellcome } from './src/Screens/Wellcome/Wellcome.jsx';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+const Drawer = createDrawerNavigator();
 export default function App() {
   return (
-    <>
-      <Wellcome />
+    <NavigationContainer>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Wellcome" component={Wellcome} />
+      </Drawer.Navigator>
       <StatusBar style="auto" />
-    </>
+    </NavigationContainer>
   );
 }
 
