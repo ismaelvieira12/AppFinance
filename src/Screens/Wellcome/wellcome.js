@@ -74,6 +74,28 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         lineHeight: 30, 
         fontFamily: 'Montserrat_400Regular',
-    }
+    },
+    efeitoOne: {
+        width: 100,
+        height: 100,
+        backgroundColor: '#0071dbff',
+        position: 'absolute',
+        bottom: -50,
+        left: -50, 
+        borderRadius: 50,
+        opacity: 0.5,
+        
+    },
+    efeitoTrow: {
+        width: 350,
+        height: 350,
+        backgroundColor: '#0056a7ff',
+        position: 'absolute',
+        bottom: "-10%",
+        right: "-30%", 
+        borderRadius: "50%",
+        opacity: 0.5,
+        
+    },
 
 })

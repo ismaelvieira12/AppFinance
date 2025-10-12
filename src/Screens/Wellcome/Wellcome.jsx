@@ -17,6 +17,8 @@ export const Wellcome = () => {
     }else { 
         return (
             <View style={styles.container}>
+                <View style={styles.efeitoOne}></View>
+                <View style={styles.efeitoTrow}></View>
                 <LinearGradient
                     colors={["#0061BD", "#0071dbff"]}
                     style={styles.headerGradient}
@@ -53,7 +55,6 @@ export const Wellcome = () => {
                     </View>
                     <AntDesign name="arrow-right" size={24} color="white"/>
                 </LinearGradient>
-                    
                 <StatusBar style="auto" />
             </View>
         );
