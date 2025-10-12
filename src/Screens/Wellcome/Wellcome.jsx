@@ -17,43 +17,42 @@ export const Wellcome = () => {
     }else { 
         return (
             <View style={styles.container}>
-                    <LinearGradient
+                <LinearGradient
                     colors={["#0061BD", "#0071dbff"]}
                     style={styles.headerGradient}
-                    >
-                        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-                            <AntDesign name="menu" size={24} color="white" />
-                            <Image
-                                style={{ width: 50, height: 50,  marginTop: 20, borderRadius: 10}}
-                                source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt05by-WcwqQ5UHeK0eNhNYxGnrX2CJsHSOA&s'}}
-                            />
-                        </View>
-                        <Text style={styles.txtWellcome}>Bem vindo(a),</Text>
-                        <Text style={styles.txtDescritionWellcome}>Gerencie suas finanças aqui!</Text>
-                    </LinearGradient>
-
-                    {/* Parte do grafico */}
-                    <View style={styles.containerGrafico}>
-                        <View>
-                            <Text style={styles.textSaldo}>Seu saldo total</Text>
-                            <Text style={styles.valueSaldo}>R$: 1.000,00</Text>
-                        </View>
-                        <View></View>
+                >
+                    <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20}}>
+                        <AntDesign name="menu" size={24} color="white" />
+                        <Image
+                            style={{ width: 50, height: 50,  marginTop: 20, borderRadius: 10}}
+                            source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt05by-WcwqQ5UHeK0eNhNYxGnrX2CJsHSOA&s'}}
+                        />
                     </View>
+                    <Text style={styles.txtWellcome}>Bem vindo(a),</Text>
+                    <Text style={styles.txtDescritionWellcome}>Gerencie suas finanças aqui!</Text>
+                </LinearGradient>
 
-                    {/* Parte de ir para metas */}
-                    <TouchableOpacity style={styles.boxOraganization}>
-                        <LinearGradient
-                            colors={["#0056a7ff", "#0084ffff"]}
-                            style={styles.gradientOrganization}
-                        >
-                            <View>
-                                <Text style={styles.textOrganization}>Ir para metas</Text>
-                                <Text style={styles.textOrganization}>Organize suas finanças</Text>
-                            </View>
-                            <AntDesign name="arrow-right" size={24} color="white"/>
-                        </LinearGradient>
-                    </TouchableOpacity>
+                {/* Parte do grafico */}
+                <View style={styles.containerGrafico}>
+                    <View>
+                        <Text style={styles.textSaldo}>Seu saldo total</Text>
+                        <Text style={styles.valueSaldo}>R$: 1.000,00</Text>
+                    </View>
+                    <View></View>
+                </View>
+
+                {/* Parte de ir para metas */}
+                
+                <LinearGradient
+                    colors={["#0056a7ff", "#0084ffff"]}
+                    style={styles.gradientOrganization}
+                >
+                    <View>
+                        <Text style={styles.textOrganization}>Ir para metas</Text>
+                        <Text style={styles.textOrganization}>Organize suas finanças</Text>
+                    </View>
+                    <AntDesign name="arrow-right" size={24} color="white"/>
+                </LinearGradient>
                     
                 <StatusBar style="auto" />
             </View>

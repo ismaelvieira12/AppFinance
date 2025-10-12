@@ -42,21 +42,18 @@ export const styles = StyleSheet.create({
         padding: 20,
     },
     textSaldo: {
-        fontSize: 15,
+        fontSize: 19,
         color: '#5c5c5cff',
         fontFamily: 'Montserrat_400Regular',
     },
     valueSaldo: {
-        fontSize: 25,
+        fontSize: 30,
         fontWeight: 'bold', 
         color: '#4fa4f5ff',
         marginTop: 5,
         fontFamily: 'Montserrat_700Bold',
     },
-    boxOraganization: {
-        width: '100%',
-        alignItems: 'center',
-    },
+
     gradientOrganization: {
         width: '80%',
         height: 100,
