@@ -70,16 +70,16 @@ export const styles = StyleSheet.create({
         elevation: 10,
     },
     efeitoOne: {
-        width: 100,
-        height: 100,
-        backgroundColor: '#bcdffeff',
+        width: 150,
+        height: 150,
         position: 'absolute',
         bottom: -50,
         left: -50, 
-        borderRadius: 50,
+        borderRadius: 75,
         opacity: 0.5,
         
     },
+    
     textOrganization: {
         color: 'white',
         fontSize: 18,

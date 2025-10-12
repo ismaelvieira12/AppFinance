@@ -46,7 +46,7 @@ export const Wellcome = () => {
                 {/* Parte de ir para metas */}
                 
                 <LinearGradient
-                    colors={["#0056a7ff", "#0084ffff"]}
+                    colors={["#4e8fcc", "#02427f"]}
                     style={styles.gradientOrganization}
                 >
                     <View style={styles.containerOrganization}>
@@ -54,7 +54,7 @@ export const Wellcome = () => {
                         <Text style={styles.textOrganization}>Organize suas finanças</Text>
                     </View>
                     <AntDesign name="arrow-right" size={24} color="white"/>
-                    <View style={styles.efeitoOne}></View>
+                    <LinearGradient style={styles.efeitoOne} colors={['#ffffff', "#044078"]}></LinearGradient>
                 </LinearGradient>
                 <StatusBar style="auto" />
             </View>
