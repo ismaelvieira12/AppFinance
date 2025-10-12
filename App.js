@@ -7,8 +7,8 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Wellcome" component={Wellcome} />
+      <Drawer.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
+        <Drawer.Screen name="Home" component={Wellcome} />
       </Drawer.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
