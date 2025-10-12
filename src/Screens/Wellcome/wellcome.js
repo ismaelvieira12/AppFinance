@@ -63,28 +63,28 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-
+        overflow: 'hidden',
         shadowColor: "#000",
         shadowOpacity: 0.6,
         shadowRadius: 10,
         elevation: 10,
     },
-    textOrganization: {
-        color: 'white',
-        fontSize: 18,
-        lineHeight: 30, 
-        fontFamily: 'Montserrat_400Regular',
-    },
     efeitoOne: {
         width: 100,
         height: 100,
-        backgroundColor: '#0071dbff',
+        backgroundColor: '#bcdffeff',
         position: 'absolute',
         bottom: -50,
         left: -50, 
         borderRadius: 50,
         opacity: 0.5,
         
+    },
+    textOrganization: {
+        color: 'white',
+        fontSize: 18,
+        lineHeight: 30, 
+        fontFamily: 'Montserrat_400Regular',
     },
     efeitoTrow: {
         width: 350,
