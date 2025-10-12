@@ -49,12 +49,13 @@ export const Wellcome = () => {
                     colors={["#4e8fcc", "#02427f"]}
                     style={styles.gradientOrganization}
                 >
+                    <LinearGradient style={styles.efeitoThree} colors={['#fff8f8', "#4aeae7"]}></LinearGradient>
+                    <LinearGradient style={styles.efeitoOne} colors={['#ffffff', "#587692"]}></LinearGradient>
                     <View style={styles.containerOrganization}>
                         <Text style={styles.textOrganization}>Ir para metas</Text>
                         <Text style={styles.textOrganization}>Organize suas finanças</Text>
                     </View>
                     <AntDesign name="arrow-right" size={24} color="white"/>
-                    <LinearGradient style={styles.efeitoOne} colors={['#ffffff', "#044078"]}></LinearGradient>
                 </LinearGradient>
                 <StatusBar style="auto" />
             </View>

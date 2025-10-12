@@ -70,19 +70,28 @@ export const styles = StyleSheet.create({
         elevation: 10,
     },
     efeitoOne: {
+        width: 100,
+        height: 100,
+        position: 'absolute',
+        bottom: -20,
+        left: -20, 
+        borderRadius: 75,
+        opacity: 0.5,
+        zIndex: 0,
+    },
+    efeitoThree: {
         width: 150,
         height: 150,
         position: 'absolute',
-        bottom: -50,
+        top: -50,
         left: -50, 
         borderRadius: 75,
         opacity: 0.5,
-        
+        zIndex: 0,
     },
-    
     textOrganization: {
         color: 'white',
-        fontSize: 18,
+        fontSize: 20,
         lineHeight: 30, 
         fontFamily: 'Montserrat_400Regular',
     },
