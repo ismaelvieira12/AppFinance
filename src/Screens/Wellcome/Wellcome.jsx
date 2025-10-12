@@ -49,8 +49,8 @@ export const Wellcome = () => {
                     colors={["#4e8fcc", "#02427f"]}
                     style={styles.gradientOrganization}
                 >
-                    <LinearGradient style={styles.efeitoThree} colors={['#fff8f8', "#4aeae7"]}></LinearGradient>
-                    <LinearGradient style={styles.efeitoOne} colors={['#ffffff', "#587692"]}></LinearGradient>
+                    <LinearGradient style={styles.efeitoThree} colors={['#fff8f8', "#004484"]}></LinearGradient>
+                    <LinearGradient style={styles.efeitoOne} colors={['#ffffff', "#263e55"]}></LinearGradient>
                     <View style={styles.containerOrganization}>
                         <Text style={styles.textOrganization}>Ir para metas</Text>
                         <Text style={styles.textOrganization}>Organize suas finanças</Text>
