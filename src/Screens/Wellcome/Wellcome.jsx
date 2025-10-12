@@ -17,10 +17,10 @@ export const Wellcome = () => {
     }else { 
         return (
             <View style={styles.container}>
-                <View style={styles.efeitoOne}></View>
+                
                 <View style={styles.efeitoTrow}></View>
                 <LinearGradient
-                    colors={["#0061BD", "#0071dbff"]}
+                    colors={["#0061BD", "#037df0"]}
                     style={styles.headerGradient}
                 >
                     <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20}}>
@@ -49,9 +49,10 @@ export const Wellcome = () => {
                     colors={["#0056a7ff", "#0084ffff"]}
                     style={styles.gradientOrganization}
                 >
-                    <View>
+                    <View >
                         <Text style={styles.textOrganization}>Ir para metas</Text>
                         <Text style={styles.textOrganization}>Organize suas finanças</Text>
+                        <View style={styles.efeitoOne}></View>
                     </View>
                     <AntDesign name="arrow-right" size={24} color="white"/>
                 </LinearGradient>
