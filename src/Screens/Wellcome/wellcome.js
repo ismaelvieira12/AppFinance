@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     },
     textSaldo: {
         fontSize: 19,
-        color: '#5c5c5cff',
+        color: '#717070ff',
         fontFamily: 'Montserrat_400Regular',
     },
     valueSaldo: {
@@ -98,12 +98,12 @@ export const styles = StyleSheet.create({
     efeitoTrow: {
         width: 350,
         height: 350,
-        backgroundColor: '#0056a7ff',
         position: 'absolute',
         bottom: "-10%",
         right: "-30%", 
-        borderRadius: "50%",
+        borderRadius: 175,
         opacity: 0.5,
+        
         
     },
 

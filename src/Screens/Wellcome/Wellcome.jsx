@@ -18,7 +18,7 @@ export const Wellcome = () => {
         return (
             <View style={styles.container}>
                 
-                <View style={styles.efeitoTrow}></View>
+                <LinearGradient style={styles.efeitoTrow} colors={["#037df0", "#037df0"]}></LinearGradient>
                 <LinearGradient
                     colors={["#0061BD", "#037df0"]}
                     style={styles.headerGradient}
