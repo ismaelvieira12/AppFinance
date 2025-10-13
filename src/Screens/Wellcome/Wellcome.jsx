@@ -8,6 +8,12 @@ import { Montserrat_400Regular } from '@expo-google-fonts/montserrat/400Regular'
 import { Montserrat_700Bold } from '@expo-google-fonts/montserrat/700Bold';
 
 export const Wellcome = () => {
+
+    const handleClick = () => {
+        alert('Menu clicado!');
+    }
+
+
     let [fontsLoaded] = useFonts({
         Montserrat_400Regular,
         Montserrat_700Bold
@@ -24,7 +30,7 @@ export const Wellcome = () => {
                     style={styles.headerGradient}
                 >
                     <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20}}>
-                        <AntDesign name="menu" size={24} color="white" />
+                        <AntDesign  name="menu" size={24} color="white" onPress={() => handleClick()}/>
                         <Image
                             style={{ width: 50, height: 50,  marginTop: 20, borderRadius: 10}}
                             source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt05by-WcwqQ5UHeK0eNhNYxGnrX2CJsHSOA&s'}}
