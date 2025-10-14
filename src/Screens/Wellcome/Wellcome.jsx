@@ -11,6 +11,7 @@ import React, { useState } from 'react'; // 👈 precisa para o useState
 import { useDrawerStatus } from '@react-navigation/drawer';
 
 
+
 export const Wellcome = () => {
     
     
@@ -20,7 +21,7 @@ export const Wellcome = () => {
         React.useEffect(() => {
         setStatusBarStyle(isDrawerOpen ? 'dark' : 'light');
     }, [isDrawerOpen]);
-    
+
     // Para ter acesso ao Drwaer
     const navigation = useNavigation(); // 👈 Inicializa o hook
     const handleClick = () => {
@@ -61,7 +62,9 @@ export const Wellcome = () => {
                         <Text style={styles.textSaldo}>Seu saldo total</Text>
                         <Text style={styles.valueSaldo}>R$: 1.000,00</Text>
                     </View>
-                    <View></View>
+                    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+                       
+                    </View>
                 </View>
 
                 {/* Parte de ir para metas */}
