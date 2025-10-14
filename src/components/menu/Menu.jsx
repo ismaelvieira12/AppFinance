@@ -1,8 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { Wellcome } from '../../Screens/Wellcome/Wellcome.jsx';
 const Drawer = createDrawerNavigator();
-
-import { StatusBar } from 'expo-status-bar';
 
 export const Menu = () => {
     return (
