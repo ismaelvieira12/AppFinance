@@ -7,14 +7,17 @@ import { useFonts } from '@expo-google-fonts/montserrat/useFonts';
 import { Montserrat_400Regular } from '@expo-google-fonts/montserrat/400Regular';
 import { Montserrat_700Bold } from '@expo-google-fonts/montserrat/700Bold';
 import { useNavigation } from '@react-navigation/native'; // 👈 Importa o hook
+import React, { useState } from 'react'; // 👈 precisa para o useState
 
 
 export const Wellcome = () => {
-// Para ter acesso ao Drwaer
+    // Para controlar a statusBar, tenho que usar o useState
+    const [statusBarStyle, setStatusBarStyle] = useState("light"); // 👈 controla a cor da barra
+    // Para ter acesso ao Drwaer
     const navigation = useNavigation(); // 👈 Inicializa o hook
     const handleClick = () => {
         navigation.openDrawer(); // 👈 Abre o menu
-        return <StatusBar style="dark" />;
+          setStatusBarStyle("dark"); 
     }
 
 
