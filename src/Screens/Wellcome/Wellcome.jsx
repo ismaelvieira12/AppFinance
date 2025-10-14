@@ -10,9 +10,10 @@ import { useNavigation } from '@react-navigation/native'; // 👈 Importa o hook
 
 
 export const Wellcome = () => {
-
+// Para ter acesso ao Drwaer
+    const navigation = useNavigation(); // 👈 Inicializa o hook
     const handleClick = () => {
-        alert('Menu clicado!');
+        navigation.openDrawer(); // 👈 Abre o menu
     }
 
 
