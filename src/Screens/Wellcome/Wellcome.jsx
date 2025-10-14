@@ -13,7 +13,9 @@ export const Wellcome = () => {
 // Para ter acesso ao Drwaer
     const navigation = useNavigation(); // 👈 Inicializa o hook
     const handleClick = () => {
-        navigation.openDrawer(); // 👈 Abre o menu
+        // navigation.openDrawer(); // 👈 Abre o menu
+        navigation.toggleDrawer();
+
     }
 
 
