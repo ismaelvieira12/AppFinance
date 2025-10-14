@@ -73,7 +73,7 @@ export const Wellcome = () => {
                         <Text style={styles.textSaldo}>Seu saldo total</Text>
                         <Text style={styles.valueSaldo}>R$: 1.000,00</Text>
                     </View>
-                    <View style={{ flex: 1, justifyContent: "center", alignItems: "center", height: 300, width: "100%" }}>
+                    <View style={{ flex: 1}}>
                             
                         <CartesianChart data={DATA} xKey="day" yKeys={["highTmp"]}>
                             {/* 👇 render function exposes various data, such as points. */}
