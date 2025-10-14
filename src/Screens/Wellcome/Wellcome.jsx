@@ -6,6 +6,8 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { useFonts } from '@expo-google-fonts/montserrat/useFonts';
 import { Montserrat_400Regular } from '@expo-google-fonts/montserrat/400Regular';
 import { Montserrat_700Bold } from '@expo-google-fonts/montserrat/700Bold';
+import { useNavigation } from '@react-navigation/native'; // 👈 Importa o hook
+
 
 export const Wellcome = () => {
 
