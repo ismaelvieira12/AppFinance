@@ -12,8 +12,15 @@ import { useDrawerStatus } from '@react-navigation/drawer';
 
 
 
+
 export const Wellcome = () => {
    
+    const data = [
+        { mes: "Jan", valor: 45 },
+        { mes: "Fev", valor: 80 },
+        { mes: "Mar", valor: 65 },
+        { mes: "Abr", valor: 100 },
+    ];
     
     // Para controlar a statusBar, tenho que usar o useState
     const [statusBarStyle, setStatusBarStyle] = useState("light"); // 👈 controla a cor da barra
@@ -82,7 +89,6 @@ export const Wellcome = () => {
                     <AntDesign name="arrow-right" size={24} color="white"/>
                 </LinearGradient>
                 <StatusBar style={statusBarStyle} />
-
             </View>
         );
     }
