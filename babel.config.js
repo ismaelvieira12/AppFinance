@@ -7,7 +7,7 @@ module.exports = function (api) {
     ],
     plugins: [
       // Permite usar importações automáticas e reexportações
-      'react-native-reanimated/plugin', // 👈 obrigatório se usar Reanimated
+       'react-native-worklets/plugin', // 👈 obrigatório se usar Reanimated
       [
         'module-resolver',
         {
