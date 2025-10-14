@@ -13,9 +13,8 @@ export const Wellcome = () => {
 // Para ter acesso ao Drwaer
     const navigation = useNavigation(); // 👈 Inicializa o hook
     const handleClick = () => {
-        // navigation.openDrawer(); // 👈 Abre o menu
-        navigation.toggleDrawer();
-
+        navigation.openDrawer(); // 👈 Abre o menu
+        return <StatusBar style="dark" />;
     }
 
 
@@ -68,7 +67,7 @@ export const Wellcome = () => {
                     </View>
                     <AntDesign name="arrow-right" size={24} color="white"/>
                 </LinearGradient>
-                <StatusBar style="auto" />
+                <StatusBar style="light" />
             </View>
         );
     }
