@@ -8,16 +8,24 @@ import { Montserrat_400Regular } from '@expo-google-fonts/montserrat/400Regular'
 import { Montserrat_700Bold } from '@expo-google-fonts/montserrat/700Bold';
 import { useNavigation } from '@react-navigation/native'; // 👈 Importa o hook
 import React, { useState } from 'react'; // 👈 precisa para o useState
+import { useDrawerStatus } from '@react-navigation/drawer';
 
 
 export const Wellcome = () => {
+    
+    
     // Para controlar a statusBar, tenho que usar o useState
     const [statusBarStyle, setStatusBarStyle] = useState("light"); // 👈 controla a cor da barra
+    const isDrawerOpen = useDrawerStatus() === 'open';
+        React.useEffect(() => {
+        setStatusBarStyle(isDrawerOpen ? 'dark' : 'light');
+    }, [isDrawerOpen]);
+    
     // Para ter acesso ao Drwaer
     const navigation = useNavigation(); // 👈 Inicializa o hook
     const handleClick = () => {
+        setStatusBarStyle("dark"); 
         navigation.openDrawer(); // 👈 Abre o menu
-          setStatusBarStyle("dark"); 
     }
 
 
@@ -70,7 +78,8 @@ export const Wellcome = () => {
                     </View>
                     <AntDesign name="arrow-right" size={24} color="white"/>
                 </LinearGradient>
-                <StatusBar style="light" />
+                <StatusBar style={statusBarStyle} />
+
             </View>
         );
     }
