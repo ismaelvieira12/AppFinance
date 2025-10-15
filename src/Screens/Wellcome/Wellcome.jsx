@@ -9,20 +9,20 @@ import { Montserrat_700Bold } from '@expo-google-fonts/montserrat/700Bold';
 import { useNavigation } from '@react-navigation/native'; // 👈 Importa o hook
 import React, { useState } from 'react'; // 👈 precisa para o useState
 import { useDrawerStatus } from '@react-navigation/drawer';
-import { CartesianChart, Line } from "victory-native";
+import { CartesianChart, Bar, Axis } from "victory-native"; 
 
 
 
 export const Wellcome = () => {
-   
+    
     const DATA_15_DIAS = [
         { day: 1, highTmp: 45 },
         { day: 2, highTmp: 48 },
         { day: 3, highTmp: 52 },
         { day: 4, highTmp: 55 },
-        { day: 5, highTmp: 58 },
+        { day: 5, highTmp: -58 },
         { day: 6, highTmp: 62 },
-        { day: 7, highTmp: 65 },
+        { day: 7, highTmp: -65 },
         { day: 8, highTmp: 68 },
         { day: 9, highTmp: 72 },
         { day: 10, highTmp: 75 },
@@ -32,10 +32,7 @@ export const Wellcome = () => {
         { day: 14, highTmp: 88 },
         { day: 15, highTmp: 92 },
     ];  
-    const DATA = Array.from({ length: 31 }, (_, i) => ({
-        day: i,
-        highTmp: 40 + 30 * Math.random(),
-    }));
+
     
     // Para controlar a statusBar, tenho que usar o useState
     const [statusBarStyle, setStatusBarStyle] = useState("light"); // 👈 controla a cor da barra
@@ -68,9 +65,9 @@ export const Wellcome = () => {
                     style={styles.headerGradient}
                 >
                     <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20}}>
-                        <AntDesign  name="menu" size={24} color="white" onPress={() => handleClick()}/>
+                        <AntDesign  name="menu" size={24} color="white" onPress={() => handleClick()}/>
                         <Image
-                            style={{ width: 50, height: 50,  marginTop: 20, borderRadius: 10}}
+                            style={{ width: 50, height: 50,  marginTop: 20, borderRadius: 10}}
                             source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt05by-WcwqQ5UHeK0eNhNYxGnrX2CJsHSOA&s'}}
                         />
                     </View>
@@ -84,13 +81,38 @@ export const Wellcome = () => {
                         <Text style={styles.textSaldo}>Seu saldo total</Text>
                         <Text style={styles.valueSaldo}>R$: 1.000,00</Text>
                     </View>
-                    <View style={{ flex: 1 }}>
-                            
-                        <CartesianChart data={DATA} xKey="day" yKeys={["highTmp"]}>
-                            {/* 👇 render function exposes various data, such as points. */}
-                            {({ points }) => (
-                            // 👇 and we'll use the Line component to render a line path.
-                            <Line points={points.highTmp} color="red" strokeWidth={3} />
+                    <View style={{flex: 1, paddingTop: 20 }}>
+                        
+                        <CartesianChart 
+                            data={DATA_15_DIAS} 
+                            xKey="day" 
+                            yKeys={["highTmp"]}
+                               domainPadding={{ left: 15, right: 15 }} 
+        
+                            // 👇 1. CONFIGURAÇÃO DOS LABELS E REMOÇÃO DAS LINHAS DE FUNDO
+                            axisConfig={{
+                                x: { 
+                                    label: { fill: 'gray', fontSize: 10, dy: 10 }, // Estilo do label 'Dia do Mês'
+                                    tickLabels: { fontSize: 8, fill: 'gray' }, // Estilo dos números (ticks) do eixo X
+                                }, 
+                                y: { 
+                                    label: { fill: 'gray', fontSize: 10 }, // Estilo do label 'Valor (R$)'
+                                    tickLabels: { fontSize: 8, fill: 'gray' }, // Estilo dos números (ticks) do eixo Y
+                                    // Garante que o domínio (escala) y comece no valor mínimo real
+                                    domain: [Math.min(...DATA_15_DIAS.map(d => d.highTmp)) * 1.1, Math.max(...DATA_15_DIAS.map(d => d.highTmp)) * 1.1],
+                                },
+                            }}
+                            // 👇 2. GARANTE QUE AS BARRAS APAREÇAM POR COMPLETO (Padding)
+                        >
+                            {({ points, chartBounds }) => (
+                                <Bar
+                                    points={points.highTmp} 
+                                    chartBounds={chartBounds}
+                                    color="#037df0" // Cor azul definida
+                                    roundedCorners={{ topLeft: 5, topRight: 5 }}
+                                    // Opcional: Adiciona um pequeno espaço entre as barras:
+                                    barSpacing={5} 
+                                />
                             )}
                         </CartesianChart>
                     </View>
