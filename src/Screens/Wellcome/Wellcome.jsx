@@ -30,7 +30,7 @@ const BarChartComponent = ({ DATA_15_DIAS, styles }) => (
                 yKeys={["highTmp"]}
                 
                 // Aumentamos o domínio padding para as barras não cortarem e os labels do Eixo Y terem espaço
-                domainPadding={{ left: 30, right: 20, top: 20 }} 
+                domainPadding={{ left: 20, right: 20, top: 0 }} 
                 
                 axisConfig={{
                     x: { 
@@ -59,11 +59,13 @@ const BarChartComponent = ({ DATA_15_DIAS, styles }) => (
             >
                 {({ points, chartBounds }) => (
                     <Bar
-                        points={points.highTmp} 
+                    points={points.highTmp} 
+                        
                         chartBounds={chartBounds}
                         color="#037df0"
                         roundedCorners={{ topLeft: 5, topRight: 5 }}
                         barSpacing={5} 
+                        barWidth={15}
                     />
                 )}
             </CartesianChart>
