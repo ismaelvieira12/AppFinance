@@ -59,8 +59,7 @@ const BarChartComponent = ({ DATA_15_DIAS, styles }) => (
             >
                 {({ points, chartBounds }) => (
                     <Bar
-                    points={points.highTmp} 
-
+                        points={points.highTmp} 
                         chartBounds={chartBounds}
                         color="#037df0"
                         roundedCorners={{ topLeft: 5, topRight: 5 }}
