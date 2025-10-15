@@ -58,11 +58,11 @@ const BarChartComponent = ({ DATA_15_DIAS, styles }) => (
             >
                 {({ points, chartBounds }) => (
                     <Bar
-                        showGrid={false} // desativa linhas de grade
-                        points={points.highTmp} 
-                        chartBounds={chartBounds}
+                    showGrid={false} // desativa linhas de grade 
+                    points={points.highTmp} 
+                    chartBounds={chartBounds}
                         color="#037df0"
-                        roundedCorners={{ topLeft: 5, topRight: 5 }}
+                        roundedCorners={{ topLeft: 3, topRight: 3 }}
                         barSpacing={5} 
                         
                     />
@@ -86,11 +86,6 @@ export const Wellcome = () => {
         { day: 8, highTmp: 68 },
         { day: 9, highTmp: 72 },
         { day: 10, highTmp: 75 },
-        { day: 11, highTmp: 78 },
-        { day: 12, highTmp: 82 },
-        { day: 13, highTmp: 85 },
-        { day: 14, highTmp: 88 },
-        { day: 15, highTmp: 92 },
     ];  
 
     // ... Lógica de Estado (Mantida)
