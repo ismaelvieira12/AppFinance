@@ -15,12 +15,23 @@ import { CartesianChart, Line } from "victory-native";
 
 export const Wellcome = () => {
    
-    // const data = [
-    //     { mes: "Jan", valor: 45 },
-    //     { mes: "Fev", valor: 80 },
-    //     { mes: "Mar", valor: 65 },
-    //     { mes: "Abr", valor: 100 },
-    // ];
+    const DATA_15_DIAS = [
+        { day: 1, highTmp: 45 },
+        { day: 2, highTmp: 48 },
+        { day: 3, highTmp: 52 },
+        { day: 4, highTmp: 55 },
+        { day: 5, highTmp: 58 },
+        { day: 6, highTmp: 62 },
+        { day: 7, highTmp: 65 },
+        { day: 8, highTmp: 68 },
+        { day: 9, highTmp: 72 },
+        { day: 10, highTmp: 75 },
+        { day: 11, highTmp: 78 },
+        { day: 12, highTmp: 82 },
+        { day: 13, highTmp: 85 },
+        { day: 14, highTmp: 88 },
+        { day: 15, highTmp: 92 },
+    ];  
     const DATA = Array.from({ length: 31 }, (_, i) => ({
         day: i,
         highTmp: 40 + 30 * Math.random(),
