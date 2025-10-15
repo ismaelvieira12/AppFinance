@@ -60,12 +60,12 @@ const BarChartComponent = ({ DATA_15_DIAS, styles }) => (
                 {({ points, chartBounds }) => (
                     <Bar
                     points={points.highTmp} 
-                        
+
                         chartBounds={chartBounds}
                         color="#037df0"
                         roundedCorners={{ topLeft: 5, topRight: 5 }}
                         barSpacing={5} 
-                        barWidth={15}
+                        
                     />
                 )}
             </CartesianChart>
