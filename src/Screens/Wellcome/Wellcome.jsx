@@ -28,7 +28,6 @@ const BarChartComponent = ({ DATA_15_DIAS, styles }) => (
                 data={DATA_15_DIAS} 
                 xKey="day" 
                 yKeys={["highTmp"]}
-                
                 // Aumentamos o domínio padding para as barras não cortarem e os labels do Eixo Y terem espaço
                 domainPadding={{ left: 20, right: 20, top: 0 }} 
                 
@@ -59,6 +58,7 @@ const BarChartComponent = ({ DATA_15_DIAS, styles }) => (
             >
                 {({ points, chartBounds }) => (
                     <Bar
+                        showGrid={false} // desativa linhas de grade
                         points={points.highTmp} 
                         chartBounds={chartBounds}
                         color="#037df0"
