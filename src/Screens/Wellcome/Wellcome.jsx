@@ -77,9 +77,10 @@ export const Wellcome = () => {
                         maxValue={100}
                         height={150}        // 👈 controla a altura
                         width={250} 
-                        frontColor={"#000"}
-                        gradientColor={"#116abd"}        // 👈 controla a largura (ajuste se quiser ocupar mais)
+                        frontColor={"#0159ab"}
+                        gradientColor={"#abd1f4"}        // 👈 controla a largura (ajuste se quiser ocupar mais)
                         showGradient
+                        dashGap={50}
                     />
                 </View>
             </View>
