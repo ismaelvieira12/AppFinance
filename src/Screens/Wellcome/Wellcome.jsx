@@ -85,16 +85,19 @@ export const Wellcome = () => {
         </View>
 
         <View style={styles.chartContainer}>
-         <BarChart
+        <BarChart
             data={barData}
-            height={120}         // 👈 diminui o tamanho total
-            barWidth={20}        // 👈 controla a espessura das barras
-            spacing={20}         // 👈 controla o espaçamento entre barras
+            height={120}
+            barWidth={20}      // 👈 diminui a largura das barras
+            spacing={15}       // 👈 diminui o espaço entre elas
             yAxisThickness={0}
             xAxisThickness={0}
-            hideYAxisText={true}
+            hideYAxisText
             hideRules
+            initialSpacing={0} // 👈 evita margem extra no início
+            noOfSections={3}   // opcional: controla a divisão do Y
         />
+
 
         </View>
       </View>
