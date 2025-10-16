@@ -14,7 +14,7 @@ import { BarChart } from "react-native-gifted-charts";
 
 export const Wellcome = () => {
     
- const data=[ {value:50}, {value:80}, {value:80}, {value:70} ]
+ const data=[ {value:50}, {value: -80}, {value:80}, {value:70} ]
 
     // ... Lógica de Estado (Mantida)
     const [statusBarStyle, setStatusBarStyle] = useState("light");
@@ -65,9 +65,19 @@ export const Wellcome = () => {
                     <Text style={styles.textSaldo}>Seu saldo total</Text>
                     <Text style={styles.valueSaldo}>R$: 1.000,00</Text>
                 </View>
-                <View style={{}}>
-
-                    <BarChart data = {data}  height={170}/>
+                <View style={styles.chartContainer}>
+                    <BarChart
+                        data={data}
+                        hideYAxisText={true}
+                        yAxisThickness={0}
+                        frontColor="#037df0"
+                        barWidth={25}
+                        spacing={20}
+                        noOfSections={3}
+                        maxValue={100}
+                        height={150}        // 👈 controla a altura
+                        width={250}         // 👈 controla a largura (ajuste se quiser ocupar mais)
+                    />
                 </View>
             </View>
             
