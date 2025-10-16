@@ -14,13 +14,13 @@ import { BarChart } from 'react-native-gifted-charts';
 export const Wellcome = () => {
   // Dados do gráfico com valores positivos e negativos
   const rawData = [
-    { value: 250, label: 'M' },
+    { value: 850, label: 'S' },
     { value: -500, label: 'T' },
-    { value: 745, label: 'W' },
-    { value: -320, label: 'T' },
-    { value: 600, label: 'F' },
+    { value: 745, label: 'Q' },
+    { value: -320, label: 'Q' },
+    { value: 600, label: 'S' },
     { value: 256, label: 'S' },
-    { value: -300, label: 'S' },
+    { value: -300, label: 'D' },
   ];
 
   // Define cores diferentes conforme o valor
