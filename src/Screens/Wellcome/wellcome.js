@@ -30,16 +30,22 @@ export const styles = StyleSheet.create({
         marginLeft: 20
     },
     containerGrafico: {
-        width: '80%',
-        height: 300,
-        backgroundColor: '#fff',
         marginTop: -60,
-        borderRadius: 25,
-        shadowColor: "#000",
-        shadowOpacity: 0.25,
-        shadowRadius: 10,
-        elevation: 10,
-        padding: 20,
+        backgroundColor: '#fff',
+        borderRadius: 12,
+        padding: 15,
+        justifyContent: 'center',
+        shadowColor: '#000',
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3,
+    },
+    chartContainer: {
+        marginTop: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        overflow: 'hidden', // 👈 evita o gráfico ultrapassar
     },
     textSaldo: {
         fontSize: 19,
