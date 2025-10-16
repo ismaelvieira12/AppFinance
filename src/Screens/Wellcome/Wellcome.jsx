@@ -14,18 +14,7 @@ import { useDrawerStatus } from '@react-navigation/drawer';
 
 export const Wellcome = () => {
     
-    const DATA_15_DIAS = [
-        { day: 1, highTmp: 45 },
-        { day: 2, highTmp: 48 },
-        { day: 3, highTmp: 52 },
-        { day: 4, highTmp: 55 },
-        { day: 5, highTmp: -58 },
-        { day: 6, highTmp: 62 },
-        { day: 7, highTmp: -65 },
-        { day: 8, highTmp: 68 },
-        { day: 9, highTmp: 72 },
-        { day: 10, highTmp: 75 },
-    ];  
+ 
 
     // ... Lógica de Estado (Mantida)
     const [statusBarStyle, setStatusBarStyle] = useState("light");
