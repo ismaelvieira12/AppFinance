@@ -9,68 +9,7 @@ import { Montserrat_700Bold } from '@expo-google-fonts/montserrat/700Bold';
 import { useNavigation } from '@react-navigation/native'; // 👈 Importa o hook
 import React, { useState } from 'react'; // 👈 precisa para o useState
 import { useDrawerStatus } from '@react-navigation/drawer';
-import { CartesianChart, Bar } from "victory-native"; 
 
-
-// Componente do Gráfico Separado para Renderização Condicional
-// Componente do Gráfico Separado para Renderização Condicional
-const BarChartComponent = ({ DATA_15_DIAS, styles }) => (
-    // Certifique-se que styles.containerGrafico não esteja aplicando overflow: hidden ou padding interno excessivo
-    <View style={styles.containerGrafico}>
-        <View>
-            <Text style={styles.textSaldo}>Seu saldo total</Text>
-            <Text style={styles.valueSaldo}>R$: 1.000,00</Text>
-        </View>
-        
-        {/* Adicione um padding horizontal maior aqui, caso styles.containerGrafico não tenha margens laterais */}
-        <View style={{flex: 1, paddingTop: 20 }}> 
-            <CartesianChart 
-                data={DATA_15_DIAS} 
-                xKey="day" 
-                yKeys={["highTmp"]}
-                // Aumentamos o domínio padding para as barras não cortarem e os labels do Eixo Y terem espaço
-                domainPadding={{ left: 20, right: 20, top: 0 }} 
-                
-                axisConfig={{
-                    x: { 
-                        label: 'Dia do Mês',
-                        visible: true,
-                        line: { stroke: 'transparent' },
-                        tickLines: { stroke: 'transparent' }, 
-                        
-                        // 👇 MUDANÇA: Usando o fontFamily: 'System' ou apenas omitindo para o SVG não quebrar
-                        label: { fill: '#000000', fontSize: 10, dy: 10, fontFamily: 'System' }, 
-                        tickLabels: { fontSize: 8, fill: '#000000', fontFamily: 'System' }
-                    }, 
-                    y: { 
-                        label: 'Valor (R$)',
-                        visible: true,
-                        line: { stroke: 'transparent' },
-                        tickLines: { stroke: 'transparent' }, // Remove as linhas de grade
-                        
-                        // 👇 MUDANÇA: Usando o fontFamily: 'System' ou apenas omitindo
-                        label: { fill: '#000000', fontSize: 10, dx: -5, fontFamily: 'System' }, // dx: move o label um pouco para esquerda
-                        tickLabels: { fontSize: 8, fill: '#000000', fontFamily: 'System' },
-                        
-                        domain: [Math.min(...DATA_15_DIAS.map(d => d.highTmp)) * 1.1, Math.max(...DATA_15_DIAS.map(d => d.highTmp)) * 1.1],
-                    },
-                }}
-            >
-                {({ points, chartBounds }) => (
-                    <Bar
-                    showGrid={false} // desativa linhas de grade 
-                    points={points.highTmp} 
-                    chartBounds={chartBounds}
-                        color="#037df0"
-                        roundedCorners={{ topLeft: 3, topRight: 3 }}
-                        barSpacing={5} 
-                        
-                    />
-                )}
-            </CartesianChart>
-        </View>
-    </View>
-);
 
 
 export const Wellcome = () => {
@@ -132,11 +71,13 @@ export const Wellcome = () => {
                 <Text style={styles.txtWellcome}>Bem vindo(a),</Text>
                 <Text style={styles.txtDescritionWellcome}>Gerencie suas finanças aqui!</Text>
             </LinearGradient>
-
-            {/* Parte do grafico (Agora usando o componente que só é renderizado APÓS a fonte) */}
-            <BarChartComponent DATA_15_DIAS={DATA_15_DIAS} styles={styles} />
-
-            {/* Parte de ir para metas */}
+            <View style={styles.containerGrafico}>
+                <View>
+                    <Text style={styles.textSaldo}>Seu saldo total</Text>
+                    <Text style={styles.valueSaldo}>R$: 1.000,00</Text>
+                </View>
+            </View>
+            
             
             <LinearGradient
                 colors={["#4e8fcc", "#02427f"]}
