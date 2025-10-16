@@ -89,9 +89,10 @@ export const Wellcome = () => {
             data={barData}
             height={120}
             barWidth={20}      // 👈 diminui a largura das barras
-            spacing={15}       // 👈 diminui o espaço entre elas
+            spacing={23}       // 👈 diminui o espaço entre elas
             yAxisThickness={0}
             xAxisThickness={0}
+            width={300}
             hideYAxisText
             hideRules
             initialSpacing={0} // 👈 evita margem extra no início
