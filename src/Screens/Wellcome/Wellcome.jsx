@@ -9,12 +9,12 @@ import { Montserrat_700Bold } from '@expo-google-fonts/montserrat/700Bold';
 import { useNavigation } from '@react-navigation/native'; // 👈 Importa o hook
 import React, { useState } from 'react'; // 👈 precisa para o useState
 import { useDrawerStatus } from '@react-navigation/drawer';
-
+import { BarChart } from "react-native-gifted-charts";
 
 
 export const Wellcome = () => {
     
- 
+ const data=[ {value:50}, {value:80}, {value:90}, {value:70} ]
 
     // ... Lógica de Estado (Mantida)
     const [statusBarStyle, setStatusBarStyle] = useState("light");
@@ -64,6 +64,10 @@ export const Wellcome = () => {
                 <View>
                     <Text style={styles.textSaldo}>Seu saldo total</Text>
                     <Text style={styles.valueSaldo}>R$: 1.000,00</Text>
+                </View>
+                <View style={{width: "100%", height: 50}}>
+
+                    <BarChart data = {data} />
                 </View>
             </View>
             
