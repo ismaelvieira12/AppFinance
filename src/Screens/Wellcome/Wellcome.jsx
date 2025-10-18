@@ -115,7 +115,7 @@ export const Wellcome = () => {
       <LinearGradient colors={['#4e8fcc', '#02427f']} style={styles.gradientOrganization}>
         <LinearGradient style={styles.efeitoThree} colors={['#fff8f8', '#004484']} />
         <LinearGradient style={styles.efeitoOne} colors={['#ffffff', '#263e55']} />
-        <TouchableOpacity style={styles.containerOrganization} onPress={() => navigation.navigate('MetasScreen')}>
+        <TouchableOpacity style={styles.containerOrganization} onPress={() => navigation.navigate('Metas')}>
           <Text style={styles.textOrganization}>Ir para metas</Text>
           <Text style={styles.textOrganization}>Organize suas finanças</Text>
         </TouchableOpacity>
