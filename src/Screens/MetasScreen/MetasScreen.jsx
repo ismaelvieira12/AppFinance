@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { styles } from './MetasScreenStyle'
 import { StatusBar, Image } from 'react-native'
 import React from 'react'
@@ -20,7 +20,12 @@ export const MetasScreen = () => {
         <Text style={styles.subTitle}>Tendo previsibilidade financeira você garante uma vida muito mais tranquila e segura.</Text>
 
         <View style={styles.boxButtom}>
+          <TouchableOpacity>Criar uma conta</TouchableOpacity>
+        </View>
 
+        <View style={styles.boxTextsLogin}>
+          <Text style={styles.textLogin}>Já possui uma conta? </Text>
+          <Text style={styles.textFazerLogin}>Fazer login</Text>
         </View>
       </View>
       <StatusBar barStyle="dark-content" />
