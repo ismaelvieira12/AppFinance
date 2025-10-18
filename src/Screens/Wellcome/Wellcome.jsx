@@ -10,6 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useState, useEffect } from 'react';
 import { useDrawerStatus } from '@react-navigation/drawer';
 import { BarChart } from 'react-native-gifted-charts';
+import { MetasScreen } from '../MetasScreen/MetasScreen.jsx';
 
 export const Wellcome = () => {
   // Dados do gráfico com valores positivos e negativos
@@ -112,7 +113,9 @@ export const Wellcome = () => {
         </TouchableOpacity>
         <AntDesign name="arrow-right" size={24} color="white" />
       </LinearGradient>
-
+            <View>
+              <MetasScreen />
+            </View>
       <StatusBar style={statusBarStyle} />
     </View>
   );
