@@ -8,6 +8,8 @@ export const styles = StyleSheet.create({
     },
     boxImage: {
         backgroundColor: ColorGlobal.FundoCards,
-        height: "49%"
+        height: "40%",
+        borderBottomEndRadius: 70,
+        borderBottomLeftRadius: 70
     }
 })
