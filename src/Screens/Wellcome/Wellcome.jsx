@@ -12,6 +12,14 @@ import { useDrawerStatus } from '@react-navigation/drawer';
 import { BarChart } from 'react-native-gifted-charts';
 import { MetasScreen } from '../MetasScreen/MetasScreen.jsx';
 
+const OpenMetas = () => {
+  return (
+    <View>
+      <MetasScreen />
+    </View>
+  )
+}
+
 export const Wellcome = () => {
   // Dados do gráfico com valores positivos e negativos
   const rawData = [
@@ -107,15 +115,13 @@ export const Wellcome = () => {
       <LinearGradient colors={['#4e8fcc', '#02427f']} style={styles.gradientOrganization}>
         <LinearGradient style={styles.efeitoThree} colors={['#fff8f8', '#004484']} />
         <LinearGradient style={styles.efeitoOne} colors={['#ffffff', '#263e55']} />
-        <TouchableOpacity style={styles.containerOrganization}>
+        <TouchableOpacity style={styles.containerOrganization} onPress={() => OpenMetas()}>
           <Text style={styles.textOrganization}>Ir para metas</Text>
           <Text style={styles.textOrganization}>Organize suas finanças</Text>
         </TouchableOpacity>
         <AntDesign name="arrow-right" size={24} color="white" />
       </LinearGradient>
-            <View>
-              <MetasScreen />
-            </View>
+  
       <StatusBar style={statusBarStyle} />
     </View>
   );
