@@ -5,7 +5,7 @@ export const MetasScreen = () => {
   return (
     <View style={styles.container}>
       <Text>MetasScreen</Text>
-      <TouchableOpacity onPress={() => navigator.navigator('StartConfigInitial')}>
+      <TouchableOpacity>
         <Text>Pagina config</Text>
       </TouchableOpacity>
     </View>

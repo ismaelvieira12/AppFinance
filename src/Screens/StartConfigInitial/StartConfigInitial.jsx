@@ -12,7 +12,7 @@ export const StartConfigInitial = () => {
       await AsyncStorage.setItem('configInicial', 'true');
 
       // Redireciona para Home
-      navigation.replace('Home');
+      navigation.navigate('Home');
     } catch (error) {
       console.error('Erro ao salvar configuração:', error);
     }
