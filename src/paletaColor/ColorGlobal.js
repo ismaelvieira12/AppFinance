@@ -1,8 +1,12 @@
 
-export const ColorGlobal = [
-    AzulEscuro = "#2364AA",
-    AzulMaisClaro = "#3DA5D9",
-    AzulCianeto = "#73BFB8",
-    AmareloNormal = "#FEC601",
-    LaranjaEscuro = "#EA7317"
-]
+export const ColorGlobal = {
+    AzulEscuro: "#2364AA",
+    AzulMaisClaro: "#3DA5D9",
+    AzulCianeto: "#73BFB8",
+    AmareloNormal: "#FEC601",
+    LaranjaEscuro: "#EA7317",
+
+
+    FundoBody: "#f7f7f7",
+    FundoCards: "#ffffff"
+};
