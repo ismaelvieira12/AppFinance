@@ -10,15 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useState, useEffect } from 'react';
 import { useDrawerStatus } from '@react-navigation/drawer';
 import { BarChart } from 'react-native-gifted-charts';
-import { MetasScreen } from '../MetasScreen/MetasScreen.jsx';
 
-// const OpenMetas = () => {
-//   return (
-//     <>
-//       <MetasScreen />
-//     </>
-//   )
-// }
 
 export const Wellcome = () => {
   // Dados do gráfico com valores positivos e negativos

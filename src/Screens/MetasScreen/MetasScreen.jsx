@@ -1,10 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
 export const MetasScreen = () => {
   return (
     <View style={styles.container}>
       <Text>MetasScreen</Text>
+      <TouchableOpacity onPress={() => navigator.navigator('StartConfigInitial')}>
+        <Text>Pagina config</Text>
+      </TouchableOpacity>
     </View>
   )
 }
