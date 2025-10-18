@@ -14,9 +14,9 @@ import { MetasScreen } from '../MetasScreen/MetasScreen.jsx';
 
 const OpenMetas = () => {
   return (
-    <View>
+    <>
       <MetasScreen />
-    </View>
+    </>
   )
 }
 
