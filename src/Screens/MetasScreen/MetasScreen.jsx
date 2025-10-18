@@ -1,9 +1,23 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import { styles } from './MetasScreenStyle'
 import { StatusBar, Image } from 'react-native'
+import { Montserrat_400Regular } from '@expo-google-fonts/montserrat/400Regular';
+import { Montserrat_700Bold } from '@expo-google-fonts/montserrat/700Bold';
+import { useFonts } from '@expo-google-fonts/montserrat/useFonts';
 import React from 'react'
 
 export const MetasScreen = () => {
+
+  // // Fontes
+  //   let [fontsLoaded] = useFonts({
+  //     Montserrat_400Regular,
+  //     Montserrat_700Bold,
+  //   });
+  
+  //   if (!fontsLoaded) {
+  //     return <Text>Carregando...</Text>;
+  //   }
+  
   return (
     <View style={styles.container}>
       <View style={styles.boxImage}>
@@ -19,9 +33,8 @@ export const MetasScreen = () => {
         </View>
         <Text style={styles.subTitle}>Tendo previsibilidade financeira você garante uma vida muito mais tranquila e segura.</Text>
 
-        <View style={styles.boxButtom}>
-          <TouchableOpacity>Criar uma conta</TouchableOpacity>
-        </View>
+
+          <TouchableOpacity style={styles.boxButtom}>Teste</TouchableOpacity>
 
         <View style={styles.boxTextsLogin}>
           <Text style={styles.textLogin}>Já possui uma conta? </Text>

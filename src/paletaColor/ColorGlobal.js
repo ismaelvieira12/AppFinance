@@ -8,5 +8,7 @@ export const ColorGlobal = {
 
 
     FundoBody: "#f7f7f7",
-    FundoCards: "#ffffff"
+    fundoImag: "#eeeeeeff",
+    FundoCards: "#ffffff",
+    ColoFontSuave: "#353333c0"
 };
