@@ -10,9 +10,9 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
         <Drawer.Screen name="Home" component={Wellcome} />
-        <Drawer.Screen name='Metas' component={MetasScreen} />
       </Drawer.Navigator>
       <StatusBar style="auto" />
+      <Navigator.name =
     </NavigationContainer>
   );
 }
