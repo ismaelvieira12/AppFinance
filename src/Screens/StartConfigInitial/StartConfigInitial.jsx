@@ -29,7 +29,7 @@ export const StartConfigInitial = () => {
           resizeMode="contain"
         />
       </View>
-      
+
       <View style={styles.boxInfor}>
         <View>
           <Text style={styles.title}>Um futuro mais seguro para você</Text>
@@ -38,11 +38,11 @@ export const StartConfigInitial = () => {
       </View>
 
       <View style={styles.boxLogin}>
-        <TouchableOpacity style={styles.boxButtom}><Text style={styles.textBtn}>Criar uma conta</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.boxButtom} onPress={handleFinalizarConfig}><Text style={styles.textBtn}>Criar uma conta</Text></TouchableOpacity>
 
         <View style={styles.boxTextsLogin}>
-          <Text style={styles.textLogin}>Já possui uma conta? </Text>
-          <Text style={styles.textFazerLogin}>Fazer login</Text>
+          <Text style={styles.textLogin}>Já tem uma conta? </Text>
+          <TouchableOpacity><Text style={styles.textFazerLogin}>Fazer login</Text></TouchableOpacity>
         </View>
       </View>
       <StatusBar barStyle="dark-content" />
@@ -57,7 +57,7 @@ export const StartConfigInitial = () => {
     padding: 10,
     borderRadius: 8,
   }}
-  onPress={handleFinalizarConfig}
+ 
 >
   <Text style={{ color: 'white', fontWeight: 'bold' }}>
     Finalizar Configuração

@@ -27,7 +27,7 @@ export const Wellcome = () => {
   // Define cores diferentes conforme o valor
   const barData = rawData.map(item => ({
     ...item,
-    frontColor: item.value < 0 ? '#9ec9f5' : '#177AD5', // 👈 azul claro se negativo
+    frontColor: item.value < 0 ? '#FEC601' : '#177AD5', // 👈 azul claro se negativo
   }));
 
   // Estado da StatusBar e Drawer

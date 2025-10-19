@@ -1,5 +1,6 @@
 
 export const ColorGlobal = {
+    AzulNormal: "#037df0",
     AzulEscuro: "#2364AA",
     AzulMaisClaro: "#3DA5D9",
     AzulCianeto: "#73BFB8",

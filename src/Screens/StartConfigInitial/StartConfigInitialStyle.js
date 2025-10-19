@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     },
     boxImage: {
         backgroundColor: ColorGlobal.fundoImag,
-        height: "50%",
+        height: "55%",
         borderBottomEndRadius: 90,
         borderBottomLeftRadius: 90,
         justifyContent: 'center',
@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     },
     boxButtom: {
         marginTop: 20,
-        backgroundColor: '#037df0',
+        backgroundColor: ColorGlobal.AzulNormal,
         padding: 20,
         borderRadius: 8,
         width: "100%"
@@ -53,6 +53,23 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18,
         textAlign: "center"
+    },
+    boxTextsLogin:{
+        flexDirection:"row",
+        justifyContent: "center",
+        alignItems: "center",
+        
+        padding: 10,
+        marginBottom: 15        
+    },
+    textLogin: {
+        fontSize: 17,
+        color: ColorGlobal.ColoFontSuave,
+    },
+    textFazerLogin:{
+        fontSize: 17,
+        color: ColorGlobal.AzulNormal,
+        fontWeight: "bold"
     }
 
 })
