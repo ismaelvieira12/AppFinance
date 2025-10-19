@@ -34,6 +34,16 @@ export const styles = StyleSheet.create({
     subTitle: {
         fontSize: 18,
         textAlign: 'center'
+    },
+    boxButtom: {
+        marginTop: 20,
+        backgroundColor: '#037df0',
+        padding: 10,
+        borderRadius: 8,
+    },
+    textBtn: {
+        color: 'white', 
+        fontWeight: 'bold'
     }
 
 })

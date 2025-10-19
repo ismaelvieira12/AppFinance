@@ -31,12 +31,12 @@ export const StartConfigInitial = () => {
       </View>
       <View style={styles.boxInfor}>
         <View>
-          <Text style={styles.title}>Um futuro Mais seguro para você</Text>
+          <Text style={styles.title}>Um futuro mais seguro para você</Text>
         </View>
         <Text style={styles.subTitle}>Tendo previsibilidade financeira você garante uma vida muito mais tranquila e segura.</Text>
 
 
-          <TouchableOpacity style={styles.boxButtom}><Text>Teste</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.boxButtom}><Text style={styles.textBtn}>Teste</Text></TouchableOpacity>
 
         <View style={styles.boxTextsLogin}>
           <Text style={styles.textLogin}>Já possui uma conta? </Text>
