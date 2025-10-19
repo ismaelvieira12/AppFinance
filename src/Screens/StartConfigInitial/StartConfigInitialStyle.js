@@ -35,15 +35,24 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         textAlign: 'center'
     },
+    boxLogin: {
+        position: "absolute",
+        width: '100%',
+        bottom: 0,
+        padding: 20
+    },
     boxButtom: {
         marginTop: 20,
         backgroundColor: '#037df0',
-        padding: 10,
+        padding: 20,
         borderRadius: 8,
+        width: "100%"
     },
     textBtn: {
         color: 'white', 
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 18,
+        textAlign: "center"
     }
 
 })
