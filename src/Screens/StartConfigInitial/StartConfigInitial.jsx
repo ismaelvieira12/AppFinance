@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
+import { StatusBar, Image, Text } from 'react-native'
+import { styles } from './StartConfigInitialStyle'
 
 export const StartConfigInitial = () => {
   const navigation = useNavigation();
@@ -19,22 +21,43 @@ export const StartConfigInitial = () => {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Configuração Inicial do App</Text>
+   <View style={styles.container}>
+      <View style={styles.boxImage}>
+        <Image
+          source={require('../../../assets/imgs/imagem-inicialPNG03.png')}
+          style={styles.image}
+          resizeMode="contain"
+        />
+      </View>
+      <View style={styles.boxInfor}>
+        <View>
+          <Text style={styles.title}>Um futuro Mais seguro para você</Text>
+        </View>
+        <Text style={styles.subTitle}>Tendo previsibilidade financeira você garante uma vida muito mais tranquila e segura.</Text>
 
-      <TouchableOpacity
-        style={{
-          marginTop: 20,
-          backgroundColor: '#037df0',
-          padding: 10,
-          borderRadius: 8,
-        }}
-        onPress={handleFinalizarConfig}
-      >
-        <Text style={{ color: 'white', fontWeight: 'bold' }}>
-          Finalizar Configuração
-        </Text>
-      </TouchableOpacity>
+
+          <TouchableOpacity style={styles.boxButtom}><Text>Teste</Text></TouchableOpacity>
+
+        <View style={styles.boxTextsLogin}>
+          <Text style={styles.textLogin}>Já possui uma conta? </Text>
+          <Text style={styles.textFazerLogin}>Fazer login</Text>
+        </View>
+      </View>
+      <StatusBar barStyle="dark-content" />
     </View>
   );
 };
+
+{/* <TouchableOpacity
+  style={{
+    marginTop: 20,
+    backgroundColor: '#037df0',
+    padding: 10,
+    borderRadius: 8,
+  }}
+  onPress={handleFinalizarConfig}
+>
+  <Text style={{ color: 'white', fontWeight: 'bold' }}>
+    Finalizar Configuração
+  </Text>
+</TouchableOpacity> */}
