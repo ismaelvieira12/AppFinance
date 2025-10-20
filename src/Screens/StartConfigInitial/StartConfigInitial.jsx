@@ -42,7 +42,7 @@ export const StartConfigInitial = () => {
 
         <View style={styles.boxTextsLogin}>
           <Text style={styles.textLogin}>Já tem uma conta? </Text>
-          <TouchableOpacity><Text style={styles.textFazerLogin}>Fazer login</Text></TouchableOpacity>
+          <TouchableOpacity><Text style={styles.textFazerLogin} onPress={() => navigation.navigate('login')}>Fazer login</Text></TouchableOpacity>
         </View>
       </View>
       <StatusBar barStyle="dark-content" />
