@@ -13,7 +13,7 @@ export const ScreenLogin = () => {
         <TouchableOpacity>
           <Text>Criar conta</Text>
         </TouchableOpacity>
-        <Image  source={require('../../../assets/imgs/imagem-inicialPNG03.png')} />
+        <Image  source={require('../../../assets/imgs/imagem-inicial02.png')} />
       </View>
     </View>
   )
