@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { ScreenLoginStyle } from './ScreenLoginStyle'
+import { Text, View } from 'react-native'
+import { styles } from './ScreenLoginStyle'
 import React from 'react'
 
 export const ScreenLogin = () => {
   return (
     <View style={styles.container}>
-      <Text>ScreenLogin</Text>
+      <Text style={styles.textLogin}>ScreenLogin</Text>
     </View>
   )
 }
