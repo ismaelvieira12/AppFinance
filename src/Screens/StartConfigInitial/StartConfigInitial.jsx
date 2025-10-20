@@ -49,17 +49,3 @@ export const StartConfigInitial = () => {
     </View>
   );
 };
-
-{/* <TouchableOpacity
-  style={{
-    marginTop: 20,
-    backgroundColor: '#037df0',
-    padding: 10,
-    borderRadius: 8,
-  }}
- 
->
-  <Text style={{ color: 'white', fontWeight: 'bold' }}>
-    Finalizar Configuração
-  </Text>
-</TouchableOpacity> */}
