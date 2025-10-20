@@ -4,7 +4,8 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: "center"
+        alignItems: "center",
+        backgroundColor: "#A7C7E7"
     },
     textLogin: {
         fontSize: 50
