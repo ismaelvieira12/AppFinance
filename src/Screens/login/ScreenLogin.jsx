@@ -11,7 +11,7 @@ export const ScreenLogin = () => {
         <TextInput placeholder='Email' />
         <TextInput placeholder='Senha' />
         <TouchableOpacity>
-          <Text>Entrar</Text>
+          <Text>Fazer Login</Text>
         </TouchableOpacity>
       </View>
     </View>
