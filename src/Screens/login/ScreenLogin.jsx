@@ -1,4 +1,4 @@
-import { Text, TextInput, View } from 'react-native'
+import { Image, Text, TextInput, View } from 'react-native'
 import { styles } from './ScreenLoginStyle'
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
@@ -13,6 +13,7 @@ export const ScreenLogin = () => {
         <TouchableOpacity>
           <Text>Criar conta</Text>
         </TouchableOpacity>
+        <Image  source={require('../../../assets/imgs/imagem-inicialPNG03.png')} />
       </View>
     </View>
   )
