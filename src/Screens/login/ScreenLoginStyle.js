@@ -11,9 +11,12 @@ export const styles = StyleSheet.create({
         fontSize: 50
     },
     img: {
-        width: 100,
-        height: 100,
+        width: 200,
+        height: 200,
         marginTop: 20,
-        borderRadius: 50
+        borderRadius: 100,
+        borderWidth: 2,
+        borderColor: "#000"
+        
     }
 })
