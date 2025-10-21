@@ -15,7 +15,16 @@ export const styles = StyleSheet.create({
         height: 200,
         marginTop: 20,
         borderRadius: 100,
-
-
-    }
+    },
+    nputLogin: {
+        width: 300,
+        height: 50,
+        borderColor: ColorGlobal.LaranjaEscuro,
+        borderWidth: 2,
+        borderRadius: 10,
+        marginBottom: 20,
+        paddingLeft: 10,
+        fontSize: 18,
+        backgroundColor: ColorGlobal.Branco
+    }  
 })
