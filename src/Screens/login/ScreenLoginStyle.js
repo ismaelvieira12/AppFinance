@@ -15,8 +15,7 @@ export const styles = StyleSheet.create({
         height: 200,
         marginTop: 20,
         borderRadius: 100,
-        borderWidth: 2,
-        borderColor: "#000"
-        
+
+
     }
 })
