@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native";
-
+import { ColorsGloal} from "../../Styles/ColorsGloal";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'space-around',
         alignItems: "center",
-        backgroundColor: "#A7C7E7"
+        backgroundColor: "#d2d8deff"
     },
     textLogin: {
         fontSize: 50
