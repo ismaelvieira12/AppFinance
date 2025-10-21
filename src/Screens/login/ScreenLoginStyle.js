@@ -26,5 +26,11 @@ export const styles = StyleSheet.create({
         paddingLeft: 20,
         fontSize: 18,
         backgroundColor: ColorGlobal.FundoBody,
-    }  
+    },
+    btnBottomLogin: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: ColorGlobal.LaranjaEscuro,
+        height: 50,
+        marginTop: 10,}  
 })
