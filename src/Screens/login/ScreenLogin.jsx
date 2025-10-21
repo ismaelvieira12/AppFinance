@@ -13,6 +13,9 @@ export const ScreenLogin = () => {
         <TouchableOpacity style={[styles.nputLogin, styles.btnBottomLogin]}>
           <Text style={styles.textBtnLogin}>Criar conta</Text>
         </TouchableOpacity>
+        <View>
+            <Text style={{textAlign: 'center', marginTop: 10}}>Já possui uma conta? Faça login</Text>
+        </View>
       </View>
     </View>
   )
