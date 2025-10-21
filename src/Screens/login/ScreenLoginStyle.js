@@ -17,14 +17,14 @@ export const styles = StyleSheet.create({
         borderRadius: 100,
     },
     nputLogin: {
-        width: 300,
+        width: 350,
         height: 50,
-        borderColor: ColorGlobal.LaranjaEscuro,
-        borderWidth: 2,
-        borderRadius: 10,
+        // borderColor: ColorGlobal.LaranjaEscuro,
+        // borderWidth: 2,
+        borderRadius: 40,
         marginBottom: 20,
         paddingLeft: 10,
         fontSize: 18,
-        backgroundColor: ColorGlobal.Branco
+        backgroundColor: ColorGlobal.FundoBody,
     }  
 })
