@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-around',
         alignItems: "center",
-        backgroundColor: ColorGlobal.FundoCards
+        backgroundColor: ColorGlobal.TesteColor
     },
     textLogin: {
         fontSize: 50

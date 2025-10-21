@@ -11,5 +11,8 @@ export const ColorGlobal = {
     FundoBody: "#f7f7f7",
     fundoImag: "#eeeeeeff",
     FundoCards: "#ffffff",
-    ColoFontSuave: "#353333c0"
+    ColoFontSuave: "#353333c0",
+
+
+    TesteColor: "#F5F5FC"
 };

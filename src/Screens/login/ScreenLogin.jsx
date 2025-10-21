@@ -1,4 +1,4 @@
-import { Image, Text, TextInput, View } from 'react-native'
+import { Image, StatusBar, Text, TextInput, View } from 'react-native'
 import { styles } from './ScreenLoginStyle'
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
@@ -17,6 +17,7 @@ export const ScreenLogin = () => {
             <Text style={{textAlign: 'center', marginTop: 10}}>Já possui uma conta? Faça login</Text>
         </View>
       </View>
+      <StatusBar barStyle="dark-content"/>
     </View>
   )
 }
