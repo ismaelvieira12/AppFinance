@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
         // borderWidth: 2,
         borderRadius: 40,
         marginBottom: 20,
-        paddingLeft: 10,
+        paddingLeft: 20,
         fontSize: 18,
         backgroundColor: ColorGlobal.FundoBody,
     }  
