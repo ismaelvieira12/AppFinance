@@ -7,10 +7,9 @@ export const ScreenLogin = () => {
   return (
       <View style={styles.container}>
         <Image  source={require('../../../assets/imgs/perfil.png')} style={styles.img}/>
-      <Text style={styles.textLogin}>ScreenLogin</Text>
       <View>
-        <TextInput placeholder='Email' />
-        <TextInput placeholder='Senha' />
+        <TextInput placeholder='Email' style={styles.nputLogin}/>
+        <TextInput placeholder='Senha' style={styles.nputLogin}/>
         <TouchableOpacity>
           <Text>Criar conta</Text>
         </TouchableOpacity>
