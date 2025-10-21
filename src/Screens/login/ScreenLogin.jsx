@@ -11,7 +11,7 @@ export const ScreenLogin = () => {
         <TextInput placeholder='Email' style={styles.nputLogin}/>
         <TextInput placeholder='Senha' style={styles.nputLogin}/>
         <TouchableOpacity style={[styles.nputLogin, styles.btnBottomLogin]}>
-          <Text>Criar conta</Text>
+          <Text style={styles.textBtnLogin}>Criar conta</Text>
         </TouchableOpacity>
       </View>
     </View>

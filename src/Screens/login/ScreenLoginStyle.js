@@ -18,9 +18,7 @@ export const styles = StyleSheet.create({
     },
     nputLogin: {
         width: 350,
-        height: 50,
-        // borderColor: ColorGlobal.LaranjaEscuro,
-        // borderWidth: 2,
+        height: 50,  
         borderRadius: 40,
         marginBottom: 20,
         paddingLeft: 20,
@@ -32,5 +30,11 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: ColorGlobal.LaranjaEscuro,
         height: 50,
-        marginTop: 10,}  
+        marginTop: 10,
+    },
+    textBtnLogin: {
+        color: ColorGlobal.FundoCards,
+        fontSize: 20,
+        fontWeight: 'bold',
+    }  
 })
