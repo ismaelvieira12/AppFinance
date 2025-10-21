@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native";
-import { ColorsGloal} from "../../Styles/ColorsGloal";
+import {ColorGlobal} from '../../Styles/ColorsGlobal'
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'space-around',
         alignItems: "center",
-        backgroundColor: "#d2d8deff"
+        backgroundColor: ColorGlobal.FundoCards
     },
     textLogin: {
         fontSize: 50
