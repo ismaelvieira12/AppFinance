@@ -26,14 +26,11 @@ export const ScreenLogin = () => {
           
           {/* Imagem */}
           <View style={styles.boxImg}>
-            <Image
-              source={require('../../../assets/imgs/segunda_foto_perfil.png')}
-              style={styles.img}
-            />
+            
           </View>
 
           {/* Campos de login */}
-        <View style={{ width: '100%', paddingHorizontal: 20 }}>
+          <View style={{ width: '100%', paddingHorizontal: 20 }}>
             <TextInput placeholder="Email" style={styles.nputLogin} />
             <TextInput
               placeholder="Senha"
@@ -60,7 +57,7 @@ export const ScreenLogin = () => {
           </View>
 
           <StatusBar barStyle="dark-content" />
-        </View>
+      </View>
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
   );

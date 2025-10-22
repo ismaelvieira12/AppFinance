@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     },
     img: {
         width: "100%",
-        height: "100%",
+        // height: "100%",
         resizeMode: 'contain',
         marginTop: 20,
     },
