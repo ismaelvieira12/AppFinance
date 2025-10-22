@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
         height: "100%",
         resizeMode: 'contain',
         marginTop: 20,
-        // borderRadius: 100,
     },
     nputLogin: {
         width: 350,
