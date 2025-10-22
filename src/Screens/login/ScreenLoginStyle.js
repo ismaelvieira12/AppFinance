@@ -8,14 +8,12 @@ export const styles = StyleSheet.create({
         backgroundColor: ColorGlobal.TesteColor
     },
     textLogin: {
-        fontSize: 50
+        fontSize: 50,
     },
     boxImg: {
         width: "100%",
         height: 550,
-        backgroundColor: ColorGlobal.AmareloNormal,
-        justifyContent: 'center',
-        alignItems: 'center',
+        backgroundColor: ColorGlobal.AmareloNormal, 
     },
     img: {
         width: "100%",
