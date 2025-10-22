@@ -11,10 +11,10 @@ export const styles = StyleSheet.create({
         fontSize: 50
     },
     img: {
-        width: 200,
-        height: 200,
+        width: "100%",
+        height: 400,
         marginTop: 20,
-        borderRadius: 100,
+        // borderRadius: 100,
     },
     nputLogin: {
         width: 350,
@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
         marginBottom: 20,
         paddingLeft: 20,
         fontSize: 18,
-        backgroundColor: ColorGlobal.FundoBody,
+        backgroundColor: ColorGlobal.FundoCards,
     },
     btnBottomLogin: {
         justifyContent: 'center',
