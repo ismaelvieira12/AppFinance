@@ -1,15 +1,14 @@
 import React from 'react';
 import {
-  View,
-  Text,
-  Image,
+  View, Text,
   TextInput,
   TouchableOpacity,
+  Image,
   KeyboardAvoidingView,
-  TouchableWithoutFeedback,
-  Keyboard,
   Platform,
-  StatusBar,
+  Keyboard,
+  TouchableWithoutFeedback,
+  StatusBar
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from './ScreenLoginStyle';
@@ -26,7 +25,10 @@ export const ScreenLogin = () => {
           
           {/* Imagem */}
           <View style={styles.boxImg}>
-            
+            <Image
+              source={require('../../../assets/loginImage.png')}
+              style={styles.img}
+            />
           </View>
 
           {/* Campos de login */}

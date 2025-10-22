@@ -13,6 +13,9 @@ export const styles = StyleSheet.create({
     boxImg: {
         width: "100%",
         height: 550,
+        backgroundColor: ColorGlobal.AmareloNormal,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     img: {
         width: "100%",
