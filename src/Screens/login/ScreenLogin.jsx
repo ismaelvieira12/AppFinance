@@ -24,13 +24,7 @@ export const ScreenLogin = () => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           
-          {/* Imagem */}
-          <View style={styles.boxImg}>
-            <Image
-              source={require('../../../assets/imgs/segunda_foto_perfil.png')}
-              style={styles.img}
-            />
-          </View>
+          
 
           {/* Campos de login */}
         <View style={{ width: '100%', paddingHorizontal: 20 }}>
