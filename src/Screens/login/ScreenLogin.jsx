@@ -26,10 +26,10 @@ export const ScreenLogin = () => {
           
           {/* Imagem */}
           <View style={styles.boxImg}>
-            <Image
+            {/* <Image
               source={require('../../../assets/imgs/segunda_foto_perfil.png')}
               style={styles.img}
-            />
+            /> */}
           </View>
 
           {/* Campos de login */}
