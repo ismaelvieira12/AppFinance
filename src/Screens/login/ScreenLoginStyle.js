@@ -10,9 +10,14 @@ export const styles = StyleSheet.create({
     textLogin: {
         fontSize: 50
     },
+    boxImg: {
+        width: "100%",
+        height: 550,
+    },
     img: {
         width: "100%",
-        height: 400,
+        height: "100%",
+        resizeMode: 'contain',
         marginTop: 20,
         // borderRadius: 100,
     },

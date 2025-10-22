@@ -5,8 +5,10 @@ import { TouchableOpacity } from 'react-native'
 
 export const ScreenLogin = () => {
   return (
-      <View style={styles.container}>
-        <Image  source={require('../../../assets/imgs/foto_de_perfil.png')} style={styles.img}/>
+    <View style={styles.container}>
+        <View style={styles.boxImg}>
+            <Image  source={require('../../../assets/imgs/segunda_foto_perfil.png')} style={styles.img}/>
+        </View>
       <View>
         <TextInput placeholder='Email' style={styles.nputLogin}/>
         <TextInput placeholder='Senha' style={styles.nputLogin}/>
