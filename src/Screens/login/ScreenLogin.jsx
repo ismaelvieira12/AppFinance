@@ -51,6 +51,7 @@ export const ScreenLogin = () => {
               <Text style={{ textAlign: 'center', marginTop: 10 }}>
                 Já possui uma conta? Faça login
               </Text>
+              
             </View>
 
           <StatusBar barStyle="dark-content" />
