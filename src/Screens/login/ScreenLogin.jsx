@@ -1,4 +1,4 @@
-import { View, TextInput, Button, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { View, TextInput, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { styles } from './ScreenLoginStyle'
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
@@ -11,29 +11,31 @@ return (
     behavior={Platform.OS === 'ios' ? 'padding' : 'height'} // tipo de ajuste
     style={{ flex: 1 }}
     >
-        <View style={styles.container}>
-                <View style={styles.boxImg}>
-                        <Image  source={require('../../../assets/imgs/segunda_foto_perfil.png')} style={styles.img}/>
-                </View>
-            <View>
-                <TextInput placeholder='Email' style={styles.nputLogin}/>
-                <TextInput placeholder='Senha' style={styles.nputLogin}/>
-                <TouchableOpacity>
-                    <LinearGradient
-                        colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoFontSuave]}
-                        start={{ x: 1, y: 0.5 }}
-                        end={{ x: 0, y: 0.5 }}
-                        style={[styles.nputLogin, styles.btnBottomLogin]}
-                    >
-                                    <Text style={styles.textBtnLogin}>Fazer login</Text>
-                    </LinearGradient>
-                </TouchableOpacity>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View style={styles.container}>
+                    <View style={styles.boxImg}>
+                            <Image  source={require('../../../assets/imgs/segunda_foto_perfil.png')} style={styles.img}/>
+                    </View>
                 <View>
-                        <Text style={{textAlign: 'center', marginTop: 10}}>Já possui uma conta? Faça login</Text>
+                    <TextInput placeholder='Email' style={styles.nputLogin}/>
+                    <TextInput placeholder='Senha' style={styles.nputLogin}/>
+                    <TouchableOpacity>
+                        <LinearGradient
+                            colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoFontSuave]}
+                            start={{ x: 1, y: 0.5 }}
+                            end={{ x: 0, y: 0.5 }}
+                            style={[styles.nputLogin, styles.btnBottomLogin]}
+                        >
+                                        <Text style={styles.textBtnLogin}>Fazer login</Text>
+                        </LinearGradient>
+                    </TouchableOpacity>
+                    <View>
+                            <Text style={{textAlign: 'center', marginTop: 10}}>Já possui uma conta? Faça login</Text>
+                    </View>
                 </View>
+                <StatusBar barStyle="dark-content"/>
             </View>
-            <StatusBar barStyle="dark-content"/>
-        </View>
+        </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
 
     
