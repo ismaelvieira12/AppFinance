@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     boxImg: {
         width: "100%",
         height: 360,
-        // backgroundColor: ColorGlobal.AmareloNormal,
+        backgroundColor: ColorGlobal.AmareloNormal,
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 20,
