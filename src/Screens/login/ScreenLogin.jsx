@@ -22,7 +22,7 @@ export const ScreenLogin = () => {
       style={styles.container}
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <View style={{flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+        <View style={{flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', padding: 40}}>
           
           
           <View style={styles.boxImg}>
@@ -33,7 +33,7 @@ export const ScreenLogin = () => {
           </View>
 
           {/* Campos de login */}
-          <View style={{ paddingHorizontal: 20 }}>
+          <View>
               <TextInput placeholder="Email" style={styles.nputLogin} />
               <TextInput
                 placeholder="Senha"
