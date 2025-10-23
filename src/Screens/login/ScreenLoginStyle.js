@@ -14,6 +14,9 @@ export const styles = StyleSheet.create({
         width: "100%",
         height: 360,
         backgroundColor: ColorGlobal.AmareloNormal,
+        borderRadius: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     img: {
         width: "100%",
