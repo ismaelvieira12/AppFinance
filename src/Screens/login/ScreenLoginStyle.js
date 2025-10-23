@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     boxImg: {
         width: "100%",
         height: 360,
-        
+        backgroundColor: ColorGlobal.AmareloNormal,
     },
     img: {
         width: "100%",
