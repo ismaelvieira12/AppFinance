@@ -54,9 +54,14 @@ export const ScreenLogin = () => {
               </TouchableOpacity>
 
               {/* Texto abaixo */}
-              <Text style={{ textAlign: 'center', marginTop: 10 }}>
-                Já possui uma conta? Faça login
-              </Text>
+              <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
+                <Text>Ainda não possui uma conta? </Text>
+                <TouchableOpacity>
+                  <Text style={{ color: ColorGlobal.AzulEscuro, fontWeight: 'bold' }}>
+                    Cadastre-se
+                  </Text>
+                </TouchableOpacity>
+              </View>
           </View>
 
           <StatusBar barStyle="dark-content" />
