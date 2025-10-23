@@ -22,7 +22,7 @@ export const ScreenLogin = () => {
       style={styles.container}
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <View s>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', width: '100%' }}>
           
           
           <View style={styles.boxImg}>
