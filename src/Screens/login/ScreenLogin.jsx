@@ -44,7 +44,7 @@ export const ScreenLogin = () => {
               {/* Botão */}
               <TouchableOpacity>
                 <LinearGradient
-                  colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoFontSuave]}
+                  colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoBtnGradient]}
                   start={{ x: 1, y: 0.5 }}
                   end={{ x: 0, y: 0.5 }}
                   style={[styles.nputLogin, styles.btnBottomLogin]}
