@@ -55,9 +55,9 @@ export const ScreenLogin = () => {
 
               {/* Texto abaixo */}
               <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
-                <Text>Ainda não possui uma conta? </Text>
+                <Text style={{fontSize: 16}}>Ainda não possui uma conta? </Text>
                 <TouchableOpacity>
-                  <Text style={{ color: ColorGlobal.AzulEscuro, fontWeight: 'bold' }}>
+                  <Text style={{ color: ColorGlobal.AzulMaisClaro, fontWeight: 'bold',fontSize: 16 }}>
                     Cadastre-se
                   </Text>
                 </TouchableOpacity>
