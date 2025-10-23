@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
         width: "100%",
         height: 360,
         backgroundColor: ColorGlobal.AmareloNormal,
-        marginTop: -20,
     },
     img: {
         width: "100%",
