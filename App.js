@@ -6,6 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ActivityIndicator, View } from 'react-native';
 
 
+
 // Suas telas
 import { Wellcome } from './src/Screens/Wellcome/Wellcome.jsx';
 import { MetasScreen } from './src/Screens/MetasScreen/MetasScreen.jsx';
@@ -14,6 +15,7 @@ import { ScreenLogin } from './src/Screens/login/ScreenLogin.jsx';
 import { ScreenRegister } from './src/Screens/register/ScreenRegister.jsx';
 
 const Drawer = createDrawerNavigator();
+
 
 export default function App() {
   const [isConfigured, setIsConfigured] = React.useState(null); // null = carregando
@@ -57,6 +59,7 @@ export default function App() {
         <Drawer.Screen name='Register' component={ ScreenRegister } />
       </Drawer.Navigator>
 
+       
       <StatusBar style="auto" />
     </NavigationContainer>
   );

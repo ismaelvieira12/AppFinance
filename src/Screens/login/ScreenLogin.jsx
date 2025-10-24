@@ -13,11 +13,12 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from './ScreenLoginStyle';
-import { ColorGlobal } from '../../paletaColor/ColorGlobal';
+import { ColorGlobal } from '../../paletaColor/ColorGlobal'; 
 import { useNavigation } from '@react-navigation/native';
 
 export const ScreenLogin = () => {
  const navigation = useNavigation();
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -58,7 +59,7 @@ export const ScreenLogin = () => {
               {/* Texto abaixo */}
               <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
                 <Text style={{fontSize: 16}}>Ainda não possui uma conta? </Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Register')} >
                   <Text style={{ color: ColorGlobal.AzulMaisClaro, fontWeight: 'bold',fontSize: 16 }}>
                     Cadastre-se
                   </Text>
