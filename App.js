@@ -64,3 +64,8 @@
 //     </NavigationContainer>
 //   );
 // }
+
+import { AppNavigator } from './routes.js';
+export default function App() {
+  return <AppNavigator />;
+}
