@@ -28,7 +28,7 @@ export const ScreenLogin = () => {
           <View style={styles.boxImg}>
             <Image
               source={require('../../../assets/imgs/segunda_foto_perfil.png')}
-              style={styles.img}
+              // style={styles.img}
             />
           </View>
 
