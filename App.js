@@ -5,6 +5,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ActivityIndicator, View } from 'react-native';
 
+
 // Suas telas
 import { Wellcome } from './src/Screens/Wellcome/Wellcome.jsx';
 import { MetasScreen } from './src/Screens/MetasScreen/MetasScreen.jsx';
