@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: "center",
-        backgroundColor: ColorGlobal.TesteColor
+        // backgroundColor: ColorGlobal.TesteColor
     },
     textLogin: {
         fontSize: 50,
