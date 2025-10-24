@@ -58,7 +58,7 @@ export const ScreenLogin = () => {
                 <Text style={{fontSize: 16}}>Ainda não possui uma conta? </Text>
                 <TouchableOpacity>
                   <Text style={{ color: ColorGlobal.AzulMaisClaro, fontWeight: 'bold',fontSize: 16 }}>
-                    Cadastre-se
+                    {/* Cadastre-se */}
                   </Text>
                 </TouchableOpacity>
               </View>
