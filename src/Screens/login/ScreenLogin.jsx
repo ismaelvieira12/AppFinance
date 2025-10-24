@@ -49,7 +49,7 @@ export const ScreenLogin = () => {
                   end={{ x: 0, y: 0.5 }}
                   style={[styles.nputLogin, styles.btnBottomLogin]}
                 >
-                  <Text style={styles.textBtnLogin}>Fazer login</Text>
+                  {/* <Text style={styles.textBtnLogin}>Fazer login</Text> */}
                 </LinearGradient>
               </TouchableOpacity>
 
