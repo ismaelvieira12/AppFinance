@@ -5,6 +5,8 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: ColorGlobal.FundoCards,
+        // justifyContent: "center",
+        // alignItems: "center"
     },
     boxImage: {
         backgroundColor: ColorGlobal.fundoImag,
