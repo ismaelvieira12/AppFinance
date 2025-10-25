@@ -10,6 +10,7 @@ import {
   Keyboard,
   Platform,
   StatusBar,
+  ImageBackground,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from './ScreenLoginStyle';
@@ -29,7 +30,7 @@ export const ScreenLogin = () => {
           
           
           <View style={styles.boxImg}>
-            <Image
+            <ImageBackground
               source={require('../../../assets/imgs/segunda_foto_perfil.png')}
               style={styles.img}
             />
@@ -68,6 +69,7 @@ export const ScreenLogin = () => {
           </View>
 
           <StatusBar barStyle="dark-content" />
+
         </View>
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
