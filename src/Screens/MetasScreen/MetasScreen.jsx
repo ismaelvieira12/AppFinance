@@ -14,10 +14,10 @@ export default function LoginScreen() {
         <TextInput placeholder="Email" style={styles.input} placeholderTextColor="#ccc" />
         <TextInput placeholder="Senha" secureTextEntry style={styles.input} placeholderTextColor="#ccc" />
       </View>
+        <Waves />
 
       {/* Ondas no rodapé */}
       <View style={{ position: "absolute", bottom: 0, width: "100%" }}> 
-        <Waves />
       </View>    
     </LinearGradient>
   );
