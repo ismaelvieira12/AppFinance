@@ -29,7 +29,7 @@ export const ScreenLogin = () => {
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', padding: 40}}>
-        <Entypo name="chevron-left" size={40} color={ColorGlobal.ColoFontSuave} style={styles.backBtn}/>
+        <Entypo name="chevron-left" size={40} color={ColorGlobal.ColoFontSuave} style={styles.backBtn} onPress={() => navigation.navigate('StartConfigInitial')}/>
           
           
           <View style={styles.boxImg}>

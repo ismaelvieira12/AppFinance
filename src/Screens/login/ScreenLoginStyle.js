@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
        backBtn: {
         position: 'absolute',
         top: 40,
-        left: 20,
+        left: 10,
         zIndex: 1,
         
     },
