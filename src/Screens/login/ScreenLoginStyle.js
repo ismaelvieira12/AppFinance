@@ -7,6 +7,13 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: ColorGlobal.TesteColor,
     },
+       backBtn: {
+        position: 'absolute',
+        top: 40,
+        left: 20,
+        zIndex: 1,
+        
+    },
     textLogin: {
         fontSize: 50,
     },

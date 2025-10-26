@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: ColorGlobal.TesteColor,
     },
+ 
     textLogin: {
         fontSize: 50,
     },

@@ -24,12 +24,12 @@ export const ScreenLogin = () => {
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={styles.container}
+    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    style={styles.container}
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', padding: 40}}>
-          <Entypo name="chevron-left" size={24} color="black" />
+        <Entypo name="chevron-left" size={40} color={ColorGlobal.ColoFontSuave} style={styles.backBtn}/>
           
           
           <View style={styles.boxImg}>
