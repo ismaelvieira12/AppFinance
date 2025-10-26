@@ -12,12 +12,12 @@ import {
   StatusBar,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { styles } from '../register/ScreenRegisterStyle'
-import { ColorGlobal } from '../../paletaColor/ColorGlobal'; 
+import { styles } from './ScreenRegisterStyle';
+import { ColorGlobal } from '../../paletaColor/ColorGlobal';
 import { useNavigation } from '@react-navigation/native';
 
 export const ScreenRegister = () => {
- const navigation = useNavigation();
+  const navigation = useNavigation();
 
   return (
     <KeyboardAvoidingView
@@ -25,48 +25,75 @@ export const ScreenRegister = () => {
       style={styles.container}
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <View style={{flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', padding: 40}}>
-          
-          
+        <View
+          style={{
+            flex: 1,
+            width: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 40,
+          }}
+        >
+          {/* Imagem */}
           <View style={styles.boxImg}>
             <Image
-              source={require('../../../assets/imgs/segunda_foto_perfil.png')}
+              source={require('../../../assets/imgs/perfilRegister.png')}
               style={styles.img}
             />
           </View>
 
-          {/* Campos de login */}
+          {/* Campos de cadastro */}
           <View>
-              <TextInput placeholder="Email" style={styles.nputLogin} />
-              <TextInput
-                placeholder="Senha"
-                secureTextEntry
-                style={styles.nputLogin}
-              />
+            <TextInput placeholder="Nome completo" style={styles.nputLogin} />
+            <TextInput
+              placeholder="Email"
+              keyboardType="email-address"
+              style={styles.nputLogin}
+            />
+            <TextInput
+              placeholder="Senha"
+              secureTextEntry
+              style={styles.nputLogin}
+            />
+            <TextInput
+              placeholder="Confirmar senha"
+              secureTextEntry
+              style={styles.nputLogin}
+            />
 
-              {/* Botão */}
-              <TouchableOpacity>
-                <LinearGradient
-                  colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoBtnGradient]}
-                  start={{ x: 1, y: 0.5 }}
-                  end={{ x: 0, y: 0.5 }}
-                  style={[styles.nputLogin, styles.btnBottomLogin]}
+            {/* Botão de criar conta */}
+            <TouchableOpacity>
+              <LinearGradient
+                colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoBtnGradient]}
+                start={{ x: 1, y: 0.5 }}
+                end={{ x: 0, y: 0.5 }}
+                style={[styles.nputLogin, styles.btnBottomLogin]}
+              >
+                <Text style={styles.textBtnLogin}>Cadastrar</Text>
+              </LinearGradient>
+            </TouchableOpacity>
+
+            {/* Texto de navegação */}
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'center',
+                marginTop: 10,
+              }}
+            >
+              <Text style={{ fontSize: 16 }}>Já possui uma conta? </Text>
+              <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                <Text
+                  style={{
+                    color: ColorGlobal.AzulMaisClaro,
+                    fontWeight: 'bold',
+                    fontSize: 16,
+                  }}
                 >
-                  <Text style={styles.textBtnLogin}>Criar conta
-                    
-                  </Text>
-                </LinearGradient>
+                  Faça login
+                </Text>
               </TouchableOpacity>
-
-              {/* Texto abaixo */}
-              <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
-                <Text style={{fontSize: 16}}>Ainda não possui uma conta? </Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Register')} >
-                  <Text style={{ color: ColorGlobal.AzulMaisClaro, fontWeight: 'bold',fontSize: 16 }}>
-                    Cadastre-se
-                  </Text>
-                </TouchableOpacity>
-              </View>
+            </View>
           </View>
 
           <StatusBar barStyle="dark-content" />
