@@ -4,12 +4,12 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: ColorGlobal.TesteColor,
+        backgroundColor: ColorGlobal.FundoCards,
         // justifyContent: "center",
         // alignItems: "center"
     },
     boxImage: {
-        backgroundColor: ColorGlobal.FundoCards,
+        backgroundColor: ColorGlobal.TesteColor,
         height: "55%",
         borderBottomEndRadius: 90,
         borderBottomLeftRadius: 90,
