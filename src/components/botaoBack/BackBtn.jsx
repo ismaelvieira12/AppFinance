@@ -4,7 +4,6 @@ import { TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { ColorGlobal } from '../../paletaColor/ColorGlobal';
-import { StyleSheet } from 'react-native';
 
 
 export const BackBtn = () => {

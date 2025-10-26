@@ -2,6 +2,7 @@ import React from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import {Waves} from "../../components/onda/Waves.jsx";
+import { BackBtn } from '../../components/botaoBack/BackBtn';
 
 
 export default function LoginScreen() {
@@ -10,6 +11,7 @@ export default function LoginScreen() {
       colors={["#0A1D3F", "#102A5C"]}
       style={styles.container}
     >
+      <BackBtn />
       <View style={styles.form}>
         <TextInput placeholder="Email" style={styles.input} placeholderTextColor="#ccc" />
         <TextInput placeholder="Senha" secureTextEntry style={styles.input} placeholderTextColor="#ccc" />

@@ -15,6 +15,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from './ScreenRegisterStyle';
 import { ColorGlobal } from '../../paletaColor/ColorGlobal';
 import { useNavigation } from '@react-navigation/native';
+import { BackBtn } from '../../components/botaoBack/BackBtn';
 
 export const ScreenRegister = () => {
   const navigation = useNavigation();
@@ -24,6 +25,7 @@ export const ScreenRegister = () => {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
+        <BackBtn />
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View
           style={{
