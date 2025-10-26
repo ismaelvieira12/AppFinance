@@ -4,7 +4,7 @@ import React from 'react'
 export const BackBtn = () => {
   return (
     <View>
-      <Text>BackBtn</Text>
+      
     </View>
   )
 }

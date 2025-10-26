@@ -17,6 +17,8 @@ import { styles } from './ScreenLoginStyle';
 import { ColorGlobal } from '../../paletaColor/ColorGlobal'; 
 import { useNavigation } from '@react-navigation/native';
 
+import Entypo from '@expo/vector-icons/Entypo';
+
 export const ScreenLogin = () => {
  const navigation = useNavigation();
 
@@ -27,6 +29,7 @@ export const ScreenLogin = () => {
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', padding: 40}}>
+          <Entypo name="chevron-left" size={24} color="black" />
           
           
           <View style={styles.boxImg}>
