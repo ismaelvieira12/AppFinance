@@ -16,8 +16,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from './ScreenLoginStyle';
 import { ColorGlobal } from '../../paletaColor/ColorGlobal'; 
 import { useNavigation } from '@react-navigation/native';
-
-import Entypo from '@expo/vector-icons/Entypo';
+import { BackBtn } from '../../components/botaoBack/BackBtn';
 
 export const ScreenLogin = () => {
  const navigation = useNavigation();
@@ -30,7 +29,8 @@ export const ScreenLogin = () => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', padding: 40}}>
           {/* Botão de voltar */}
-         
+          <BackBtn />
+
           <View style={styles.boxImg}>
             <ImageBackground
               source={require('../../../assets/imgs/segunda_foto_perfil.png')}
