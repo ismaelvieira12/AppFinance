@@ -4,6 +4,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar, Image, Text } from 'react-native'
 import { styles } from './StartConfigInitialStyle'
+import { LinearGradient } from 'expo-linear-gradient';
+import { ColorGlobal } from '../../paletaColor/ColorGlobal';
 
 export const StartConfigInitial = () => {
   const navigation = useNavigation();
@@ -38,7 +40,14 @@ export const StartConfigInitial = () => {
       </View>
 
       <View style={styles.boxLogin}>
-        <TouchableOpacity style={styles.boxButtom} onPress={handleFinalizarConfig}><Text style={styles.textBtn}>Criar uma conta</Text></TouchableOpacity>
+        <LinearGradient
+          colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoBtnGradient]}
+          start={{ x: 1, y: 0.5 }}
+          end={{ x: 0, y: 0.5 }}
+          style={styles.btnGradient}
+        >
+          <TouchableOpacity onPress={handleFinalizarConfig}><Text style={styles.textBtn}>Criar uma conta</Text></TouchableOpacity>
+        </LinearGradient>
 
         <View style={styles.boxTextsLogin}>
           <Text style={styles.textLogin}>Já tem uma conta? </Text>

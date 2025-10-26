@@ -4,12 +4,12 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: ColorGlobal.FundoCards,
+        backgroundColor: ColorGlobal.TesteColor,
         // justifyContent: "center",
         // alignItems: "center"
     },
     boxImage: {
-        backgroundColor: ColorGlobal.fundoImag,
+        backgroundColor: ColorGlobal.FundoCards,
         height: "55%",
         borderBottomEndRadius: 90,
         borderBottomLeftRadius: 90,
@@ -43,11 +43,11 @@ export const styles = StyleSheet.create({
         bottom: 0,
         padding: 20
     },
-    boxButtom: {
+    btnGradient: {
         marginTop: 20,
         backgroundColor: ColorGlobal.AzulNormal,
         padding: 20,
-        borderRadius: 8,
+        borderRadius: 50,
         width: "100%"
     },
     textBtn: {
