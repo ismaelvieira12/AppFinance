@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     maxWidth: 960,
-    marginHorizontal: "auto",
+    // marginHorizontal: "auto",
   },
   title: {
     fontSize: 64,
