@@ -16,7 +16,7 @@ import { ScreenRegister } from './src/Screens/register/ScreenRegister.jsx';
 
 const Drawer = createDrawerNavigator();
 
-
+// mudando a forma de navegação
 export default function App() {
   const [isConfigured, setIsConfigured] = React.useState(null); // null = carregando
 
