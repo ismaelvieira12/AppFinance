@@ -3,12 +3,14 @@ import React from 'react'
 
 const index = () => {
   return (
-    <View>
-      <Text>Testando</Text>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={styles.text}>Testando</Text>
     </View>
   )
 }
 
 export default index
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  text: { fontSize: 30 }
+})
