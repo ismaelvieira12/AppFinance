@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Page() {
+export default function HomePages() {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
