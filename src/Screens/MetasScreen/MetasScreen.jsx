@@ -18,7 +18,7 @@ export default function LoginScreen() {
       </View>
         <Waves />
 
-      
+      {/* Ondas no rodapé */}
       <View style={{ position: "absolute", bottom: 0, width: "100%" }}> 
       </View>    
     </LinearGradient>
