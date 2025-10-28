@@ -57,6 +57,7 @@ export default function App() {
         <Drawer.Screen name="StartConfigInitial" component={StartConfigInitial} />
         <Drawer.Screen name='Login' component={ ScreenLogin } />
         <Drawer.Screen name='Register' component={ ScreenRegister } />
+        <Drawer.Screen name="index" component={require('./app/index').default} />
       </Drawer.Navigator>
 
        
