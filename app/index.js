@@ -1,11 +1,12 @@
 import React from 'react'
-import { registerRootComponent } from 'expo';
-import App from './App';
+import { View, Text } from 'react-native'
+
 
 const index = () => {
   return (
-    
-    <App />
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{fontSize:}}>index</Text>
+    </View>
   )
 }
 
