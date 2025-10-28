@@ -1,4 +1,4 @@
-import { ColorGlobal } from "../../paletaColor/ColorGlobal";
+import { ColorGlobal } from "../hooks/ColorGlobal";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({

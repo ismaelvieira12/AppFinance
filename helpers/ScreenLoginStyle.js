@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import {ColorGlobal} from '../../paletaColor/ColorGlobal'
+import {ColorGlobal} from '../hooks/ColorGlobal'
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
