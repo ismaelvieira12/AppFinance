@@ -3,9 +3,11 @@ import { View, Text } from 'react-native'
 import App from './App'
 import { useNavigation } from '@react-navigation/native';
 const index = () => {
+  const navigation = useNavigation();
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text style={{fontSize:40}}>index</Text>
+      <button title="Go to App" onPress={() => navigation.navigate('App')} />
     </View>
   )
 }
