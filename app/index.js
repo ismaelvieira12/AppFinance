@@ -4,6 +4,7 @@ import App from './App';
 
 const index = () => {
   return (
+    
     <App />
   )
 }
