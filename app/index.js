@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import App from './App'
-
+import navigaton from './App'
 const index = () => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
