@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
   },
   btnText: { color: "#fff", fontSize: 15, fontWeight: "600" },
   calendarWrap: { width: "92%", alignItems: "center", marginBottom: 10 },
-  calendar: { width: "100%", borderRadius: 10 },
+  calendar: { width: "100%", borderRadius: 10, backgroundColor: ColorGlobal. },
   card: {
     width: "92%",
     backgroundColor: ColorGlobal.FundoCards,
