@@ -239,8 +239,8 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   btnText: { color: "#fff", fontSize: 15, fontWeight: "600" },
-  calendarWrap: { width: "92%", alignItems: "center", marginBottom: 10 },
-  calendar: { width: "100%", borderRadius: 10, backgroundColor: ColorGlobal. },
+  calendarWrap: { width: "100%", marginBottom: 10, paddingHorizontal: 16 },
+  calendar: { width: "100%", borderRadius: 10, backgroundColor: ColorGlobal.FundoCards },
   card: {
     width: "92%",
     backgroundColor: ColorGlobal.FundoCards,
