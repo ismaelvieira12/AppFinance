@@ -48,7 +48,7 @@ export default function StartConfigInitial() {
           >
             <TouchableOpacity><Text style={styles.textBtn}>Criar uma conta</Text></TouchableOpacity>
           </LinearGradient>
-        </Link>
+        
         <View style={styles.boxTextsLogin}>
           <Text style={styles.textLogin}>Já tem uma conta? </Text>
           <TouchableOpacity><Text style={styles.textFazerLogin}>Fazer login</Text></TouchableOpacity>
