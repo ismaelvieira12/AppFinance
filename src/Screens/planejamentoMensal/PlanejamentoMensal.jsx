@@ -1,5 +1,5 @@
 // PlanejamentoMensal.jsx
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Animated,
   Easing,
+  Alert,
 } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { useNavigation } from "@react-navigation/native";
@@ -19,7 +20,7 @@ export default function PlanejamentoMensal() {
   const [meta, setMeta] = useState("");
   const [porcentagemGuardar, setPorcentagemGuardar] = useState(20); // % inicial
   const [resultado, setResultado] = useState(null);
-  const progressAnim = useRef(new Animated.Value(0)).current; // 0..100
+  const progressAnim = useRef(new Animated.Value(0)).current;
   const navigation = useNavigation();
 
   const toggleCalendar = () => setShowCalendar((s) => !s);
@@ -41,8 +42,7 @@ export default function PlanejamentoMensal() {
     });
   };
 
-  // chama anim quando componente monta inicialmente
-  React.useEffect(() => {
+  useEffect(() => {
     animarBarra(porcentagemGuardar);
   }, []);
 
@@ -52,24 +52,45 @@ export default function PlanejamentoMensal() {
 
     if (isNaN(rendaNum) || isNaN(metaNum) || rendaNum <= 0 || metaNum <= 0) {
       setResultado(null);
-      return alert("Por favor, preencha os valores corretamente!");
+      return Alert.alert("Atenção", "Por favor, preencha os valores corretamente!");
+    }
+
+    // Valida se o usuário está tentando guardar mais do que ganha
+    if (metaNum <= rendaNum) {
+      Alert.alert(
+        "Meta muito baixa",
+        "A meta deve ser maior que o valor da renda mensal para o cálculo fazer sentido."
+      );
     }
 
     const valorMensalGuardar = (rendaNum * porcentagemGuardar) / 100;
-    if (valorMensalGuardar <= 0) {
-      return alert("Escolha uma porcentagem de guardar maior que 0%.");
+
+    if (valorMensalGuardar <= 0 || !isFinite(valorMensalGuardar)) {
+      return Alert.alert(
+        "Erro",
+        "O valor calculado para guardar é inválido. Verifique os números."
+      );
     }
 
     const mesesNecessarios = Math.ceil(metaNum / valorMensalGuardar);
 
+    if (!isFinite(mesesNecessarios) || mesesNecessarios <= 0) {
+      return Alert.alert(
+        "Erro de cálculo",
+        "Os valores inseridos não são suficientes para calcular o planejamento."
+      );
+    }
+
+    const progressoPercent =
+      metaNum > 0 ? Math.min(100, (rendaNum / metaNum) * 100) : 0;
+
     setResultado({
       valorMensalGuardar,
       mesesNecessarios,
-      progressoPercent: Math.min(100, (rendaNum / metaNum) * 100),
+      progressoPercent,
     });
   };
 
-  // animação de largura para a barra (interpolação)
   const barraWidth = progressAnim.interpolate({
     inputRange: [0, 100],
     outputRange: ["0%", "100%"],
@@ -103,7 +124,7 @@ export default function PlanejamentoMensal() {
 
       {/* Card principal */}
       <View style={styles.card}>
-        <Text style={styles.title}>💰Quanto você deseja quardar?</Text>
+        <Text style={styles.title}>💰 Quanto você deseja alcançar?</Text>
 
         <TextInput
           placeholder="Quanto você ganha por mês?"
@@ -136,14 +157,8 @@ export default function PlanejamentoMensal() {
             <Text style={styles.pctLabel}>Guardar</Text>
             <Text style={styles.pctValue}>{porcentagemGuardar}%</Text>
 
-            {/* Barra de progresso animada horizontal */}
             <View style={styles.progressBackground}>
-              <Animated.View
-                style={[
-                  styles.progressFill,
-                  { width: barraWidth },
-                ]}
-              />
+              <Animated.View style={[styles.progressFill, { width: barraWidth }]} />
             </View>
           </View>
 
@@ -185,7 +200,7 @@ export default function PlanejamentoMensal() {
             <View style={{ height: 12 }} />
 
             <Text style={[styles.resultadoText, { marginTop: 8 }]}>
-              Progresso (renda atual ÷ meta):{" "}
+              Progresso (renda ÷ meta):{" "}
               <Text style={styles.valor}>
                 {Math.min(100, resultado.progressoPercent).toFixed(1)}%
               </Text>
@@ -233,7 +248,13 @@ const styles = StyleSheet.create({
     padding: 16,
     elevation: 3,
   },
-  title: { fontSize: 18, fontWeight: "700", color: ColorGlobal.AzulEscuro, textAlign: "center", marginBottom: 12 },
+  title: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: ColorGlobal.AzulEscuro,
+    textAlign: "center",
+    marginBottom: 12,
+  },
   input: {
     backgroundColor: ColorGlobal.fundoImag,
     borderRadius: 10,
@@ -253,17 +274,53 @@ const styles = StyleSheet.create({
   },
   pctBtnText: { color: "#fff", fontSize: 22, fontWeight: "700" },
   pctCenter: { flex: 1, paddingHorizontal: 12 },
-  pctLabel: { color: ColorGlobal.ColoFontSuave, fontSize: 13, textAlign: "center" },
-  pctValue: { fontSize: 18, fontWeight: "700", color: ColorGlobal.AzulEscuro, textAlign: "center", marginTop: 4 },
-  progressBackground: { height: 8, backgroundColor: "#eee", borderRadius: 8, overflow: "hidden", marginTop: 8 },
+  pctLabel: {
+    color: ColorGlobal.ColoFontSuave,
+    fontSize: 13,
+    textAlign: "center",
+  },
+  pctValue: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: ColorGlobal.AzulEscuro,
+    textAlign: "center",
+    marginTop: 4,
+  },
+  progressBackground: {
+    height: 8,
+    backgroundColor: "#eee",
+    borderRadius: 8,
+    overflow: "hidden",
+    marginTop: 8,
+  },
   progressFill: { height: 8, backgroundColor: ColorGlobal.AmareloNormal },
-  btnCalcular: { marginTop: 12, backgroundColor: ColorGlobal.AmareloNormal, borderRadius: 10, paddingVertical: 10 },
+  btnCalcular: {
+    marginTop: 12,
+    backgroundColor: ColorGlobal.AmareloNormal,
+    borderRadius: 10,
+    paddingVertical: 10,
+  },
   btnCalcularText: { textAlign: "center", color: "#333", fontWeight: "700" },
-  resultadoBox: { marginTop: 14, padding: 12, backgroundColor: ColorGlobal.FundoBody, borderRadius: 10, alignItems: "center" },
-  resultadoText: { color: ColorGlobal.ColoFontSuave, fontSize: 15, textAlign: "center" },
+  resultadoBox: {
+    marginTop: 14,
+    padding: 12,
+    backgroundColor: ColorGlobal.FundoBody,
+    borderRadius: 10,
+    alignItems: "center",
+  },
+  resultadoText: {
+    color: ColorGlobal.ColoFontSuave,
+    fontSize: 15,
+    textAlign: "center",
+  },
   valor: { color: ColorGlobal.AzulEscuro, fontWeight: "700" },
   bottomBox: { marginTop: 24, alignItems: "center" },
   titleCriar: { fontSize: 16, color: ColorGlobal.ColoFontSuave, marginBottom: 8 },
-  btnCriar: { backgroundColor: ColorGlobal.AzulNormal, paddingHorizontal: 28, paddingVertical: 10, borderRadius: 10 },
+  btnCriar: {
+    backgroundColor: ColorGlobal.AzulNormal,
+    paddingHorizontal: 28,
+    paddingVertical: 10,
+    borderRadius: 10,
+  },
   btnCriarText: { color: "#fff", fontWeight: "700" },
 });
