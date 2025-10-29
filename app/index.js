@@ -1,25 +1,12 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-// import { useNavigation } from '@react-navigation/native';
+
 import { StatusBar, Image, Text } from 'react-native'
 import { styles } from '../src/Screens/StartConfigInitial/StartConfigInitialStyle'
 import { LinearGradient } from 'expo-linear-gradient';
 import { ColorGlobal } from '../src/paletaColor/ColorGlobal';
 export default function StartConfigInitial() {
-  // const navigation = useNavigation();
-
-  // const handleFinalizarConfig = async () => {
-  //   try {
-  //     // Salva flag de que o usuário já configurou
-  //     await AsyncStorage.setItem('configInicial', 'true');
-
-  //     // Redireciona para Home
-  //     navigation.navigate('Home');
-  //   } catch (error) {
-  //     console.error('Erro ao salvar configuração:', error);
-  //   }
-  // };
 
   return (
    <View style={styles.container}>
