@@ -1,5 +1,6 @@
 // PlanejamentoMensal.jsx
 import React, { useRef, useState, useEffect } from "react";
+import { StatusBar } from "expo-status-bar";
 import {
   View,
   Text,
@@ -219,6 +220,7 @@ export default function PlanejamentoMensal() {
           <Text style={styles.btnCriarText}>Criar</Text>
         </TouchableOpacity>
       </View>
+      <StatusBar style="auto" />
     </View>
   );
 }
@@ -240,7 +242,7 @@ const styles = StyleSheet.create({
   },
   btnText: { color: "#fff", fontSize: 15, fontWeight: "600" },
   calendarWrap: { width: "100%", marginBottom: 10, paddingHorizontal: 16 },
-  calendar: { width: "100%", borderRadius: 10, backgroundColor: ColorGlobal.FundoCards },
+  calendar: { width: "100%", borderRadius: 10, backgroundColor: ColorGlobal.LaranjaEscuro },
   card: {
     width: "92%",
     backgroundColor: ColorGlobal.FundoCards,
