@@ -6,7 +6,7 @@ import { StatusBar, Image, Text } from 'react-native'
 import { styles } from '../src/Screens/StartConfigInitial/StartConfigInitialStyle'
 import { LinearGradient } from 'expo-linear-gradient';
 import { ColorGlobal } from '../src/paletaColor/ColorGlobal';
-
+import { Link } from 'expo-router';
 export default function StartConfigInitial() {
   // const navigation = useNavigation();
 
@@ -40,15 +40,16 @@ export default function StartConfigInitial() {
       </View>
 
       <View style={styles.boxLogin}>
-        <LinearGradient
-          colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoBtnGradient]}
-          start={{ x: 1, y: 0.5 }}
-          end={{ x: 0, y: 0.5 }}
-          style={styles.btnGradient}
-        >
-          <TouchableOpacity><Text style={styles.textBtn}>Criar uma conta</Text></TouchableOpacity>
-        </LinearGradient>
-
+        <Link href="/(auth)/Login">
+          <LinearGradient
+            colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoBtnGradient]}
+            start={{ x: 1, y: 0.5 }}
+            end={{ x: 0, y: 0.5 }}
+            style={styles.btnGradient}
+          >
+            <TouchableOpacity><Text style={styles.textBtn}>Criar uma conta</Text></TouchableOpacity>
+          </LinearGradient>
+        </Link>
         <View style={styles.boxTextsLogin}>
           <Text style={styles.textLogin}>Já tem uma conta? </Text>
           <TouchableOpacity><Text style={styles.textFazerLogin}>Fazer login</Text></TouchableOpacity>
