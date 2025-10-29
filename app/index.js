@@ -6,7 +6,6 @@ import { StatusBar, Image, Text } from 'react-native'
 import { styles } from '../src/Screens/StartConfigInitial/StartConfigInitialStyle'
 import { LinearGradient } from 'expo-linear-gradient';
 import { ColorGlobal } from '../src/paletaColor/ColorGlobal';
-import { Link } from 'expo-router';
 export default function StartConfigInitial() {
   // const navigation = useNavigation();
 
@@ -40,7 +39,7 @@ export default function StartConfigInitial() {
       </View>
 
       <View style={styles.boxLogin}>
-        <Link href="/(auth)/Login">
+        
           <LinearGradient
             colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoBtnGradient]}
             start={{ x: 1, y: 0.5 }}
