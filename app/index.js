@@ -6,6 +6,7 @@ import { StatusBar, Image, Text } from 'react-native'
 import { styles } from '../src/Screens/StartConfigInitial/StartConfigInitialStyle'
 import { LinearGradient } from 'expo-linear-gradient';
 import { ColorGlobal } from '../src/paletaColor/ColorGlobal';
+import { Link } from 'expo-router';
 export default function StartConfigInitial() {
 
   return (
@@ -33,6 +34,7 @@ export default function StartConfigInitial() {
             end={{ x: 0, y: 0.5 }}
             style={styles.btnGradient}
           >
+            
             <TouchableOpacity><Text style={styles.textBtn}>Criar uma conta</Text></TouchableOpacity>
           </LinearGradient>
         
