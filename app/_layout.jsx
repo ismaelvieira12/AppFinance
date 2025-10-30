@@ -8,11 +8,11 @@ export default function Layout() {
     <>
         <Stack>
             <Stack.Screen 
+                name="login"
                 options={{ headerShown: false }} 
             />
         </Stack>
-        <Link href="/index" />
-        
+
     </>
   );
 }
