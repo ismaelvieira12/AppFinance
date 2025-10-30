@@ -34,7 +34,7 @@ export default function StartConfigInitial() {
             end={{ x: 0, y: 0.5 }}
             style={styles.btnGradient}
           >
-            <Link href="/Wellcome">
+            <Link href={'/auth'}>
               <TouchableOpacity><Text style={styles.textBtn}>Criar uma conta</Text></TouchableOpacity>
             </Link>
           </LinearGradient>
