@@ -34,9 +34,9 @@ export default function StartConfigInitial() {
             end={{ x: 0, y: 0.5 }}
             style={styles.btnGradient}
           >
-            
+            <Link href={"/(auth)/Register"} style={styles.linkBtn}>
               <TouchableOpacity><Text style={styles.textBtn}>Criar uma conta</Text></TouchableOpacity>
-        
+            
           </LinearGradient>
         
         <View style={styles.boxTextsLogin}>
