@@ -9,7 +9,7 @@ import { ColorGlobal } from '../../paletaColor/ColorGlobal';
 export const BackBtn = () => {
     const navigation = useNavigation();
   return (
-    <TouchableOpacity style={styles.backBtn} onPress={() => navigation.navigate('')}>
+    <TouchableOpacity style={styles.backBtn} onPress={() => navigation.navigate('index')}>
         <Entypo name="chevron-left" size={32} color={ColorGlobal.AzulMaisClaro} />
     </TouchableOpacity>
   )
