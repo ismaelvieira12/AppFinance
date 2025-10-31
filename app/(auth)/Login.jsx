@@ -15,7 +15,7 @@ import React from 'react';
   import { LinearGradient } from 'expo-linear-gradient';
   import { styles } from '../../src/Screens/login/ScreenLoginStyle';
   import { ColorGlobal } from '../../src/paletaColor/ColorGlobal'; 
-  import { useNavigation } from '@react-navigation/native';
+//   import { useNavigation } from '@react-navigation/native';
   import { BackBtn } from '../../src/components/botaoBack/BackBtn.jsx';
 
 export default function Login ()  {
