@@ -17,7 +17,7 @@ import { ColorGlobal } from '../../src/paletaColor/ColorGlobal';
 
 import { BackBtn } from '../../src/components/botaoBack/BackBtn';
 
-export const ScreenRegister = () => {
+export default function Register ()  {
 
   return (
     <KeyboardAvoidingView
