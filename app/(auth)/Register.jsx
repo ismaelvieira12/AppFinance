@@ -38,7 +38,7 @@ export const ScreenRegister = () => {
           {/* Imagem */}
           <View style={styles.boxImg}>
             <Image
-              source={require('../../../assets/register.png')}
+              source={require('../../assets/imgs/register.png')}
               style={styles.img}
             />
           </View>
