@@ -15,7 +15,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from '../../src/Screens/register/ScreenRegisterStyle';
 import { ColorGlobal } from '../../src/paletaColor/ColorGlobal';
 
-import { BackBtn } from '../../components/botaoBack/BackBtn';
+import { BackBtn } from '../../src/components/botaoBack/BackBtn';
 
 export const ScreenRegister = () => {
 
