@@ -41,7 +41,7 @@ export default function StartConfigInitial() {
         
         <View style={styles.boxTextsLogin}>
           <Text style={styles.textLogin}>Já tem uma conta? </Text>
-          <Link href={"(auth)/Login"} style={styles.linkBtn}>
+          <Link href={"/(auth)/Login"} style={styles.linkBtn}>
             <TouchableOpacity><Text style={styles.textFazerLogin}>Fazer login</Text></TouchableOpacity>
           </Link>
         </View>
