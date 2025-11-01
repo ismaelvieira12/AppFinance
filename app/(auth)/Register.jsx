@@ -38,7 +38,7 @@
 //           {/* Imagem */}
 //           <View style={styles.boxImg}>
 //             <Image
-//               source={require('../../../assets/imgs/perfilRegister.png')}
+//               source={require('../../../assets/register.png')}
 //               style={styles.img}
 //             />
 //           </View>
@@ -83,7 +83,7 @@
 //               }}
 //             >
 //               <Text style={{ fontSize: 16 }}>Já possui uma conta? </Text>
-//               <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+//               <TouchableOpacity>
 //                 <Text
 //                   style={{
 //                     color: ColorGlobal.AzulMaisClaro,
