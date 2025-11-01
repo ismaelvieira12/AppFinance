@@ -14,11 +14,10 @@
 // import { LinearGradient } from 'expo-linear-gradient';
 // import { styles } from './ScreenRegisterStyle';
 // import { ColorGlobal } from '../../paletaColor/ColorGlobal';
-// import { useNavigation } from '@react-navigation/native';
+
 // import { BackBtn } from '../../components/botaoBack/BackBtn';
 
 // export const ScreenRegister = () => {
-//   const navigation = useNavigation();
 
 //   return (
 //     <KeyboardAvoidingView
