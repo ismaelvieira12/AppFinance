@@ -12,8 +12,8 @@ import {
   StatusBar,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { styles } from './ScreenRegisterStyle';
-import { ColorGlobal } from '../../paletaColor/ColorGlobal';
+import { styles } from '../../src/Screens/register/ScreenRegisterStyle';
+import { ColorGlobal } from '../../src/paletaColor/ColorGlobal';
 
 import { BackBtn } from '../../components/botaoBack/BackBtn';
 
