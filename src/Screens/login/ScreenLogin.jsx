@@ -16,7 +16,7 @@ import React from 'react';
   import { styles } from './ScreenLoginStyle.js';
   import { ColorGlobal } from '../../paletaColor/ColorGlobal.js'; 
   import { useNavigation } from '@react-navigation/native';
-  import { BackBtn } from '../../src/components/botaoBack/BackBtn.jsx';
+  import { BackBtn } from '../../components/botaoBack/BackBtn.jsx';
 
 export default function Login ()  {
     const navigation = useNavigation();
@@ -32,7 +32,7 @@ export default function Login ()  {
 
               <View style={styles.boxImg}>
                 <ImageBackground
-                  source={require('../../assets/imgs/segunda_foto_perfil.png')}
+                  source={require('../../../assets/imgs/segunda_foto_perfil.png')}
                   style={styles.img}
                 />
               </View>

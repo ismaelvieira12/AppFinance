@@ -1,7 +1,6 @@
 import React from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import {Waves} from "../../components/onda/Waves.jsx";
 import { BackBtn } from '../../components/botaoBack/BackBtn';
 
 
@@ -16,7 +15,6 @@ export default function LoginScreen() {
         <TextInput placeholder="Email" style={styles.input} placeholderTextColor="#ccc" />
         <TextInput placeholder="Senha" secureTextEntry style={styles.input} placeholderTextColor="#ccc" />
       </View>
-        <Waves />
 
       {/* Ondas no rodapé */}
       <View style={{ position: "absolute", bottom: 0, width: "100%" }}> 
