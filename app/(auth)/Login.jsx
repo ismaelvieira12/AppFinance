@@ -60,7 +60,7 @@ export default function Login ()  {
                   {/* Texto abaixo */}
                   <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
                     <Text style={{fontSize: 16}}>Ainda não possui uma conta? </Text>
-                    <TouchableOpacity onPress={() => navigation.navigate('Register')} >
+                    <TouchableOpacity >
                       <Text style={{ color: ColorGlobal.AzulMaisClaro, fontWeight: 'bold',fontSize: 16 }}>
                         Cadastre-se
                       </Text>

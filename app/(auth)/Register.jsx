@@ -10,9 +10,9 @@ import {
   Platform,
   StatusBar,
 } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { styles } from '../../src/Screens/register/ScreenRegisterStyle';
-import { ColorGlobal } from '../../src/paletaColor/ColorGlobal';
+// import { LinearGradient } from 'expo-linear-gradient';
+// import { styles } from '../../src/Screens/register/ScreenRegisterStyle';
+// import { ColorGlobal } from '../../src/paletaColor/ColorGlobal';
 
 // import { BackBtn } from '../../src/components/botaoBack/BackBtn';
 import React from 'react'
