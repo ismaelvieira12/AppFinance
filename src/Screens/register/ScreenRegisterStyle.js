@@ -44,5 +44,8 @@ export const styles = StyleSheet.create({
         color: ColorGlobal.FundoCards,
         fontSize: 20,
         fontWeight: 'bold',
+    },
+    teste: {
+        backgroundColor: 'red',
     }  
 })
