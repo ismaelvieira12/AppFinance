@@ -11,7 +11,7 @@ import { ActivityIndicator, View } from 'react-native';
 import { Wellcome } from './src/Screens/Wellcome/Wellcome.jsx';
 import  MetasScreen  from './src/Screens/MetasScreen/MetasScreen.jsx';
 import { StartConfigInitial } from './src/Screens/StartConfigInitial/StartConfigInitial.jsx';
-import { ScreenLogin } from './src/Screens/login/ScreenLogin.jsx';
+import  ScreenLogin  from './src/Screens/login/ScreenLogin.jsx';
 import { ScreenRegister } from './src/Screens/register/ScreenRegister.jsx';
 
 const Drawer = createDrawerNavigator();

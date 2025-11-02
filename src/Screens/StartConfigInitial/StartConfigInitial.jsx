@@ -3,7 +3,7 @@ import { View, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar, Image, Text } from 'react-native'
-import { styles } from '../../..'
+import { styles } from '../../Screens/StartConfigInitial/StartConfigInitialStyle';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ColorGlobal } from '../../paletaColor/ColorGlobal';
 
