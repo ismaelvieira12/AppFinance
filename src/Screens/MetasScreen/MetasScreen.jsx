@@ -9,7 +9,7 @@ export default function MetasScreen () {
     <ScrollView style={styles.container}>
         <BackBtn />
         <View style={styles.box1}>
-            <Text>METAS</Text>
+            <Text style={styles.text}>METAS</Text>
         </View>
     </ScrollView>
   );
@@ -20,6 +20,9 @@ const styles = StyleSheet.create({
  box1: {
     backgroundColor: "red",
     height: 200,
-
+ },
+ text: {
+    fontSize: 40,
+    color: #fff
  }
 });
