@@ -16,10 +16,10 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center" },
+  container: { flex: 1, justifyContent: "center", backgroundColor: "#000" },
  box1: {
     backgroundColor: "red",
     height: 200,
-    
+
  }
 });
