@@ -8,7 +8,9 @@ export default function LoginScreen() {
   return (
     <ScrollView style={styles.container}>
         <BackBtn />
-        <View
+        <View>
+            
+        </View>
     </ScrollView>
   );
 }
