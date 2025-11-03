@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
  },
  text: {
     fontSize: 40,
-    color: #fff
+    color: "#fff",
+    fontWeight: "bold",
  }
 });
