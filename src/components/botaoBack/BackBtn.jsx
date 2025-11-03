@@ -1,18 +1,17 @@
 
 import React from 'react'
-import { TouchableOpacity, ScrollView } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { ColorGlobal } from '../../paletaColor/ColorGlobal';
-import { View } from 'react-native-web';
 
 
 export const BackBtn = () => {
     const navigation = useNavigation();
   return (
-    <ScrollView>
-      <View style={styles.box1}
-    </ScrollView>
+    <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+        <Entypo name="chevron-left" size={32} color={ColorGlobal.AzulMaisClaro} />
+    </TouchableOpacity>
   )
 }
 
@@ -23,7 +22,4 @@ const styles = {
         left: 20,
         zIndex: 10,
     },
-    box1: {
-      
-    }
 };
