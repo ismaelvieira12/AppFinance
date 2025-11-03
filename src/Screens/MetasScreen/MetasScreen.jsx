@@ -1,25 +1,15 @@
 import React from "react";
-import { View, TextInput, StyleSheet } from "react-native";
+import { View, TextInput, StyleSheet, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { BackBtn } from '../../components/botaoBack/BackBtn';
 
 
 export default function LoginScreen() {
   return (
-    <LinearGradient
-      colors={["#0A1D3F", "#102A5C"]}
-      style={styles.container}
-    >
-      <BackBtn />
-      <View style={styles.form}>
-        <TextInput placeholder="Email" style={styles.input} placeholderTextColor="#ccc" />
-        <TextInput placeholder="Senha" secureTextEntry style={styles.input} placeholderTextColor="#ccc" />
-      </View>
-
-      {/* Ondas no rodapé */}
-      <View style={{ position: "absolute", bottom: 0, width: "100%" }}> 
-      </View>    
-    </LinearGradient>
+    <ScrollView style={styles.container}>
+        <BackBtn />
+        <View
+    </ScrollView>
   );
 }
 
