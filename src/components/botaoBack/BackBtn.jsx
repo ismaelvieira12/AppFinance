@@ -25,6 +25,10 @@ const styles = {
         left: 20,
         zIndex: 10,
     },
+    container: {
+        flex: 1,
+        backgroundColor: 
+    },
     box1: {
       
     }
