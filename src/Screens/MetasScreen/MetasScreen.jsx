@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { BackBtn } from '../../components/botaoBack/BackBtn';
 
 
-export default function LoginScreen() {
+export default function MetasScreen () {
   return (
     <ScrollView style={styles.container}>
         <BackBtn />
