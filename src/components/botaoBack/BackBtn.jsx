@@ -10,10 +10,8 @@ import { View } from 'react-native-web';
 export const BackBtn = () => {
     const navigation = useNavigation();
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.box1}>
-        <Text>METAS</Text>
-      </View>
+    <ScrollView>
+      <View style={styles.box1}
     </ScrollView>
   )
 }
@@ -24,10 +22,6 @@ const styles = {
         top: 40,
         left: 20,
         zIndex: 10,
-    },
-    container: {
-        flex: 1,
-        backgroundColor: 
     },
     box1: {
       
