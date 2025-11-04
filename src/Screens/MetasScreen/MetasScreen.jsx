@@ -1,14 +1,30 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  FlatList,
+} from "react-native" ;
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { styles } from "./MetasScreenStyle";
+
 export default function MetasScreen() {
   const [descricao, setDescricao] = useState("");
   const [valor, setValor] = useState("");
-  const [tipo, setTipo] = useState("receita"); // "receita" ou "despesa"
+  const [tipo, setTipo] = useState("receita");
   const [transacoes, setTransacoes] = useState([]);
 
+  const handleValorChange = (text) => {
+    // Permite apenas números e ponto (para casas decimais)
+    const numeroValido = text.replace(/[^0-9.,]/g, "");
+
+    // Substitui vírgula por ponto para facilitar o parseFloat
+    setValor(numeroValido.replace(",", "."));
+  };
+
   const adicionarTransacao = () => {
-    if (!descricao || !valor) return;
+    if (!descricao || !valor || isNaN(valor)) return;
 
     const nova = {
       id: Date.now().toString(),
@@ -24,11 +40,13 @@ export default function MetasScreen() {
 
   const calcularSaldo = () => {
     const receitas = transacoes
-      .filter(t => t.tipo === "receita")
+      .filter((t) => t.tipo === "receita")
       .reduce((acc, t) => acc + t.valor, 0);
+
     const despesas = transacoes
-      .filter(t => t.tipo === "despesa")
+      .filter((t) => t.tipo === "despesa")
       .reduce((acc, t) => acc + t.valor, 0);
+
     return receitas - despesas;
   };
 
@@ -50,10 +68,11 @@ export default function MetasScreen() {
         onChangeText={setDescricao}
         style={styles.input}
       />
+
       <TextInput
         placeholder="Valor"
         value={valor}
-        onChangeText={setValor}
+        onChangeText={handleValorChange}
         keyboardType="numeric"
         style={styles.input}
       />
@@ -81,13 +100,16 @@ export default function MetasScreen() {
       {/* Lista */}
       <FlatList
         data={transacoes}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
         style={{ marginTop: 20 }}
         renderItem={({ item }) => (
           <View
             style={[
               styles.item,
-              { borderLeftColor: item.tipo === "receita" ? "#4CAF50" : "#E53935" },
+              {
+                borderLeftColor:
+                  item.tipo === "receita" ? "#4CAF50" : "#E53935",
+              },
             ]}
           >
             <Text style={styles.desc}>{item.descricao}</Text>
@@ -97,7 +119,8 @@ export default function MetasScreen() {
                 { color: item.tipo === "receita" ? "#4CAF50" : "#E53935" },
               ]}
             >
-              {item.tipo === "despesa" ? "-" : "+"} R$ {item.valor.toFixed(2).replace(".", ",")}
+              {item.tipo === "despesa" ? "-" : "+"} R${" "}
+              {item.valor.toFixed(2).replace(".", ",")}
             </Text>
           </View>
         )}
@@ -105,4 +128,3 @@ export default function MetasScreen() {
     </View>
   );
 }
-
