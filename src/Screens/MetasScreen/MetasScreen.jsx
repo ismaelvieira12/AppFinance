@@ -1,4 +1,5 @@
 import { View, Text, ScrollView } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
 
 
@@ -11,7 +12,7 @@ export default function MetasScreen() {
   )
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     backgrounfColor: '#FA4000',
     justifyContent: 'center',
@@ -19,4 +20,4 @@ const styles = {
     height: 300,
     weidth: 300,
   },
-}
+} )
