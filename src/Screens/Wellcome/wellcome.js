@@ -60,7 +60,7 @@ export const styles = StyleSheet.create({
     },
 
     gradientOrganization: {
-        width: '80%',
+        width: '90%',
         height: 100,
         borderRadius: 20,
         marginTop: 20,
