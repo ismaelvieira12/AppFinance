@@ -34,14 +34,16 @@ export const styles = StyleSheet.create({
         borderRadius: 12,
         padding: 15,
         justifyContent: 'center',
+        
         shadowColor: '#000',
         shadowOpacity: 0.1,
         shadowRadius: 4,
         elevation: 3,
-        width:"80%"
+        width:"90%"
     },
     chartContainer: {
-        margin: 'auto',
+        width: '100%',
+
         overflow: 'hidden', // 👈 evita o gráfico ultrapassar
     },
     textSaldo: {
