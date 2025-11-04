@@ -16,7 +16,7 @@ const styles = {
     backgrounfColor: '#FA4000',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 300',
+    height: 300,
     weidth: 300,
   },
 }
