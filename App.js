@@ -39,7 +39,7 @@ export default function App() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ActivityIndicator size="large" color="#037df0" />
-      </View>
+      </View>   
     );
   }
 
