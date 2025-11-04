@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
   FlatList,
-} from "react-native" ;
+  Alert,
+} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { styles } from "./MetasScreenStyle";
 
@@ -15,16 +16,41 @@ export default function MetasScreen() {
   const [tipo, setTipo] = useState("receita");
   const [transacoes, setTransacoes] = useState([]);
 
-  const handleValorChange = (text) => {
-    // Permite apenas números e ponto (para casas decimais)
-    const numeroValido = text.replace(/[^0-9.,]/g, "");
+  // 🔹 Carrega as transações ao abrir a tela
+  useEffect(() => {
+    const carregarDados = async () => {
+      try {
+        const dados = await AsyncStorage.getItem("@transacoes");
+        if (dados) setTransacoes(JSON.parse(dados));
+      } catch (error) {
+        console.log("Erro ao carregar dados:", error);
+      }
+    };
+    carregarDados();
+  }, []);
 
-    // Substitui vírgula por ponto para facilitar o parseFloat
+  // 🔹 Salva as transações sempre que houver mudança
+  useEffect(() => {
+    const salvarDados = async () => {
+      try {
+        await AsyncStorage.setItem("@transacoes", JSON.stringify(transacoes));
+      } catch (error) {
+        console.log("Erro ao salvar dados:", error);
+      }
+    };
+    salvarDados();
+  }, [transacoes]);
+
+  const handleValorChange = (text) => {
+    const numeroValido = text.replace(/[^0-9.,]/g, "");
     setValor(numeroValido.replace(",", "."));
   };
 
   const adicionarTransacao = () => {
-    if (!descricao || !valor || isNaN(valor)) return;
+    if (!descricao || !valor || isNaN(valor)) {
+      Alert.alert("Erro", "Preencha todos os campos corretamente!");
+      return;
+    }
 
     const nova = {
       id: Date.now().toString(),
@@ -48,6 +74,19 @@ export default function MetasScreen() {
       .reduce((acc, t) => acc + t.valor, 0);
 
     return receitas - despesas;
+  };
+
+  const limparTudo = async () => {
+    Alert.alert("Limpar tudo?", "Isso apagará todas as transações!", [
+      { text: "Cancelar", style: "cancel" },
+      {
+        text: "Apagar",
+        onPress: async () => {
+          await AsyncStorage.removeItem("@transacoes");
+          setTransacoes([]);
+        },
+      },
+    ]);
   };
 
   return (
@@ -95,6 +134,13 @@ export default function MetasScreen() {
 
       <TouchableOpacity style={styles.btnAdd} onPress={adicionarTransacao}>
         <Text style={styles.btnAddText}>Adicionar</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[styles.btnAdd, { backgroundColor: "#E53935", marginTop: 10 }]}
+        onPress={limparTudo}
+      >
+        <Text style={styles.btnAddText}>🗑️ Limpar Tudo</Text>
       </TouchableOpacity>
 
       {/* Lista */}
