@@ -80,7 +80,7 @@ export const Wellcome = () => {
     <View style={styles.container}>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 40 }}
+        contentContainerStyle={{ paddingBottom: 40, alignItems: 'center' }}
       >
         <LinearGradient style={styles.efeitoTrow} colors={['#fad348de', '#ff6f00e4']} />
 
@@ -114,7 +114,8 @@ export const Wellcome = () => {
           <View style={styles.chartContainer}>
             <BarChart
               data={barData}
-              
+              height={200}
+              width={200}
               barWidth={40}
               spacing={50}
               yAxisThickness={0}
