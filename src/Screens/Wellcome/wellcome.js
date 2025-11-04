@@ -41,10 +41,7 @@ export const styles = StyleSheet.create({
         width:"80%"
     },
     chartContainer: {
-        marginTop: 10,
-        alignItems: 'center',
-        justifyContent: 'center',
-        // width: '100%',
+        margin: 'auto',
         overflow: 'hidden', // 👈 evita o gráfico ultrapassar
     },
     textSaldo: {

@@ -114,12 +114,11 @@ export const Wellcome = () => {
           <View style={styles.chartContainer}>
             <BarChart
               data={barData}
-              height={180}
+              
               barWidth={40}
               spacing={50}
               yAxisThickness={0}
               xAxisThickness={0}
-              width={300}
               hideYAxisText
               hideRules
               initialSpacing={0}
