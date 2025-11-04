@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function MetasScreen() {
   return (
-    <View>
+    <ScrollView>
       <Text>MetasScreen</Text>
-    </View>
+    </ScrollView>
   )
 }
