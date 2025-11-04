@@ -9,7 +9,7 @@ export default function MetasScreen () {
     <ScrollView style={styles.container}>
         <BackBtn />
         <View style={styles.box1}>
-            <Text style={styles.text}>METAS</Text>
+            <Text style={styles.text}>TESTE</Text>
         </View>
     </ScrollView>
   );
