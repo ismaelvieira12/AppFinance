@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     },
     headerGradient: {
        width: '100%',
-       height: "15%",
+       height: "13%",
        padding: 20,
        borderBottomLeftRadius: 85,
        borderBottomRightRadius: 85,
