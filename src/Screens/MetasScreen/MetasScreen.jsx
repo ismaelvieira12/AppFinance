@@ -82,8 +82,27 @@ export default function MetasScreen() {
       {
         text: "Apagar",
         onPress: async () => {
-          await AsyncStorage.removeItem("@transacoes");
-          setTransacoes([]);
+          try {
+            // Remove os dados do AsyncStorage
+            await AsyncStorage.removeItem("@transacoes");
+
+            // Limpa o estado imediatamente
+            setTransacoes([]);
+
+            // Confirma se o AsyncStorage foi limpo
+            const dadosVerificados = await AsyncStorage.getItem("@transacoes");
+            if (dadosVerificados === null) {
+              Alert.alert("Sucesso", "Todas as transações foram apagadas!");
+            } else {
+              Alert.alert(
+                "Atenção",
+                "Ocorreu um problema ao limpar as transações. Tente novamente."
+              );
+            }
+          } catch (error) {
+            console.log("Erro ao limpar dados:", error);
+            Alert.alert("Erro", "Não foi possível apagar as transações.");
+          }
         },
       },
     ]);
