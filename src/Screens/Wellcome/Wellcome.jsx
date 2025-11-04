@@ -16,24 +16,40 @@ export const Wellcome = () => {
   const navigation = useNavigation();
   const isDrawerOpen = useDrawerStatus() === 'open';
   const [statusBarStyle, setStatusBarStyle] = useState('light');
-  const [dados, setDados] = useState({ receita: 0, despesa: 0 });
+  const [receitaTotal, setReceitaTotal] = useState(0);
+  const [despesaTotal, setDespesaTotal] = useState(0);
 
-  // 🔹 Carrega dados salvos
+  // 🔹 Carrega dados salvos da tela Metas
   const carregarDados = async () => {
     try {
-      const json = await AsyncStorage.getItem('dadosFinanceiros');
-      if (json) {
-        const data = JSON.parse(json);
-        setDados(data);
+      const dados = await AsyncStorage.getItem('@transacoes');
+      if (dados) {
+        const lista = JSON.parse(dados);
+
+        const receitas = lista
+          .filter(t => t.tipo === 'receita')
+          .reduce((acc, t) => acc + t.valor, 0);
+
+        const despesas = lista
+          .filter(t => t.tipo === 'despesa')
+          .reduce((acc, t) => acc + t.valor, 0);
+
+        setReceitaTotal(receitas);
+        setDespesaTotal(despesas);
       }
     } catch (error) {
-      console.log('Erro ao carregar dados:', error);
+      console.log('Erro ao carregar transações:', error);
     }
   };
 
   useEffect(() => {
     carregarDados();
   }, []);
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', carregarDados);
+    return unsubscribe;
+  }, [navigation]);
 
   useEffect(() => {
     setStatusBarStyle(isDrawerOpen ? 'dark' : 'light');
@@ -44,12 +60,11 @@ export const Wellcome = () => {
     navigation.openDrawer();
   };
 
-  const saldoTotal = dados.receita - dados.despesa;
+  const saldoTotal = receitaTotal - despesaTotal;
 
-  // Gráfico com base nos dados
   const barData = [
-    { value: dados.receita, label: 'Receita', frontColor: '#177AD5' },
-    { value: -dados.despesa, label: 'Despesa', frontColor: '#FEC601' },
+    { value: receitaTotal, label: 'Receita', frontColor: '#177AD5' },
+    { value: -despesaTotal, label: 'Despesa', frontColor: '#FEC601' },
   ];
 
   let [fontsLoaded] = useFonts({
@@ -93,7 +108,7 @@ export const Wellcome = () => {
         <View style={styles.containerGrafico}>
           <View>
             <Text style={styles.textSaldo}>Seu saldo total</Text>
-            <Text style={styles.valueSaldo}>R$: {saldoTotal.toFixed(2)}</Text>
+            <Text style={styles.valueSaldo}>R$ {saldoTotal.toFixed(2).replace('.', ',')}</Text>
           </View>
 
           <View style={styles.chartContainer}>
