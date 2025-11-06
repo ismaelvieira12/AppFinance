@@ -3,7 +3,7 @@ import { ColorGlobal } from "../../paletaColor/ColorGlobal";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: ColorGlobal.FundoBody,
+    backgroundColor: ColorGlobal.TesteColor,
     padding: 20,
   },
   titulo: {
