@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { styles } from "./MetasScreenStyle";
+import { MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
 
 export default function MetasScreen() {
   const [descricao, setDescricao] = useState("");
@@ -113,10 +114,13 @@ export default function MetasScreen() {
       <Text style={styles.titulo}>💰 Livro diário</Text>
 
       <View style={styles.boxSaldo}>
-        <Text style={styles.label}>Saldo Atual:</Text>
-        <Text style={styles.saldo}>
-          R$ {calcularSaldo().toFixed(2).replace(".", ",")}
-        </Text>
+        <View>
+          <Text style={styles.label}>Saldo Atual:</Text>
+          <Text style={styles.saldo}>
+            R$ {calcularSaldo().toFixed(2).replace(".", ",")}
+          </Text>
+        </View>
+        <MaterialCommunityIcons name="chart-line" size={40} color="#4CAF50" />
       </View>
 
       {/* Inputs */}
