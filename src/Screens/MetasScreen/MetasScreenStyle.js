@@ -62,7 +62,7 @@ export const styles = StyleSheet.create({
   item: {
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: "#fff",
+    backgroundColor: ColorGlobal.FundoCards,
     padding: 12,
     borderRadius: 8,
     marginBottom: 10,
