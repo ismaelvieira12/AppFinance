@@ -19,6 +19,8 @@ export const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 15,
     marginBottom: 20,
+  
+    justifyContent: "space-around"
   },
   label: { color: ColorGlobal.FundoCards, fontSize: 16 },
   saldo: { color: ColorGlobal.FundoCards, fontSize: 26, fontWeight: "bold" },
