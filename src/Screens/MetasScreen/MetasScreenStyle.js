@@ -68,6 +68,6 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
     borderLeftWidth: 6,
   },
-  desc: { fontSize: 16, color: "#333" },
+  desc: { fontSize: 16, color: ColorGlobal.descTask },
   valor: { fontSize: 16, fontWeight: "bold" },
 });
