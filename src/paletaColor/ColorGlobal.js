@@ -20,4 +20,6 @@ export const ColorGlobal = {
     corBtnMetasReceitaNormal: "#102A5C",
     btnSelecionado: "#1C3C8D",
     btnAdd: "#4CAF50",
+    // Description das tasks
+    descTask: "#333",
 };
