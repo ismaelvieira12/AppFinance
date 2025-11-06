@@ -42,10 +42,10 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   btnSelecionado: {
-    backgroundColor: "#1C3C8D",
+    backgroundColor: ColorGlobal.btnSelecionado,
   },
   textBtn: {
-    color: "#fff",
+    color: ColorGlobal.FundoCards,
     fontWeight: "bold",
   },
   btnAdd: {

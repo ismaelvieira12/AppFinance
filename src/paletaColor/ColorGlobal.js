@@ -17,4 +17,5 @@ export const ColorGlobal = {
     TesteColor: "#F5F5FC",
 
     corBtnMetasReceitaNormal: "#102A5C",
+    btnSelecionado: "#1C3C8D",
 };
