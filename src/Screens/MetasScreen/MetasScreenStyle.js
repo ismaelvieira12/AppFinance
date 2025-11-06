@@ -55,7 +55,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   btnAddText: {
-    color: "#fff",
+    color: ColorGlobal.FundoCards,
     fontWeight: "bold",
     fontSize: 16,
   },
