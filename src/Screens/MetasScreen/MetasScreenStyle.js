@@ -7,12 +7,12 @@ export const styles = StyleSheet.create({
     padding: 20,
   },
   titulo: {
-    fontSize: 22,
+    fontSize: 25,
     fontWeight: "bold",
     color: ColorGlobal.AzulEscuro,
     marginTop: 20,
     marginBottom: 20,
-    textAlign: "center",
+    textAlign: "justify",
   },
   boxSaldo: {
     backgroundColor: "#102A5C",

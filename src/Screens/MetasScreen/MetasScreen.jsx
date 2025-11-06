@@ -110,7 +110,7 @@ export default function MetasScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>💰 Minhas Metas Financeiras</Text>
+      <Text style={styles.titulo}>💰 Livro diário</Text>
 
       <View style={styles.boxSaldo}>
         <Text style={styles.label}>Saldo Atual:</Text>
