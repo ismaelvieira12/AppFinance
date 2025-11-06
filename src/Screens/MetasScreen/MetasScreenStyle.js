@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
-import { g}
+import { ColorGlobal } from "../../paletaColor/ColorGlobal";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "",
+    backgroundColor: ColorGlobal.FundoBody,
     padding: 20,
   },
   titulo: {
