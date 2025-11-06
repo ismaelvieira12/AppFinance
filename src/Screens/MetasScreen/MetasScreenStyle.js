@@ -15,13 +15,13 @@ export const styles = StyleSheet.create({
     textAlign: "justify",
   },
   boxSaldo: {
-    backgroundColor: "#102A5C",
+    backgroundColor: ColorGlobal.AzulNormal,
     padding: 15,
     borderRadius: 15,
     marginBottom: 20,
   },
-  label: { color: "#aaa", fontSize: 16 },
-  saldo: { color: "#fff", fontSize: 26, fontWeight: "bold" },
+  label: { color: ColorGlobal.FundoCards, fontSize: 16 },
+  saldo: { color: ColorGlobal.FundoCards, fontSize: 26, fontWeight: "bold" },
   input: {
     backgroundColor: "#fff",
     padding: 10,
