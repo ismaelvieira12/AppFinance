@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   btnAdd: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: ColorGlobal.btnAdd,
     padding: 12,
     borderRadius: 10,
     alignItems: "center",

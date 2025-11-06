@@ -16,6 +16,8 @@ export const ColorGlobal = {
 
     TesteColor: "#F5F5FC",
 
+    // Cores BTNs da pagina de metas    
     corBtnMetasReceitaNormal: "#102A5C",
     btnSelecionado: "#1C3C8D",
+    btnAdd: "#4CAF50",
 };
