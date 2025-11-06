@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 15,
     marginBottom: 20,
-  
+    flexDirection: "row",
     justifyContent: "space-around"
   },
   label: { color: ColorGlobal.FundoCards, fontSize: 16 },
