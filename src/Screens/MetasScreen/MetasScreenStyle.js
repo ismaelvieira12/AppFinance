@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
   label: { color: ColorGlobal.FundoCards, fontSize: 16 },
   saldo: { color: ColorGlobal.FundoCards, fontSize: 26, fontWeight: "bold" },
   input: {
-    backgroundColor: "#fff",
+    backgroundColor: ColorGlobal.FundoCards,
     padding: 10,
     borderRadius: 10,
     marginBottom: 10,
