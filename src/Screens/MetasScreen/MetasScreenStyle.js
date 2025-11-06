@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     marginBottom: 15,
   },
   btnTipo: {
-    backgroundColor: "#102A5C",
+    backgroundColor: ColorGlobal.corBtnMetasReceitaNormal,
     padding: 10,
     borderRadius: 10,
     width: "40%",

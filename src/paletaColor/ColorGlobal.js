@@ -14,5 +14,7 @@ export const ColorGlobal = {
     ColoFontSuave: "#4d5c6aff",
     ColoBtnGradient: "#bed6edff",
 
-    TesteColor: "#F5F5FC"
+    TesteColor: "#F5F5FC",
+
+    corBtnMetasReceitaNormal: "#102A5C",
 };
