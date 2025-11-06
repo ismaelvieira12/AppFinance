@@ -9,7 +9,8 @@ export const styles = StyleSheet.create({
   titulo: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#fff",
+    color: ColorGlobal.AzulEscuro,
+    marginTop: 20,
     marginBottom: 20,
     textAlign: "center",
   },
