@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
   },
   tipoContainer: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     marginBottom: 15,
   },
   btnTipo: {
