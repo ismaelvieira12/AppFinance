@@ -114,7 +114,7 @@ export default function MetasScreen() {
       <Text style={styles.titulo}>💰 Livro diário</Text>
 
       <View style={styles.boxSaldo}>
-        <View>
+        <View style={{padding: 15,  }}>
           <Text style={styles.label}>Saldo Atual:</Text>
           <Text style={styles.saldo}>
             R$ {calcularSaldo().toFixed(2).replace(".", ",")}
