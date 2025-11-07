@@ -12,6 +12,7 @@ import MetasScreen from './src/Screens/MetasScreen/MetasScreen.jsx';
 import { StartConfigInitial } from './src/Screens/StartConfigInitial/StartConfigInitial.jsx';
 import ScreenLogin from './src/Screens/login/ScreenLogin.jsx';
 import { ScreenRegister } from './src/Screens/register/ScreenRegister.jsx';
+import { ColorGlobal } from './src/paletaColor/ColorGlobal.js';
 
 // Cria os navegadores
 const Drawer = createDrawerNavigator();
@@ -48,7 +49,7 @@ export default function App() {
   if (isConfigured === null) {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ActivityIndicator size="large" color="#037df0" />
+        <ActivityIndicator size="large" color={ColorGlobal.AzulNormal} />
       </View>
     );
   }
