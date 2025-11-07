@@ -120,7 +120,7 @@ export default function MetasScreen() {
             R$ {calcularSaldo().toFixed(2).replace(".", ",")}
           </Text>
         </View>
-        <MaterialCommunityIcons name="chart-line" size={40} color="#4CAF50" />
+        <MaterialCommunityIcons name="chart-line" size={40}  />
       </View>
 
       {/* Inputs */}
