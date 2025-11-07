@@ -8,7 +8,7 @@ import { ActivityIndicator, View } from 'react-native';
 
 
 // Suas telas
-import { Wellcome } from './src/Screens/Wellcome/Wellcome.jsx';
+
 import  MetasScreen  from './src/Screens/MetasScreen/MetasScreen.jsx';
 import { StartConfigInitial } from './src/Screens/StartConfigInitial/StartConfigInitial.jsx';
 import  ScreenLogin  from './src/Screens/login/ScreenLogin.jsx';
