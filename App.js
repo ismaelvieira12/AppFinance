@@ -1,27 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ActivityIndicator, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
-
-
-// Suas telas
+// Telas
 import { Wellcome } from './src/Screens/Wellcome/Wellcome.jsx';
-import  MetasScreen  from './src/Screens/MetasScreen/MetasScreen.jsx';
+import MetasScreen from './src/Screens/MetasScreen/MetasScreen.jsx';
 import { StartConfigInitial } from './src/Screens/StartConfigInitial/StartConfigInitial.jsx';
-import  ScreenLogin  from './src/Screens/login/ScreenLogin.jsx';
+import ScreenLogin from './src/Screens/login/ScreenLogin.jsx';
 import { ScreenRegister } from './src/Screens/register/ScreenRegister.jsx';
 
+// Cria os navegadores
 const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 
-// mudando a forma de navegação
+// Drawer com as telas principais do app
+function DrawerRoutes() {
+  return (
+    <Drawer.Navigator screenOptions={{ headerShown: false }}>
+      <Drawer.Screen name="Home" component={Wellcome} />
+      <Drawer.Screen name="Metas" component={MetasScreen} />
+    </Drawer.Navigator>
+  );
+}
+
 export default function App() {
-  const [isConfigured, setIsConfigured] = React.useState(null); // null = carregando
+  const [isConfigured, setIsConfigured] = useState(null);
 
-  // 1️⃣ Verifica se já existe configuração salva
-  React.useEffect(() => {
+  // Verifica se o usuário já fez a configuração inicial
+  useEffect(() => {
     const verificarConfiguracao = async () => {
       try {
         const valor = await AsyncStorage.getItem('configInicial');
@@ -34,32 +44,30 @@ export default function App() {
     verificarConfiguracao();
   }, []);
 
-  // 2️⃣ Exibe carregamento enquanto verifica
+  // Exibe loading enquanto verifica
   if (isConfigured === null) {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ActivityIndicator size="large" color="#037df0" />
-      </View>   
+      </View>
     );
   }
 
-  // 3️⃣ Define a tela inicial com base na configuração
-  const initialRoute = isConfigured ? 'Home' : 'StartConfigInitial';
-
   return (
     <NavigationContainer>
-      <Drawer.Navigator
-        initialRouteName={initialRoute}
-        screenOptions={{ headerShown: false }}
-      >
-        <Drawer.Screen name="Home" component={Wellcome} />
-        <Drawer.Screen name="Metas" component={MetasScreen} />
-        <Drawer.Screen name="StartConfigInitial" component={StartConfigInitial} />
-        <Drawer.Screen name='Login' component={ ScreenLogin } />
-        <Drawer.Screen name='Register' component={ ScreenRegister } />
-      </Drawer.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {/* Se ainda não configurou, vai pra tela inicial */}
+        {!isConfigured ? (
+          <Stack.Screen name="StartConfigInitial" component={StartConfigInitial} />
+        ) : (
+          <Stack.Screen name="Drawer" component={DrawerRoutes} />
+        )}
 
-       
+        {/* Telas fora do Drawer */}
+        <Stack.Screen name="Login" component={ScreenLogin} />
+        <Stack.Screen name="Register" component={ScreenRegister} />
+      </Stack.Navigator>
+
       <StatusBar style="auto" />
     </NavigationContainer>
   );
