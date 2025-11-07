@@ -8,7 +8,8 @@ import { ActivityIndicator, View } from 'react-native';
 
 
 // Suas telas
-
+import { Wellcome } from './src/Screens/Wellcome/Wellcome.jsx';
+import  MetasScreen  from './src/Screens/MetasScreen/MetasScreen.jsx';
 import { StartConfigInitial } from './src/Screens/StartConfigInitial/StartConfigInitial.jsx';
 import  ScreenLogin  from './src/Screens/login/ScreenLogin.jsx';
 import { ScreenRegister } from './src/Screens/register/ScreenRegister.jsx';
@@ -51,8 +52,8 @@ export default function App() {
         initialRouteName={initialRoute}
         screenOptions={{ headerShown: false }}
       >
-        
-        
+        <Drawer.Screen name="Home" component={Wellcome} />
+        <Drawer.Screen name="Metas" component={MetasScreen} />
         <Drawer.Screen name="StartConfigInitial" component={StartConfigInitial} />
         <Drawer.Screen name='Login' component={ ScreenLogin } />
         <Drawer.Screen name='Register' component={ ScreenRegister } />
