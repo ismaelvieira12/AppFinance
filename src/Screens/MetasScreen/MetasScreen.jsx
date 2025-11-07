@@ -10,6 +10,7 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { styles } from "./MetasScreenStyle";
 import { MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
+import { ColorGlobal } from "../../paletaColor/ColorGlobal";
 
 export default function MetasScreen() {
   const [descricao, setDescricao] = useState("");
@@ -120,7 +121,7 @@ export default function MetasScreen() {
             R$ {calcularSaldo().toFixed(2).replace(".", ",")}
           </Text>
         </View>
-        <MaterialCommunityIcons name="chart-line" size={40}  />
+        <MaterialCommunityIcons name="chart-line" size={40} color={ColorGlobal.FundoCards}  />
       </View>
 
       {/* Inputs */}
