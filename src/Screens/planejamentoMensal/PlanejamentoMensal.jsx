@@ -19,7 +19,7 @@ export const PlanejamentoScreen = () => {
         </Text>
       </TouchableOpacity>
 
-      
+      {/* Calendário (só aparece quando clica no botão) */}
       {showCalendar && (
         <Calendar
           style={styles.calendar}
