@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { useNavigation } from "@react-navigation/native";
-import { ColorGlobal } from "../../Utils/ColorGlobal"; // ajuste o caminho conforme sua pasta
+import { ColorGlobal } from "../../paletaColor/ColorGlobal"; // ajuste o caminho conforme sua pasta
 
 export default function PlanejamentoScreen() {
   const [showCalendar, setShowCalendar] = useState(false);
