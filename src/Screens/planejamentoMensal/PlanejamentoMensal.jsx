@@ -3,7 +3,7 @@ import React from 'react'
 
 export const PlanejamentoMensal = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>PlanejamentoMensal</Text>
     </View>
   )
