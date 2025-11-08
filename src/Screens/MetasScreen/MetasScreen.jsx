@@ -110,6 +110,8 @@ export default function MetasScreen() {
     ]);
   };
 
+  navigator = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>💰 Livro diário</Text>
