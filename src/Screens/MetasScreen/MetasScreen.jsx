@@ -121,7 +121,11 @@ export default function MetasScreen() {
             R$ {calcularSaldo().toFixed(2).replace(".", ",")}
           </Text>
         </View>
+        <TouchableOpacity>
+
         <MaterialCommunityIcons name="chart-line" size={40} color={ColorGlobal.FundoCards}  />
+        </TouchableOpacity>
+        
       </View>
 
       {/* Inputs */}
