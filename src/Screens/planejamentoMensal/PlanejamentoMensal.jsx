@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { useNavigation } from "@react-navigation/native";
 
-export const PlanejamentoScreen = () => {
+export default function PlanejamentoScreen (){
   const [showCalendar, setShowCalendar] = useState(false);
   const navigation = useNavigation();
 

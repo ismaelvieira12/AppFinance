@@ -13,7 +13,7 @@ import { StartConfigInitial } from './src/Screens/StartConfigInitial/StartConfig
 import ScreenLogin from './src/Screens/login/ScreenLogin.jsx';
 import { ScreenRegister } from './src/Screens/register/ScreenRegister.jsx';
 import { ColorGlobal } from './src/paletaColor/ColorGlobal.js';
-import { PlanejamentoMensal } from './src/Screens/planejamentoMensal/PlanejamentoMensal.jsx';
+import  PlanejamentoMensal  from './src/Screens/planejamentoMensal/PlanejamentoMensal.jsx';
 
 // Cria os navegadores
 const Drawer = createDrawerNavigator();
