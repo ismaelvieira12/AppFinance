@@ -123,7 +123,7 @@ export default function MetasScreen() {
             R$ {calcularSaldo().toFixed(2).replace(".", ",")}
           </Text>
         </View>
-        <TouchableOpacity onPress={{() => navigator.navigate("PlanejamentoMensal")}}>
+        <TouchableOpacity onPress={() => navigator.navigate("PlanejamentoMensal")}>
           <MaterialCommunityIcons name="chart-line" size={40} color={ColorGlobal.FundoCards}  />
         </TouchableOpacity>
         
