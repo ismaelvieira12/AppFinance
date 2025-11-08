@@ -11,7 +11,7 @@ import { Calendar } from "react-native-calendars";
 import { useNavigation } from "@react-navigation/native";
 import { ColorGlobal } from "../../paletaColor/ColorGlobal"; // ajuste o caminho conforme sua pasta
 
-export default function PlanejamentoScreen() {
+export default function PlanejamentoMensal() {
   const [showCalendar, setShowCalendar] = useState(false);
   const [renda, setRenda] = useState("");
   const [metaGuardar, setMetaGuardar] = useState("");
