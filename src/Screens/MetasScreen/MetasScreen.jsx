@@ -11,7 +11,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { styles } from "./MetasScreenStyle";
 import { MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
 import { ColorGlobal } from "../../paletaColor/ColorGlobal";
-
+import { useNavigation } from "@react-navigation/native";
 export default function MetasScreen() {
   const [descricao, setDescricao] = useState("");
   const [valor, setValor] = useState("");
