@@ -73,7 +73,7 @@ export default function PlanejamentoMensal() {
               todayTextColor: ColorGlobal.AzulNormal,
               dayTextColor: ColorGlobal.ColoFontSuave,
               arrowColor: ColorGlobal.AzulNormal,
-              
+              monthTextColor: ColorGlobal.AzulNormal,
             }}
           />
         </Animated.View>
