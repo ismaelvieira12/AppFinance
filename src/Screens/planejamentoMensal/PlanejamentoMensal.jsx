@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+// PlanejamentoMensal.jsx
+import React, { useRef, useState } from "react";
 import {
   View,
   Text,
@@ -6,36 +7,48 @@ import {
   TextInput,
   StyleSheet,
   Animated,
+  Easing,
 } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { useNavigation } from "@react-navigation/native";
-import Slider from "@react-native-community/slider";
 import { ColorGlobal } from "../../paletaColor/ColorGlobal";
-import { Circle } from "react-native-svg";
-import { AnimatedCircularProgress } from "react-native-circular-progress";
 
 export default function PlanejamentoMensal() {
   const [showCalendar, setShowCalendar] = useState(false);
   const [renda, setRenda] = useState("");
   const [meta, setMeta] = useState("");
-  const [porcentagemGuardar, setPorcentagemGuardar] = useState(20);
+  const [porcentagemGuardar, setPorcentagemGuardar] = useState(20); // % inicial
   const [resultado, setResultado] = useState(null);
-  const fadeAnim = useRef(new Animated.Value(0)).current;
-
+  const progressAnim = useRef(new Animated.Value(0)).current; // 0..100
   const navigation = useNavigation();
 
-  const toggleCalendar = () => {
-    setShowCalendar(!showCalendar);
-    Animated.timing(fadeAnim, {
-      toValue: showCalendar ? 0 : 1,
-      duration: 300,
-      useNativeDriver: true,
+  const toggleCalendar = () => setShowCalendar((s) => !s);
+
+  const animarBarra = (toValue) => {
+    Animated.timing(progressAnim, {
+      toValue,
+      duration: 400,
+      easing: Easing.out(Easing.cubic),
+      useNativeDriver: false,
     }).start();
   };
 
+  const alterarPorcentagem = (delta) => {
+    setPorcentagemGuardar((prev) => {
+      const next = Math.min(80, Math.max(5, prev + delta));
+      animarBarra(next);
+      return next;
+    });
+  };
+
+  // chama anim quando componente monta inicialmente
+  React.useEffect(() => {
+    animarBarra(porcentagemGuardar);
+  }, []);
+
   const calcularPlanejamento = () => {
-    const rendaNum = parseFloat(renda);
-    const metaNum = parseFloat(meta);
+    const rendaNum = parseFloat(renda.toString().replace(",", "."));
+    const metaNum = parseFloat(meta.toString().replace(",", "."));
 
     if (isNaN(rendaNum) || isNaN(metaNum) || rendaNum <= 0 || metaNum <= 0) {
       setResultado(null);
@@ -43,26 +56,37 @@ export default function PlanejamentoMensal() {
     }
 
     const valorMensalGuardar = (rendaNum * porcentagemGuardar) / 100;
-    const mesesNecessarios = metaNum / valorMensalGuardar;
+    if (valorMensalGuardar <= 0) {
+      return alert("Escolha uma porcentagem de guardar maior que 0%.");
+    }
+
+    const mesesNecessarios = Math.ceil(metaNum / valorMensalGuardar);
 
     setResultado({
       valorMensalGuardar,
-      mesesNecessarios: Math.ceil(mesesNecessarios),
+      mesesNecessarios,
+      progressoPercent: Math.min(100, (rendaNum / metaNum) * 100),
     });
   };
 
+  // animação de largura para a barra (interpolação)
+  const barraWidth = progressAnim.interpolate({
+    inputRange: [0, 100],
+    outputRange: ["0%", "100%"],
+  });
+
   return (
     <View style={styles.container}>
-      {/* Botão para exibir calendário */}
+      {/* Botão calendário */}
       <TouchableOpacity style={styles.btnToggle} onPress={toggleCalendar}>
         <Text style={styles.btnText}>
           {showCalendar ? "Fechar Calendário" : "Mostrar Calendário"}
         </Text>
       </TouchableOpacity>
 
-      {/* Calendário */}
+      {/* Calendário (visível somente quando clicado) */}
       {showCalendar && (
-        <Animated.View style={{ opacity: fadeAnim }}>
+        <View style={styles.calendarWrap}>
           <Calendar
             style={styles.calendar}
             theme={{
@@ -74,7 +98,7 @@ export default function PlanejamentoMensal() {
               monthTextColor: ColorGlobal.AzulNormal,
             }}
           />
-        </Animated.View>
+        </View>
       )}
 
       {/* Card principal */}
@@ -86,7 +110,7 @@ export default function PlanejamentoMensal() {
           placeholderTextColor={ColorGlobal.ColoFontSuave}
           keyboardType="numeric"
           value={renda}
-          onChangeText={setRenda}
+          onChangeText={(t) => setRenda(t.replace(/[^0-9,\.]/g, ""))}
           style={styles.input}
         />
 
@@ -95,26 +119,40 @@ export default function PlanejamentoMensal() {
           placeholderTextColor={ColorGlobal.ColoFontSuave}
           keyboardType="numeric"
           value={meta}
-          onChangeText={setMeta}
+          onChangeText={(t) => setMeta(t.replace(/[^0-9,\.]/g, ""))}
           style={styles.input}
         />
 
-        {/* Controle de porcentagem */}
-        <View style={styles.sliderBox}>
-          <Text style={styles.sliderLabel}>
-            Guardar {porcentagemGuardar}% da renda
-          </Text>
-          <Slider
-            style={{ width: "100%", height: 40 }}
-            minimumValue={5}
-            maximumValue={80}
-            step={1}
-            minimumTrackTintColor={ColorGlobal.AzulNormal}
-            maximumTrackTintColor="#ccc"
-            thumbTintColor={ColorGlobal.AmareloNormal}
-            value={porcentagemGuardar}
-            onValueChange={(v) => setPorcentagemGuardar(v)}
-          />
+        {/* Controle de porcentagem com botões +/- */}
+        <View style={styles.pctRow}>
+          <TouchableOpacity
+            style={styles.pctBtn}
+            onPress={() => alterarPorcentagem(-1)}
+          >
+            <Text style={styles.pctBtnText}>-</Text>
+          </TouchableOpacity>
+
+          <View style={styles.pctCenter}>
+            <Text style={styles.pctLabel}>Guardar</Text>
+            <Text style={styles.pctValue}>{porcentagemGuardar}%</Text>
+
+            {/* Barra de progresso animada horizontal */}
+            <View style={styles.progressBackground}>
+              <Animated.View
+                style={[
+                  styles.progressFill,
+                  { width: barraWidth },
+                ]}
+              />
+            </View>
+          </View>
+
+          <TouchableOpacity
+            style={styles.pctBtn}
+            onPress={() => alterarPorcentagem(1)}
+          >
+            <Text style={styles.pctBtnText}>+</Text>
+          </TouchableOpacity>
         </View>
 
         <TouchableOpacity style={styles.btnCalcular} onPress={calcularPlanejamento}>
@@ -123,22 +161,15 @@ export default function PlanejamentoMensal() {
 
         {resultado && (
           <View style={styles.resultadoBox}>
-            <AnimatedCircularProgress
-              size={120}
-              width={12}
-              fill={Math.min((renda / meta) * 100, 100)}
-              tintColor={ColorGlobal.AzulNormal}
-              backgroundColor={ColorGlobal.fundoImag}
-              rotation={0}
-              lineCap="round"
-            >
-              {(fill) => (
-                <Text style={styles.valorGrafico}>{fill.toFixed(0)}%</Text>
-              )}
-            </AnimatedCircularProgress>
+            <Text style={styles.resultadoText}>
+              🏦 Meta:{" "}
+              <Text style={styles.valor}>
+                R$ {parseFloat(meta).toFixed(2).replace(".", ",")}
+              </Text>
+            </Text>
 
             <Text style={styles.resultadoText}>
-              🏦 Guardar por mês:{" "}
+              💾 Guardar por mês:{" "}
               <Text style={styles.valor}>
                 R$ {resultado.valorMensalGuardar.toFixed(2).replace(".", ",")}
               </Text>
@@ -148,6 +179,15 @@ export default function PlanejamentoMensal() {
               ⏳ Tempo estimado:{" "}
               <Text style={styles.valor}>
                 {resultado.mesesNecessarios} meses
+              </Text>
+            </Text>
+
+            <View style={{ height: 12 }} />
+
+            <Text style={[styles.resultadoText, { marginTop: 8 }]}>
+              Progresso (renda atual ÷ meta):{" "}
+              <Text style={styles.valor}>
+                {Math.min(100, resultado.progressoPercent).toFixed(1)}%
               </Text>
             </Text>
           </View>
@@ -168,116 +208,62 @@ export default function PlanejamentoMensal() {
   );
 }
 
-// Estilo
+// Estilos
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: ColorGlobal.FundoBody,
     alignItems: "center",
-    paddingTop: 40,
+    paddingTop: 28,
   },
   btnToggle: {
     backgroundColor: ColorGlobal.AzulNormal,
     paddingVertical: 10,
-    paddingHorizontal: 25,
+    paddingHorizontal: 18,
     borderRadius: 12,
-    marginBottom: 10,
+    marginBottom: 8,
   },
-  btnText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  calendar: {
-    borderRadius: 12,
-    elevation: 2,
-    width: 330,
-    marginBottom: 20,
-  },
+  btnText: { color: "#fff", fontSize: 15, fontWeight: "600" },
+  calendarWrap: { width: "92%", alignItems: "center", marginBottom: 10 },
+  calendar: { width: "100%", borderRadius: 10 },
   card: {
+    width: "92%",
     backgroundColor: ColorGlobal.FundoCards,
-    width: "90%",
-    borderRadius: 16,
-    padding: 20,
+    borderRadius: 14,
+    padding: 16,
     elevation: 3,
   },
-  title: {
-    fontSize: 20,
-    fontWeight: "700",
-    color: ColorGlobal.AzulEscuro,
-    textAlign: "center",
-    marginBottom: 15,
-  },
+  title: { fontSize: 18, fontWeight: "700", color: ColorGlobal.AzulEscuro, textAlign: "center", marginBottom: 12 },
   input: {
     backgroundColor: ColorGlobal.fundoImag,
     borderRadius: 10,
     padding: 10,
-    marginVertical: 6,
+    marginVertical: 8,
     fontSize: 16,
     color: ColorGlobal.ColoFontSuave,
   },
-  sliderBox: {
-    marginVertical: 15,
-  },
-  sliderLabel: {
-    color: ColorGlobal.ColoFontSuave,
-    fontSize: 15,
-    marginBottom: 5,
-    textAlign: "center",
-  },
-  btnCalcular: {
-    backgroundColor: ColorGlobal.AmareloNormal,
+  pctRow: { flexDirection: "row", alignItems: "center", marginTop: 10 },
+  pctBtn: {
+    width: 42,
+    height: 42,
     borderRadius: 10,
-    paddingVertical: 10,
-    marginTop: 10,
-  },
-  btnCalcularText: {
-    textAlign: "center",
-    color: "#333",
-    fontWeight: "700",
-    fontSize: 16,
-  },
-  resultadoBox: {
-    marginTop: 20,
+    backgroundColor: ColorGlobal.AzulEscuro,
     alignItems: "center",
-    backgroundColor: ColorGlobal.FundoBody,
-    padding: 20,
-    borderRadius: 12,
-    elevation: 2,
+    justifyContent: "center",
   },
-  valorGrafico: {
-    color: ColorGlobal.AzulEscuro,
-    fontWeight: "700",
-    fontSize: 18,
-  },
-  resultadoText: {
-    fontSize: 16,
-    textAlign: "center",
-    color: ColorGlobal.ColoFontSuave,
-    marginTop: 10,
-  },
-  valor: {
-    color: ColorGlobal.AzulEscuro,
-    fontWeight: "bold",
-  },
-  bottomBox: {
-    marginTop: 40,
-    alignItems: "center",
-  },
-  titleCriar: {
-    fontSize: 18,
-    color: ColorGlobal.ColoFontSuave,
-    marginBottom: 10,
-  },
-  btnCriar: {
-    backgroundColor: ColorGlobal.AzulNormal,
-    paddingHorizontal: 30,
-    paddingVertical: 12,
-    borderRadius: 10,
-  },
-  btnCriarText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
+  pctBtnText: { color: "#fff", fontSize: 22, fontWeight: "700" },
+  pctCenter: { flex: 1, paddingHorizontal: 12 },
+  pctLabel: { color: ColorGlobal.ColoFontSuave, fontSize: 13, textAlign: "center" },
+  pctValue: { fontSize: 18, fontWeight: "700", color: ColorGlobal.AzulEscuro, textAlign: "center", marginTop: 4 },
+  progressBackground: { height: 8, backgroundColor: "#eee", borderRadius: 8, overflow: "hidden", marginTop: 8 },
+  progressFill: { height: 8, backgroundColor: ColorGlobal.AmareloNormal },
+  btnCalcular: { marginTop: 12, backgroundColor: ColorGlobal.AmareloNormal, borderRadius: 10, paddingVertical: 10 },
+  btnCalcularText: { textAlign: "center", color: "#333", fontWeight: "700" },
+  resultadoBox: { marginTop: 14, padding: 12, backgroundColor: ColorGlobal.FundoBody, borderRadius: 10, alignItems: "center" },
+  resultadoText: { color: ColorGlobal.ColoFontSuave, fontSize: 15, textAlign: "center" },
+  valor: { color: ColorGlobal.AzulEscuro, fontWeight: "700" },
+  bottomBox: { marginTop: 24, alignItems: "center" },
+  titleCriar: { fontSize: 16, color: ColorGlobal.ColoFontSuave, marginBottom: 8 },
+  btnCriar: { backgroundColor: ColorGlobal.AzulNormal, paddingHorizontal: 28, paddingVertical: 10, borderRadius: 10 },
+  btnCriarText: { color: "#fff", fontWeight: "700" },
 });
