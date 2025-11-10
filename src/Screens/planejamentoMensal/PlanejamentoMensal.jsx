@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   View,
   Text,
@@ -9,16 +9,16 @@ import {
 } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { useNavigation } from "@react-navigation/native";
-import { ColorGlobal } from "../../paletaColor/ColorGlobal"; // ajuste o caminho conforme sua pasta
+import { ColorGlobal } from "../../paletaColor/ColorGlobal";
 
 export default function PlanejamentoMensal() {
   const [showCalendar, setShowCalendar] = useState(false);
   const [renda, setRenda] = useState("");
-  const [metaGuardar, setMetaGuardar] = useState("");
+  const [meta, setMeta] = useState("");
   const [resultado, setResultado] = useState(null);
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
   const navigation = useNavigation();
-  const fadeAnim = new Animated.Value(0);
 
   const toggleCalendar = () => {
     setShowCalendar(!showCalendar);
@@ -31,31 +31,26 @@ export default function PlanejamentoMensal() {
 
   const calcularPlanejamento = () => {
     const rendaNum = parseFloat(renda);
-    const guardarNum = parseFloat(metaGuardar);
+    const metaNum = parseFloat(meta);
 
-    if (isNaN(rendaNum) || isNaN(guardarNum) || rendaNum <= 0) {
+    if (isNaN(rendaNum) || isNaN(metaNum) || rendaNum <= 0 || metaNum <= 0) {
       setResultado(null);
       return alert("Por favor, preencha os valores corretamente!");
     }
 
-    if (guardarNum > rendaNum) {
-      return alert("Você não pode guardar mais do que ganha 😅");
-    }
-
-    const podeGastar = rendaNum - guardarNum;
-    const porcentagemGuardar = ((guardarNum / rendaNum) * 100).toFixed(1);
-    const porcentagemGastar = ((podeGastar / rendaNum) * 100).toFixed(1);
+    // 🧮 Cálculo de planejamento
+    const valorMensalGuardar = rendaNum * 0.2; // 20% da renda como sugestão inicial
+    const mesesNecessarios = metaNum / valorMensalGuardar;
 
     setResultado({
-      podeGastar,
-      porcentagemGuardar,
-      porcentagemGastar,
+      valorMensalGuardar,
+      mesesNecessarios: Math.ceil(mesesNecessarios),
     });
   };
 
   return (
     <View style={styles.container}>
-      {/* Botão para mostrar/esconder o calendário */}
+      {/* Botão para exibir o calendário */}
       <TouchableOpacity style={styles.btnToggle} onPress={toggleCalendar}>
         <Text style={styles.btnText}>
           {showCalendar ? "Fechar Calendário" : "Mostrar Calendário"}
@@ -79,7 +74,7 @@ export default function PlanejamentoMensal() {
         </Animated.View>
       )}
 
-      {/* Entrada de dados */}
+      {/* Card principal */}
       <View style={styles.card}>
         <Text style={styles.title}>💰 Planejamento Mensal</Text>
 
@@ -93,11 +88,11 @@ export default function PlanejamentoMensal() {
         />
 
         <TextInput
-          placeholder="Quanto deseja guardar?"
+          placeholder="Estipule um valor para ser alcançado"
           placeholderTextColor={ColorGlobal.ColoFontSuave}
           keyboardType="numeric"
-          value={metaGuardar}
-          onChangeText={setMetaGuardar}
+          value={meta}
+          onChangeText={setMeta}
           style={styles.input}
         />
 
@@ -105,33 +100,27 @@ export default function PlanejamentoMensal() {
           <Text style={styles.btnCalcularText}>Calcular</Text>
         </TouchableOpacity>
 
+        {/* Resultado */}
         {resultado && (
           <View style={styles.resultadoBox}>
             <Text style={styles.resultadoText}>
-              💸 Você pode gastar até:{" "}
-              <Text style={styles.valor}>
-                R$ {resultado.podeGastar.toFixed(2).replace(".", ",")}
-              </Text>
+              🏦 Para alcançar{" "}
+              <Text style={styles.valor}>R$ {parseFloat(meta).toFixed(2).replace(".", ",")}</Text>
             </Text>
 
-            <View style={styles.barraProgresso}>
-              <View
-                style={[
-                  styles.parteGastar,
-                  { width: `${resultado.porcentagemGastar}%` },
-                ]}
-              />
-              <View
-                style={[
-                  styles.parteGuardar,
-                  { width: `${resultado.porcentagemGuardar}%` },
-                ]}
-              />
-            </View>
+            <Text style={styles.resultadoText}>
+              Você precisa guardar aproximadamente{" "}
+              <Text style={styles.valor}>
+                R$ {resultado.valorMensalGuardar.toFixed(2).replace(".", ",")}
+              </Text>{" "}
+              por mês.
+            </Text>
 
-            <Text style={styles.info}>
-              💼 Guardar: {resultado.porcentagemGuardar}% | Gastar:{" "}
-              {resultado.porcentagemGastar}%
+            <Text style={styles.resultadoText}>
+              ⏳ Tempo estimado:{" "}
+              <Text style={styles.valor}>
+                {resultado.mesesNecessarios} meses
+              </Text>
             </Text>
           </View>
         )}
@@ -151,6 +140,7 @@ export default function PlanejamentoMensal() {
   );
 }
 
+// 🎨 Estilo
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -226,24 +216,6 @@ const styles = StyleSheet.create({
   valor: {
     color: ColorGlobal.AzulEscuro,
     fontWeight: "bold",
-  },
-  barraProgresso: {
-    flexDirection: "row",
-    height: 12,
-    borderRadius: 10,
-    overflow: "hidden",
-    marginVertical: 10,
-  },
-  parteGastar: {
-    backgroundColor: ColorGlobal.AzulMaisClaro,
-  },
-  parteGuardar: {
-    backgroundColor: ColorGlobal.LaranjaEscuro,
-  },
-  info: {
-    textAlign: "center",
-    color: ColorGlobal.ColoFontSuave,
-    fontSize: 14,
   },
   bottomBox: {
     marginTop: 40,
