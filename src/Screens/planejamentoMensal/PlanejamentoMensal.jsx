@@ -9,12 +9,16 @@ import {
 } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { useNavigation } from "@react-navigation/native";
+import Slider from "@react-native-community/slider";
 import { ColorGlobal } from "../../paletaColor/ColorGlobal";
+import { Circle } from "react-native-svg";
+import { AnimatedCircularProgress } from "react-native-circular-progress";
 
 export default function PlanejamentoMensal() {
   const [showCalendar, setShowCalendar] = useState(false);
   const [renda, setRenda] = useState("");
   const [meta, setMeta] = useState("");
+  const [porcentagemGuardar, setPorcentagemGuardar] = useState(20);
   const [resultado, setResultado] = useState(null);
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
@@ -38,8 +42,7 @@ export default function PlanejamentoMensal() {
       return alert("Por favor, preencha os valores corretamente!");
     }
 
-    // 🧮 Cálculo de planejamento
-    const valorMensalGuardar = rendaNum * 0.2; // 20% da renda como sugestão inicial
+    const valorMensalGuardar = (rendaNum * porcentagemGuardar) / 100;
     const mesesNecessarios = metaNum / valorMensalGuardar;
 
     setResultado({
@@ -50,14 +53,14 @@ export default function PlanejamentoMensal() {
 
   return (
     <View style={styles.container}>
-      {/* Botão para exibir o calendário */}
+      {/* Botão para exibir calendário */}
       <TouchableOpacity style={styles.btnToggle} onPress={toggleCalendar}>
         <Text style={styles.btnText}>
           {showCalendar ? "Fechar Calendário" : "Mostrar Calendário"}
         </Text>
       </TouchableOpacity>
 
-      {/* Calendário animado */}
+      {/* Calendário */}
       {showCalendar && (
         <Animated.View style={{ opacity: fadeAnim }}>
           <Calendar
@@ -96,24 +99,49 @@ export default function PlanejamentoMensal() {
           style={styles.input}
         />
 
+        {/* Controle de porcentagem */}
+        <View style={styles.sliderBox}>
+          <Text style={styles.sliderLabel}>
+            Guardar {porcentagemGuardar}% da renda
+          </Text>
+          <Slider
+            style={{ width: "100%", height: 40 }}
+            minimumValue={5}
+            maximumValue={80}
+            step={1}
+            minimumTrackTintColor={ColorGlobal.AzulNormal}
+            maximumTrackTintColor="#ccc"
+            thumbTintColor={ColorGlobal.AmareloNormal}
+            value={porcentagemGuardar}
+            onValueChange={(v) => setPorcentagemGuardar(v)}
+          />
+        </View>
+
         <TouchableOpacity style={styles.btnCalcular} onPress={calcularPlanejamento}>
           <Text style={styles.btnCalcularText}>Calcular</Text>
         </TouchableOpacity>
 
-        {/* Resultado */}
         {resultado && (
           <View style={styles.resultadoBox}>
-            <Text style={styles.resultadoText}>
-              🏦 Para alcançar{" "}
-              <Text style={styles.valor}>R$ {parseFloat(meta).toFixed(2).replace(".", ",")}</Text>
-            </Text>
+            <AnimatedCircularProgress
+              size={120}
+              width={12}
+              fill={Math.min((renda / meta) * 100, 100)}
+              tintColor={ColorGlobal.AzulNormal}
+              backgroundColor={ColorGlobal.fundoImag}
+              rotation={0}
+              lineCap="round"
+            >
+              {(fill) => (
+                <Text style={styles.valorGrafico}>{fill.toFixed(0)}%</Text>
+              )}
+            </AnimatedCircularProgress>
 
             <Text style={styles.resultadoText}>
-              Você precisa guardar aproximadamente{" "}
+              🏦 Guardar por mês:{" "}
               <Text style={styles.valor}>
                 R$ {resultado.valorMensalGuardar.toFixed(2).replace(".", ",")}
-              </Text>{" "}
-              por mês.
+              </Text>
             </Text>
 
             <Text style={styles.resultadoText}>
@@ -140,7 +168,7 @@ export default function PlanejamentoMensal() {
   );
 }
 
-// 🎨 Estilo
+// Estilo
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -188,6 +216,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: ColorGlobal.ColoFontSuave,
   },
+  sliderBox: {
+    marginVertical: 15,
+  },
+  sliderLabel: {
+    color: ColorGlobal.ColoFontSuave,
+    fontSize: 15,
+    marginBottom: 5,
+    textAlign: "center",
+  },
   btnCalcular: {
     backgroundColor: ColorGlobal.AmareloNormal,
     borderRadius: 10,
@@ -202,16 +239,22 @@ const styles = StyleSheet.create({
   },
   resultadoBox: {
     marginTop: 20,
+    alignItems: "center",
     backgroundColor: ColorGlobal.FundoBody,
-    padding: 15,
-    borderRadius: 10,
+    padding: 20,
+    borderRadius: 12,
     elevation: 2,
+  },
+  valorGrafico: {
+    color: ColorGlobal.AzulEscuro,
+    fontWeight: "700",
+    fontSize: 18,
   },
   resultadoText: {
     fontSize: 16,
     textAlign: "center",
     color: ColorGlobal.ColoFontSuave,
-    marginBottom: 8,
+    marginTop: 10,
   },
   valor: {
     color: ColorGlobal.AzulEscuro,
