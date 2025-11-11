@@ -103,7 +103,7 @@ export default function PlanejamentoMensal() {
 
       {/* Card principal */}
       <View style={styles.card}>
-        <Text style={styles.title}>💰 Planejamento Mensal</Text>
+        <Text style={styles.title}>💰</Text>
 
         <TextInput
           placeholder="Quanto você ganha por mês?"
