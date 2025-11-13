@@ -20,8 +20,8 @@ export const styles = StyleSheet.create({
     height: 200,
     borderRadius: 15,
     marginBottom: 20,
-    // borderRadius: 15,
-    // marginBottom: 20,
+    top: -13,
+    
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center"
