@@ -126,8 +126,9 @@ export default function MetasScreen() {
           </TouchableOpacity>
         </View>
 
-        <View>
-          <View></View>          
+        <View >
+          <View style={styles.boxReceita}></View> 
+          <View></View>         
         </View>
         
       </View>
