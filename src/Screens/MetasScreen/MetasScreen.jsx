@@ -114,7 +114,6 @@ export default function MetasScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>💰 Livro diário</Text>
 
       <View style={styles.boxSaldo}>
         <View style={{paddingVertical: 10}}>
