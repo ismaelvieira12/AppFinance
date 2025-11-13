@@ -18,10 +18,10 @@ export const styles = StyleSheet.create({
     backgroundColor: ColorGlobal.AzulNormal,
     padding: 15,
     // borderRadius: 15,
-    marginBottom: 20,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
+    // marginBottom: 20,
+    // flexDirection: "row",
+    // justifyContent: "space-between",
+    // alignItems: "center"
   },
   label: { color: ColorGlobal.FundoCards, fontSize: 16 },
   saldo: { color: ColorGlobal.FundoCards, fontSize: 26, fontWeight: "bold" },
