@@ -23,8 +23,8 @@ export const styles = StyleSheet.create({
     // borderRadius: 15,
     // marginBottom: 20,
     flexDirection: "row",
-    // justifyContent: "space-between",
-    // alignItems: "center"
+    justifyContent: "space-between",
+    alignItems: "center"
   },
   label: { color: ColorGlobal.FundoCards, fontSize: 16 },
   saldo: { color: ColorGlobal.FundoCards, fontSize: 26, fontWeight: "bold" },
