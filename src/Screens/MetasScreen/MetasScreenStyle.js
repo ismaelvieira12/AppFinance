@@ -26,6 +26,18 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center"
   },
+  boxReceitas: {
+    backgroundColor: ColorGlobal.LaranjaEscuro,
+    width: 100,
+    height: 30,
+    borderRadius: 10,
+    marginBottom: 15,
+  },
+  boxReceitas: {
+    backgroundColor: ColorGlobal.LaranjaEscuro,
+    width: 100,
+  },
+  
   label: { color: ColorGlobal.FundoCards, fontSize: 16 },
   saldo: { color: ColorGlobal.FundoCards, fontSize: 26, fontWeight: "bold" },
   input: {
