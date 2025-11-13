@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: ColorGlobal.TesteColor,
-    padding: 20,
+    // padding: 20,
   },
   titulo: {
     fontSize: 25,
@@ -18,10 +18,10 @@ export const styles = StyleSheet.create({
     backgroundColor: ColorGlobal.AzulNormal,
     padding: 15,
     height: 200,
-    borderRadius: 15,
+    borderRadius: 25,
     marginBottom: 20,
-    top: -13,
-    
+    // top: -13,
+
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center"
