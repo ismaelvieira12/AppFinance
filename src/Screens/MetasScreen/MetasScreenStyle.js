@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
   boxSaldo: {
     backgroundColor: ColorGlobal.AzulNormal,
     padding: 15,
-    borderRadius: 15,
+    // borderRadius: 15,
     marginBottom: 20,
     flexDirection: "row",
     justifyContent: "space-between",
