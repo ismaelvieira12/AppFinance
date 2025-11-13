@@ -33,9 +33,12 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 15,
   },
-  boxReceitas: {
+  boxDespesas: {
     backgroundColor: ColorGlobal.LaranjaEscuro,
     width: 100,
+    height: 30,
+    borderRadius: 10,
+    marginBottom: 15,
   },
   
   label: { color: ColorGlobal.FundoCards, fontSize: 16 },
