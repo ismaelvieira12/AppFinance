@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
     // borderRadius: 15,
     // marginBottom: 20,
-    // flexDirection: "row",
+    flexDirection: "row",
     // justifyContent: "space-between",
     // alignItems: "center"
   },
