@@ -116,7 +116,7 @@ export default function MetasScreen() {
     <View style={styles.container}>
 
       <View style={styles.boxSaldo}>
-        <View style={{paddingVertical: 10}}>
+        <View style={{paddingVertical: 10, flexDirection: 'row', justifyContent}}>
           <Text style={styles.saldo}>
             <Text style={styles.label}>Saldo Atual:</Text>{'\n'}
             R$ {calcularSaldo().toFixed(2).replace(".", ",")}
