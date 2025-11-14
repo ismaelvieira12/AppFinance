@@ -23,7 +23,6 @@ export const styles = StyleSheet.create({
 
     flexDirection: "column",
     justifyContent: "space-between",
-    // alignItems: "center"
   },
   boxReceitas: {
     backgroundColor: ColorGlobal.LaranjaEscuro,
