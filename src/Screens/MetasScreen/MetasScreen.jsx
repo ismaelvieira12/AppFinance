@@ -126,7 +126,7 @@ export default function MetasScreen() {
           </TouchableOpacity>
         </View>
 
-        <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
           <View style={styles.boxReceitas}></View> 
           <View style={styles.boxDespesas}></View>         
         </View>
