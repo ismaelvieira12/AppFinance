@@ -20,7 +20,6 @@ export const styles = StyleSheet.create({
     height: 200,
     borderRadius: 25,
     marginBottom: 20,
-
     flexDirection: "column",
     justifyContent: "space-between",
   },
