@@ -38,6 +38,8 @@ export const styles = StyleSheet.create({
     height: 30,
     borderRadius: 10,
     marginBottom: 15,
+    justifyContent: "center",
+    alignItems: "center"
   },
   
   label: { color: ColorGlobal.FundoCards, fontSize: 16 },
