@@ -29,6 +29,7 @@ export const styles = StyleSheet.create({
     height: 30,
     borderRadius: 10,
     marginBottom: 15,
+    justifyContent:
   },
   boxDespesas: {
     backgroundColor: ColorGlobal.LaranjaEscuro,
