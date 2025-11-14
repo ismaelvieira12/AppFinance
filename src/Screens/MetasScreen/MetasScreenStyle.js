@@ -21,9 +21,9 @@ export const styles = StyleSheet.create({
     borderRadius: 25,
     marginBottom: 20,
 
-    flexDirection: "",
+    flexDirection: "column",
     justifyContent: "space-between",
-    alignItems: "center"
+    // alignItems: "center"
   },
   boxReceitas: {
     backgroundColor: ColorGlobal.LaranjaEscuro,
