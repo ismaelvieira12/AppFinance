@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   
-  label: { color: ColorGlobal.FundoCards, fontSize: 16 },
+  label: { color: ColorGlobal.FundoCards, fontSize: 20 },
   saldo: { color: ColorGlobal.FundoCards, fontSize: 26, fontWeight: "bold" },
   input: {
     backgroundColor: ColorGlobal.FundoCards,
