@@ -132,7 +132,7 @@ export default function MetasScreen() {
             <Text>0,00</Text>
           </View> 
           <View style={styles.boxDespesas}>
-            <Text>Total de Despesas</Text>
+            <Text>Total Despesas</Text>
             <Text>0,00</Text>
           </View>         
         </View>
