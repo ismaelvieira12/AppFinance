@@ -41,6 +41,9 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
+  textValueRD: {
+    color:ColorGlobal.AmareloNormal
+  },
   
   label: { color: ColorGlobal.FundoCards, fontSize: 16 },
   saldo: { color: ColorGlobal.FundoCards, fontSize: 26, fontWeight: "bold" },
