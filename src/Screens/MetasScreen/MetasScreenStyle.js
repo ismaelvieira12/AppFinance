@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     alignItems: "center"
   },
   boxDespesas: {
-    backgroundColor: ColorGlobal.LaranjaEscuro,
+    // backgroundColor: ColorGlobal.LaranjaEscuro,
     width: 100,
     height: 30,
     borderRadius: 10,
