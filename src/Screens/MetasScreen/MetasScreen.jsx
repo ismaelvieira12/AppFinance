@@ -129,11 +129,11 @@ export default function MetasScreen() {
         <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
           <View style={styles.boxReceitas}>
             <Text style={styles.textValueRD}>Receitas</Text>
-            <Text>0,00</Text>
+            <Text style={styles.ValueRD}>0,00</Text>
           </View> 
           <View style={styles.boxDespesas}>
             <Text style={styles.textValueRD}> Despesas</Text>
-            <Text>0,00</Text>
+            <Text style={styles.ValueRD}>0,00</Text>
           </View>         
         </View>
         
