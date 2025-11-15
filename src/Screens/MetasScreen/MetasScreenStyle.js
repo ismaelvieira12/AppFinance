@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   boxReceitas: {
-    backgroundColor: ColorGlobal.LaranjaEscuro,
+    // backgroundColor: ColorGlobal.LaranjaEscuro,
     width: 100,
     height: 30,
     borderRadius: 10,
