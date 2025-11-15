@@ -40,9 +40,14 @@ export const styles = StyleSheet.create({
     alignItems: "center"
   },
   textValueRD: {
-    color:ColorGlobal.AmareloNormal,
+    color:ColorGlobal.TesteColor,
     fontSize: 15,
-    fontWeight: "bold"
+    fontWeight: "bold",
+  },
+  ValueRD: {
+    color:ColorGlobal.TesteColor,
+    fontSize: 15,
+    fontWeight: "bold",
   },
   
   label: { color: ColorGlobal.FundoCards, fontSize: 20 },
