@@ -24,7 +24,6 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   boxReceitas: {
-    
     width: 100,
     height: 30,
     borderRadius: 10,
@@ -33,7 +32,6 @@ export const styles = StyleSheet.create({
     alignItems: "center"
   },
   boxDespesas: {
-    
     width: 100,
     height: 30,
     borderRadius: 10,

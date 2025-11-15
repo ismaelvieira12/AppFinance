@@ -121,9 +121,9 @@ export default function MetasScreen() {
             <Text style={styles.label}>Saldo Atual:</Text>{'\n'}
             R$ {calcularSaldo().toFixed(2).replace(".", ",")}
           </Text>
-          <TouchableOpacity onPress={() => navigator.navigate("PlanejamentoMensal")} style={{ marginTop: 10}}>
+          {/* <TouchableOpacity onPress={() => navigator.navigate("PlanejamentoMensal")} style={{ marginTop: 10}}>
             <MaterialCommunityIcons name="chart-line" size={40} color={ColorGlobal.FundoCards}  />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
 
         <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
