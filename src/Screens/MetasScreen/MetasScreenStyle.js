@@ -42,7 +42,9 @@ export const styles = StyleSheet.create({
     alignItems: "center"
   },
   textValueRD: {
-    color:ColorGlobal.AmareloNormal
+    color:ColorGlobal.AmareloNormal,
+    fontSize: 15,
+    fontWeight: "bold"
   },
   
   label: { color: ColorGlobal.FundoCards, fontSize: 16 },
