@@ -134,7 +134,7 @@ rowRD: {
 boxReceitas: {
   backgroundColor: "#4CAF50",
   width: "35%",
-  padding: 14,
+  padding: 8,
   borderRadius: 12,
   alignItems: "center",
   elevation: 2,
@@ -143,7 +143,7 @@ boxReceitas: {
 boxDespesas: {
   backgroundColor: "#E53935",
   width: "35%",
-  padding: 14,
+  padding: 8,
   borderRadius: 12,
   alignItems: "center",
   elevation: 2,
