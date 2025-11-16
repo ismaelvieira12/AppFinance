@@ -101,4 +101,65 @@ export const styles = StyleSheet.create({
   },
   desc: { fontSize: 16, color: ColorGlobal.descTask },
   valor: { fontSize: 16, fontWeight: "bold" },
+
+  saldoBox: {
+  backgroundColor: ColorGlobal.AzulNormal,
+  paddingVertical: 18,
+  borderRadius: 14,
+  width: "100%",
+  alignItems: "center",
+  marginBottom: 18,
+  elevation: 3,
+},
+
+saldoTitulo: {
+  color: "#fff",
+  fontSize: 16,
+  fontWeight: "600",
+},
+
+saldoValor: {
+  color: "#fff",
+  fontSize: 28,
+  fontWeight: "bold",
+  marginTop: 4,
+},
+
+rowRD: {
+  flexDirection: "row",
+  justifyContent: "space-between",
+  width: "100%",
+},
+
+boxReceitas: {
+  backgroundColor: "#4CAF50",
+  width: "48%",
+  padding: 14,
+  borderRadius: 12,
+  alignItems: "center",
+  elevation: 2,
+},
+
+boxDespesas: {
+  backgroundColor: "#E53935",
+  width: "48%",
+  padding: 14,
+  borderRadius: 12,
+  alignItems: "center",
+  elevation: 2,
+},
+
+labelRD: {
+  color: "#fff",
+  fontSize: 15,
+  fontWeight: "600",
+},
+
+valorRD: {
+  color: "#fff",
+  fontSize: 20,
+  fontWeight: "bold",
+  marginTop: 4,
+},
+
 });
