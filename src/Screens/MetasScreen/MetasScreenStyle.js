@@ -133,7 +133,7 @@ rowRD: {
 
 boxReceitas: {
   backgroundColor: "#4CAF50",
-  width: "48%",
+  width: "35%",
   padding: 14,
   borderRadius: 12,
   alignItems: "center",
