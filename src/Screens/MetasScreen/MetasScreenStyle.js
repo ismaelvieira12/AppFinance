@@ -114,7 +114,7 @@ saldoBox: {
 saldoTitulo: {
   color: "#fff",
   fontSize: 16,
-  fontWeight: "600",
+  
 },
 
 saldoValor: {
