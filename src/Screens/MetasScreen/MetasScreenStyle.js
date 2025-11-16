@@ -109,7 +109,6 @@ export const styles = StyleSheet.create({
   width: "100%",
   alignItems: "center",
   marginBottom: 5,
-  elevation: 3,
 },
 
 saldoTitulo: {
