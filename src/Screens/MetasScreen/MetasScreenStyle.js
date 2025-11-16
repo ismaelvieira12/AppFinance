@@ -102,13 +102,13 @@ export const styles = StyleSheet.create({
   desc: { fontSize: 16, color: ColorGlobal.descTask },
   valor: { fontSize: 16, fontWeight: "bold" },
 
-  saldoBox: {
+saldoBox: {
   backgroundColor: ColorGlobal.AzulNormal,
   paddingVertical: 18,
   borderRadius: 14,
   width: "100%",
   alignItems: "center",
-  marginBottom: 5,
+  marginTop: 10
 },
 
 saldoTitulo: {
