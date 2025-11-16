@@ -18,7 +18,8 @@ export const styles = StyleSheet.create({
     backgroundColor: ColorGlobal.AzulNormal,
     padding: 15,
     height: 200,
-    
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 25,
     marginBottom: 20,
     flexDirection: "column",
     justifyContent: "space-between",
