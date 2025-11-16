@@ -142,7 +142,7 @@ boxReceitas: {
 
 boxDespesas: {
   backgroundColor: "#E53935",
-  width: "48%",
+  width: "35%",
   padding: 14,
   borderRadius: 12,
   alignItems: "center",
