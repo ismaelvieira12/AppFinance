@@ -110,34 +110,53 @@ export default function MetasScreen() {
     ]);
   };
 
+  const totalReceitas = transacoes
+    .filter((t) => t.tipo === "receita")
+    .reduce((acc, t) => acc + t.valor, 0);
+
+  const totalDespesas = transacoes
+    .filter((t) => t.tipo === "despesa")
+    .reduce((acc, t) => acc + t.valor, 0);
+
+  const saldoAtual = totalReceitas - totalDespesas;
+
+
   const navigator = useNavigation();
 
   return (
     <View style={styles.container}>
 
-      <View style={styles.boxSaldo}>
-        <View style={{paddingVertical: 10, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', marginTop: 30}}>
-          <Text style={styles.saldo}>
-            <Text style={styles.label}>Saldo Atual:</Text>{'\n'}
-            R$ {calcularSaldo().toFixed(2).replace(".", ",")}
+    <View style={styles.boxSaldo}>
+
+      {/* SALDO ATUAL EM DESTAQUE */}
+      <View style={styles.saldoBox}>
+        <Text style={styles.saldoTitulo}>Saldo Atual</Text>
+        <Text style={styles.saldoValor}>
+          R$ {saldoAtual.toFixed(2).replace(".", ",")}
+        </Text>
+      </View>
+
+      {/* RECEITAS E DESPESAS */}
+      <View style={styles.rowRD}>
+
+        <View style={styles.boxReceitas}>
+          <Text style={styles.labelRD}>Receitas</Text>
+          <Text style={styles.valorRD}>
+            R$ {totalReceitas.toFixed(2).replace(".", ",")}
           </Text>
-          {/* <TouchableOpacity onPress={() => navigator.navigate("PlanejamentoMensal")} style={{ marginTop: 10}}>
-            <MaterialCommunityIcons name="chart-line" size={40} color={ColorGlobal.FundoCards}  />
-          </TouchableOpacity> */}
         </View>
 
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-          <View style={styles.boxReceitas}>
-            <Text style={styles.textValueRD}>Receitas</Text>
-            <Text style={styles.ValueRD}>0,00</Text>
-          </View> 
-          <View style={styles.boxDespesas}>
-            <Text style={styles.textValueRD}> Despesas</Text>
-            <Text style={styles.ValueRD}>0,00</Text>
-          </View>         
+        <View style={styles.boxDespesas}>
+          <Text style={styles.labelRD}>Despesas</Text>
+          <Text style={styles.valorRD}>
+            R$ {totalDespesas.toFixed(2).replace(".", ",")}
+          </Text>
         </View>
-        
+
       </View>
+
+    </View>
+
 
       <View style={{ paddingHorizontal: 15 }}>
         {/* Inputs */}
