@@ -127,7 +127,7 @@ saldoValor: {
 
 rowRD: {
   flexDirection: "row",
-  justifyContent: "space-between",
+  justifyContent: "space-around",
   width: "100%",
 },
 
