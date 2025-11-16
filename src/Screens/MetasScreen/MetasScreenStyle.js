@@ -108,7 +108,7 @@ export const styles = StyleSheet.create({
   borderRadius: 14,
   width: "100%",
   alignItems: "center",
-  marginBottom: 18,
+  marginBottom: 5,
   elevation: 3,
 },
 
