@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
   },
   
   label: { color: ColorGlobal.FundoCards, fontSize: 20 },
-  saldo: { color: ColorGlobal.FundoCards, fontSize: 26, fontWeight: "bold" },
+  saldo: { color: ColorGlobal.FundoCards, fontSize: 26, fontWeight: "bold", textAlign:"center" },
   input: {
     backgroundColor: ColorGlobal.FundoCards,
     padding: 10,
