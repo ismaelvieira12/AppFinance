@@ -22,7 +22,7 @@ export default function Login ()  {
     const navigation = useNavigation();
       return (
         <KeyboardAvoidingView
-        
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.container}
         >
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
