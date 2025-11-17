@@ -41,7 +41,7 @@ export default function Login ()  {
               <View>
                   <TextInput placeholder="Email" style={styles.nputLogin} />
                   <TextInput
-                    placeholder="Senha"
+                    // placeholder="Senha"
                     secureTextEntry
                     style={styles.nputLogin}
                   />
