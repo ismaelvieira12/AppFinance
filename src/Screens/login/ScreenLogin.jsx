@@ -50,7 +50,7 @@ export default function Login ()  {
                   <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                     <LinearGradient
                       colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoBtnGradient]}
-                      start={{ x: 1, y: 0.5 }}
+                      
                       end={{ x: 0, y: 0.5 }}
                       style={[styles.nputLogin, styles.btnBottomLogin]}
                     >
