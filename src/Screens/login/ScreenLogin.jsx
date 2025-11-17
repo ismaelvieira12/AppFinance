@@ -47,7 +47,7 @@ export default function Login ()  {
                   />
 
                   {/* Botão */}
-                  <TouchableOpacity onPress={() => navigation.navigate()}>
+                  <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                     <LinearGradient
                       colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoBtnGradient]}
                       start={{ x: 1, y: 0.5 }}
