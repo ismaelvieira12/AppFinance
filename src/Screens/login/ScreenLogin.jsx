@@ -46,7 +46,7 @@ export default function Login ()  {
                     style={styles.nputLogin}
                   />
 
-                  
+                  {/* Botão */}
                   <TouchableOpacity>
                     <LinearGradient
                       colors={[ColorGlobal.AzulNormal, ColorGlobal.ColoBtnGradient]}
