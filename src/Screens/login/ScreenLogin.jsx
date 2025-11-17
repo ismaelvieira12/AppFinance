@@ -27,7 +27,7 @@ export default function Login ()  {
         >
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={{flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', padding: 40}}>
-              
+              {/* Botão de voltar */}
               <BackBtn />
 
               <View style={styles.boxImg}>
