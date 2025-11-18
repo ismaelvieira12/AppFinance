@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     nputLogin: {
         width: 350,
         height: 50,  
-        borderRadius: 40,
+        // borderRadius: 40,
         marginBottom: 20,
         paddingLeft: 20,
         fontSize: 18,
