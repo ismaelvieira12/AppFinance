@@ -69,7 +69,7 @@ export default function Login ()  {
                   </View>
               </View>
 
-              {/* <StatusBar barStyle="dark-content" /> */}
+              <StatusBar barStyle="dark-content" />
 
             </View>
           </TouchableWithoutFeedback>
