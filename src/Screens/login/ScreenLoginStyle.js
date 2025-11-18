@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
         height: 360,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 20,
+        // marginBottom: 20,
     },
     img: {
         width: "100%",
