@@ -33,7 +33,7 @@ export default function Login ()  {
               <View style={styles.boxImg}>
                 <ImageBackground
                   source={require('../../../assets/imgs/segunda_foto_perfil.png')}
-                  style={styles.img}
+                  
                 />
               </View>
 
