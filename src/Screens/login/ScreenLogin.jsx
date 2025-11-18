@@ -59,7 +59,7 @@ export default function Login ()  {
                   </TouchableOpacity>
 
                   {/* Texto abaixo */}
-                  <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
+                  <View style={{ flexDirection: 'column', justifyContent: 'center', marginTop: 10 }}>
                     <Text style={{fontSize: 16}}>Ainda não possui uma conta? </Text>
                     <TouchableOpacity onPress={() => navigation.navigate('Register')} >
                       <Text style={{ color: ColorGlobal.AzulMaisClaro, fontWeight: 'bold',fontSize: 16 }}>
