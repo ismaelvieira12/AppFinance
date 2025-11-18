@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         backgroundColor: ColorGlobal.TesteColor,
     },
     textLogin: {
-        fontSize: 50,
+        // fontSize: 50,
     },
     boxImg: {
         width: "100%",
