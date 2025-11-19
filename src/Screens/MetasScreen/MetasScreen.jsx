@@ -127,7 +127,7 @@ export default function MetasScreen() {
     <View style={styles.container}>
 
     <View style={styles.boxSaldo}>
-        <B
+        
       {/* SALDO ATUAL EM DESTAQUE */}
       <View style={styles.saldoBox}>
         <Text style={styles.saldoTitulo}>Saldo Atual</Text>
