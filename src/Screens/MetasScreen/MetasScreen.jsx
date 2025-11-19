@@ -157,7 +157,7 @@ export default function MetasScreen() {
 
     </View>
       <TouchableOpacity style={{backgroundColor: ColorGlobal.AmareloNormal, height: 40, marginTop: 5, marginLeft: 15, marginRight: 15, marginBottom: 10}}>
-        
+        <Text>Crie suas metas de ganhos aqui! </Text>
       </TouchableOpacity>
 
       <View style={{ paddingHorizontal: 15 }}>
