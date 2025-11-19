@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     height: 200,
     borderBottomLeftRadius: 25,
     borderBottomRightRadius: 25,
-    marginBottom: 20,
+    marginBottom: 5,
     flexDirection: "column",
     justifyContent: "space-between",
   },
