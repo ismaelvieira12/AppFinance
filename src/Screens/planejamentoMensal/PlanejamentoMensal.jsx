@@ -220,6 +220,7 @@ export default function PlanejamentoMensal() {
           <Text style={styles.btnCriarText}>Criar</Text>
         </TouchableOpacity>
       </View>
+      <TouchableOpacity style={{}}></TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
