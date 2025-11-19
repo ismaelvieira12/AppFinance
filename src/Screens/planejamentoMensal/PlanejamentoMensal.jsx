@@ -220,7 +220,7 @@ export default function PlanejamentoMensal() {
           <Text style={styles.btnCriarText}>Criar</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity  style={{backgroundColor: ColorGlobal.AzulMaisClaro, height: 40, width: 80, borderRadius: 15, position: "absolute", bottom: 10, left: 20, justifyContent: "center", alignItems:"center"}} onPress={() => navigation.navigate("Metas")}>
+      <TouchableOpacity  style={{backgroundColor: ColorGlobal.AzulMaisClaro, height: 40, width: 80, borderRadius: 15, position: "absolute", bottom: 10, left: 20, justifyContent: "center", alignItems:"center"}} onPress={() => navigation.goBack()}>
         <Text>Voltar</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
