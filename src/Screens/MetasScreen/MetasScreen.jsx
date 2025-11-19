@@ -156,7 +156,7 @@ export default function MetasScreen() {
       </View>
 
     </View>
-      <TouchableOpacity style={{backgroundColor: ColorGlobal.AmareloNormal, height: 40, marginTop: 5, marginLeft: 15, marginRight: 15, marginBottom: 10, borderRadius: 10}}>
+      <TouchableOpacity style={{backgroundColor: ColorGlobal.AmareloNormal, height: 40, marginTop: 5, marginLeft: 15, marginRight: 15, marginBottom: 10, borderRadius: 10, alignItems: "center"}}>
         <Text>Crie suas metas de ganhos aqui! </Text>
       </TouchableOpacity>
 
