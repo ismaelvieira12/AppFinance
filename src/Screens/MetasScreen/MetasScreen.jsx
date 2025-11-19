@@ -156,7 +156,7 @@ export default function MetasScreen() {
       </View>
 
     </View>
-      <TouchableOpacity style={{backgroundColor: ColorGlobal.AmareloNormal, height: 40, marginTop: 5, marginLeft: 15}}>
+      <TouchableOpacity style={{backgroundColor: ColorGlobal.AmareloNormal, height: 40, marginTop: 5, marginLeft: 15, marginRight: 15}}>
         
       </TouchableOpacity>
 
