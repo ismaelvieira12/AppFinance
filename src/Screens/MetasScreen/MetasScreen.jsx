@@ -124,7 +124,7 @@ export default function MetasScreen() {
   const navigator = useNavigation();
 
   return (
-    <View style={styles.container}>
+  <View style={styles.container}>
 
     <View style={styles.boxSaldo}>
         
