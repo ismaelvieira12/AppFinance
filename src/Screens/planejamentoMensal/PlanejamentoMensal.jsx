@@ -14,10 +14,8 @@ import {
 import { Calendar } from "react-native-calendars";
 import { useNavigation } from "@react-navigation/native";
 import { ColorGlobal } from "../../paletaColor/ColorGlobal";
-import { useNavigation } from "@react-navigation/native";
 
 export default function PlanejamentoMensal() {
-  const navigate = useNavigation()
   const [showCalendar, setShowCalendar] = useState(false);
   const [renda, setRenda] = useState("");
   const [meta, setMeta] = useState("");
@@ -222,7 +220,7 @@ export default function PlanejamentoMensal() {
           <Text style={styles.btnCriarText}>Criar</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity  style={{backgroundColor: ColorGlobal.AzulMaisClaro, height: 40, width: 80, borderRadius: 15, position: "absolute", bottom: 10, left: 20, justifyContent: "center", alignItems:"center"}}onPress={() => navigate.navigate("Metas")}>
+      <TouchableOpacity  style={{backgroundColor: ColorGlobal.AzulMaisClaro, height: 40, width: 80, borderRadius: 15, position: "absolute", bottom: 10, left: 20, justifyContent: "center", alignItems:"center"}} onPress={() => navigation.navigate("Metas")}>
         <Text>Voltar</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
