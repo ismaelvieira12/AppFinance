@@ -156,7 +156,7 @@ export default function MetasScreen() {
       </View>
 
     </View>
-      <View></View>
+      <View style={{backgroundColor: ColorGlobal.AmareloNormal, height: 40, margin: 10}}></View>
 
       <View style={{ paddingHorizontal: 15 }}>
         {/* Inputs */}
