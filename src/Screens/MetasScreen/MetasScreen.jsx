@@ -156,7 +156,9 @@ export default function MetasScreen() {
       </View>
 
     </View>
-      <View style={{backgroundColor: ColorGlobal.AmareloNormal }}></View>
+      <TouchableOpacity>
+        
+      </TouchableOpacity>
 
       <View style={{ paddingHorizontal: 15 }}>
         {/* Inputs */}
