@@ -156,7 +156,7 @@ export default function MetasScreen() {
       </View>
 
     </View>
-
+      <View></View>
 
       <View style={{ paddingHorizontal: 15 }}>
         {/* Inputs */}
