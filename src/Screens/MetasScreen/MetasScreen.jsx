@@ -156,7 +156,7 @@ export default function MetasScreen() {
       </View>
 
     </View>
-      <TouchableOpacity>
+      <TouchableOpacity style={{}}>
         
       </TouchableOpacity>
 
