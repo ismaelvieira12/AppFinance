@@ -157,7 +157,7 @@ export default function MetasScreen() {
 
     </View>
       <TouchableOpacity style={{backgroundColor: ColorGlobal.AzulNormal, height: 60, marginTop: 5, marginLeft: 15, marginRight: 15, marginBottom: 10, borderRadius: 10, alignItems: "center", justifyContent: "center"}} onPress={() => navigator.navigate("PlanejamentoMensal")}>
-        <Text >Crie suas metas de ganhos aqui! </Text>
+        <Text style={{color: ColorGlobal.FundoCards,}}>Crie suas metas de ganhos aqui! </Text>
       </TouchableOpacity>
 
       <View style={{ paddingHorizontal: 15 }}>
