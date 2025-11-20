@@ -23,7 +23,6 @@ const Stack = createNativeStackNavigator();
 function DrawerRoutes() {
   return (
     <Drawer.Navigator screenOptions={{ headerShown: false }}>
-      <DrawerItem></DrawerItem>
       <Drawer.Screen name="Home" component={Wellcome} />
       <Drawer.Screen name="Metas" component={MetasScreen} />
     </Drawer.Navigator>
