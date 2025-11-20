@@ -327,5 +327,5 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 10,
   },
-  btnCriarText: { color: "#fff", fontWeight: "700" },
+  
 });
