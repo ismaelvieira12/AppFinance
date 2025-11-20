@@ -233,7 +233,7 @@ export default function MetasScreen() {
           )}
         />
       </View>
-      <TouchableOpacity  style={{backgroundColor: ColorGlobal.AzulEscuro, height: 40, width: 80, borderRadius: 15, position: "absolute", bottom: 10, left: 20, justifyContent: "center", alignItems:"center"}} onPress={() => navigation.goBack()}>
+      <TouchableOpacity  style={{backgroundColor: ColorGlobal.AzulEscuro, height: 40, width: 80, borderRadius: 15, position: "absolute", bottom: 10, left: 20, justifyContent: "center", alignItems:"center"}} onPress={() => navigator.goBack()}>
         <Text style={{color: ColorGlobal.FundoCards, fontWeight: "bold"}}>Voltar</Text>
       </TouchableOpacity>
     </View>
