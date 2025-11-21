@@ -15,7 +15,7 @@ import { ScreenRegister } from './src/Screens/register/ScreenRegister.jsx';
 import { ColorGlobal } from './src/paletaColor/ColorGlobal.js';
 import  PlanejamentoMensal  from './src/Screens/planejamentoMensal/PlanejamentoMensal.jsx';
 
-// Cria os navegadores
+
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
