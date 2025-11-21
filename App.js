@@ -30,7 +30,7 @@ function DrawerRoutes() {
 }
 
 export default function App() {
-  
+  const [isConfigured, setIsConfigured] = useState(null);
 
   // Verifica se o usuário já fez a configuração inicial
   useEffect(() => {
