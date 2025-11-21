@@ -19,7 +19,7 @@ import  PlanejamentoMensal  from './src/Screens/planejamentoMensal/PlanejamentoM
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
-
+// Drawer com as telas principais do app
 function DrawerRoutes() {
   return (
     <Drawer.Navigator screenOptions={{ headerShown: false }}>
