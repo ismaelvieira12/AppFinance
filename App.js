@@ -71,7 +71,7 @@ export default function App() {
         <Stack.Screen name="PlanejamentoMensal" component={PlanejamentoMensal} />
       </Stack.Navigator>
 
-      <StatusBar style="auto" />
+      
     </NavigationContainer>
   );
 }
