@@ -66,7 +66,7 @@ export default function App() {
           <Stack.Screen name="Drawer" component={DrawerRoutes} />
         )}
 
-        
+        {/* Telas fora do Drawer */}
         <Stack.Screen name="Login" component={ScreenLogin} />
         <Stack.Screen name="Register" component={ScreenRegister} />
         <Stack.Screen name="PlanejamentoMensal" component={PlanejamentoMensal} />
