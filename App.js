@@ -59,7 +59,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        
+        {/* Se ainda não configurou, vai pra tela inicial */}
         {!isConfigured ? (
           <Stack.Screen name="StartConfigInitial" component={StartConfigInitial} />
         ) : (
