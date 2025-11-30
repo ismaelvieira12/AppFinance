@@ -47,7 +47,14 @@ export default function App() {
   }, []);
 
   // Exibe loading enquanto verifica
+  if (isConfigured === null) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size="large" color={ColorGlobal.AzulNormal} />
 
+      </View>
+    );
+  }
 
   return (
     <NavigationContainer>
