@@ -32,6 +32,18 @@ function DrawerRoutes() {
 export default function App() {
   const [isConfigured, setIsConfigured] = useState(null);
 
+  // Verifica se o usuário já fez a configuração inicial
+  useEffect(() => {
+    const verificarConfiguracao = async () => {
+      try {
+        const valor = await AsyncStorage.getItem('configInicial');
+        setIsConfigured(valor === 'true');
+      } catch (error) {
+        console.error('Erro ao verificar configuração:', error);
+        setIsConfigured(false);
+      }
+    };
+    verificarConfiguracao();
   }, []);
 
   // Exibe loading enquanto verifica
